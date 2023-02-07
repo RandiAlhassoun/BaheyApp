@@ -10,7 +10,25 @@
 		C18F607D29923E4B00168E0D /* BaheyAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F607C29923E4B00168E0D /* BaheyAppApp.swift */; };
 		C18F607F29923E4B00168E0D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F607E29923E4B00168E0D /* ContentView.swift */; };
 		C18F608129923E4C00168E0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C18F608029923E4C00168E0D /* Assets.xcassets */; };
-		C18F608429923E4C00168E0D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C18F608329923E4C00168E0D /* Preview Assets.xcassets */; };
+		C18F608F29923EAF00168E0D /* Explore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F608E29923EAF00168E0D /* Explore.swift */; };
+		C18F609129923EE500168E0D /* OnBoarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F609029923EE500168E0D /* OnBoarding.swift */; };
+		C18F609329923EFE00168E0D /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F609229923EFE00168E0D /* Splash.swift */; };
+		C18F609529923F2000168E0D /* ExploreCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F609429923F2000168E0D /* ExploreCategories.swift */; };
+		C18F609729923F3800168E0D /* ProviderInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F609629923F3800168E0D /* ProviderInfo.swift */; };
+		C18F609929923F4C00168E0D /* ViewAllReviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F609829923F4C00168E0D /* ViewAllReviews.swift */; };
+		C18F609C29923F6D00168E0D /* WriteReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F609B29923F6D00168E0D /* WriteReview.swift */; };
+		C18F609F29923F8F00168E0D /* AfterReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F609E29923F8F00168E0D /* AfterReview.swift */; };
+		C18F60A129923F9F00168E0D /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F60A029923F9F00168E0D /* Favorites.swift */; };
+		C18F60A32992401300168E0D /* FavoritesEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F60A22992401300168E0D /* FavoritesEmpty.swift */; };
+		C18F60A52992408400168E0D /* FavoritesNotRegistered.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F60A42992408400168E0D /* FavoritesNotRegistered.swift */; };
+		C18F60A72992409A00168E0D /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F60A62992409A00168E0D /* Login.swift */; };
+		C18F60A9299240A800168E0D /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F60A8299240A800168E0D /* SignUp.swift */; };
+		C18F60AB299240BB00168E0D /* More.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F60AA299240BB00168E0D /* More.swift */; };
+		C18F60AD299240CB00168E0D /* AboutUs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F60AC299240CB00168E0D /* AboutUs.swift */; };
+		C18F60AF299240E100168E0D /* AddBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F60AE299240E100168E0D /* AddBusiness.swift */; };
+		C18F60B12992415D00168E0D /* DeleteAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F60B02992415D00168E0D /* DeleteAccount.swift */; };
+		C18F60B32992417000168E0D /* Logout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F60B22992417000168E0D /* Logout.swift */; };
+		C18F60B5299250EF00168E0D /* AllModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F60B4299250EF00168E0D /* AllModifiers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,7 +36,25 @@
 		C18F607C29923E4B00168E0D /* BaheyAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaheyAppApp.swift; sourceTree = "<group>"; };
 		C18F607E29923E4B00168E0D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C18F608029923E4C00168E0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C18F608329923E4C00168E0D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C18F608E29923EAF00168E0D /* Explore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Explore.swift; sourceTree = "<group>"; };
+		C18F609029923EE500168E0D /* OnBoarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding.swift; sourceTree = "<group>"; };
+		C18F609229923EFE00168E0D /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
+		C18F609429923F2000168E0D /* ExploreCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCategories.swift; sourceTree = "<group>"; };
+		C18F609629923F3800168E0D /* ProviderInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderInfo.swift; sourceTree = "<group>"; };
+		C18F609829923F4C00168E0D /* ViewAllReviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAllReviews.swift; sourceTree = "<group>"; };
+		C18F609B29923F6D00168E0D /* WriteReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteReview.swift; sourceTree = "<group>"; };
+		C18F609E29923F8F00168E0D /* AfterReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterReview.swift; sourceTree = "<group>"; };
+		C18F60A029923F9F00168E0D /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
+		C18F60A22992401300168E0D /* FavoritesEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesEmpty.swift; sourceTree = "<group>"; };
+		C18F60A42992408400168E0D /* FavoritesNotRegistered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesNotRegistered.swift; sourceTree = "<group>"; };
+		C18F60A62992409A00168E0D /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		C18F60A8299240A800168E0D /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
+		C18F60AA299240BB00168E0D /* More.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = More.swift; sourceTree = "<group>"; };
+		C18F60AC299240CB00168E0D /* AboutUs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUs.swift; sourceTree = "<group>"; };
+		C18F60AE299240E100168E0D /* AddBusiness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBusiness.swift; sourceTree = "<group>"; };
+		C18F60B02992415D00168E0D /* DeleteAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccount.swift; sourceTree = "<group>"; };
+		C18F60B22992417000168E0D /* Logout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logout.swift; sourceTree = "<group>"; };
+		C18F60B4299250EF00168E0D /* AllModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllModifiers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +89,7 @@
 			children = (
 				C18F607C29923E4B00168E0D /* BaheyAppApp.swift */,
 				C18F607E29923E4B00168E0D /* ContentView.swift */,
+				C18F60B4299250EF00168E0D /* AllModifiers.swift */,
 				C18F608029923E4C00168E0D /* Assets.xcassets */,
 				C18F608229923E4C00168E0D /* Preview Content */,
 			);
@@ -62,7 +99,24 @@
 		C18F608229923E4C00168E0D /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				C18F608329923E4C00168E0D /* Preview Assets.xcassets */,
+				C18F608E29923EAF00168E0D /* Explore.swift */,
+				C18F609029923EE500168E0D /* OnBoarding.swift */,
+				C18F609229923EFE00168E0D /* Splash.swift */,
+				C18F609429923F2000168E0D /* ExploreCategories.swift */,
+				C18F609629923F3800168E0D /* ProviderInfo.swift */,
+				C18F609829923F4C00168E0D /* ViewAllReviews.swift */,
+				C18F609B29923F6D00168E0D /* WriteReview.swift */,
+				C18F609E29923F8F00168E0D /* AfterReview.swift */,
+				C18F60A029923F9F00168E0D /* Favorites.swift */,
+				C18F60A22992401300168E0D /* FavoritesEmpty.swift */,
+				C18F60A42992408400168E0D /* FavoritesNotRegistered.swift */,
+				C18F60A62992409A00168E0D /* Login.swift */,
+				C18F60A8299240A800168E0D /* SignUp.swift */,
+				C18F60AA299240BB00168E0D /* More.swift */,
+				C18F60AC299240CB00168E0D /* AboutUs.swift */,
+				C18F60AE299240E100168E0D /* AddBusiness.swift */,
+				C18F60B02992415D00168E0D /* DeleteAccount.swift */,
+				C18F60B22992417000168E0D /* Logout.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -125,7 +179,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C18F608429923E4C00168E0D /* Preview Assets.xcassets in Resources */,
 				C18F608129923E4C00168E0D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +190,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C18F609929923F4C00168E0D /* ViewAllReviews.swift in Sources */,
 				C18F607F29923E4B00168E0D /* ContentView.swift in Sources */,
+				C18F608F29923EAF00168E0D /* Explore.swift in Sources */,
+				C18F609C29923F6D00168E0D /* WriteReview.swift in Sources */,
+				C18F60A9299240A800168E0D /* SignUp.swift in Sources */,
+				C18F60AF299240E100168E0D /* AddBusiness.swift in Sources */,
+				C18F609729923F3800168E0D /* ProviderInfo.swift in Sources */,
+				C18F60A32992401300168E0D /* FavoritesEmpty.swift in Sources */,
+				C18F60A129923F9F00168E0D /* Favorites.swift in Sources */,
+				C18F60AD299240CB00168E0D /* AboutUs.swift in Sources */,
+				C18F60AB299240BB00168E0D /* More.swift in Sources */,
+				C18F60A72992409A00168E0D /* Login.swift in Sources */,
+				C18F609129923EE500168E0D /* OnBoarding.swift in Sources */,
+				C18F60B32992417000168E0D /* Logout.swift in Sources */,
+				C18F60A52992408400168E0D /* FavoritesNotRegistered.swift in Sources */,
+				C18F609529923F2000168E0D /* ExploreCategories.swift in Sources */,
 				C18F607D29923E4B00168E0D /* BaheyAppApp.swift in Sources */,
+				C18F609F29923F8F00168E0D /* AfterReview.swift in Sources */,
+				C18F609329923EFE00168E0D /* Splash.swift in Sources */,
+				C18F60B5299250EF00168E0D /* AllModifiers.swift in Sources */,
+				C18F60B12992415D00168E0D /* DeleteAccount.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
