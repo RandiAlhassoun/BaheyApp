@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Explore: View {
     var body: some View {
-        Circle().foregroundColor(Color("Lgreen"))
+        Circle().foregroundColor(Color("yellowFill"))
     }
 }
 
