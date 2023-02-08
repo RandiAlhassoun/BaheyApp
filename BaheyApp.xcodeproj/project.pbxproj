@@ -29,6 +29,7 @@
 		C18F60B12992415D00168E0D /* DeleteAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F60B02992415D00168E0D /* DeleteAccount.swift */; };
 		C18F60B32992417000168E0D /* Logout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F60B22992417000168E0D /* Logout.swift */; };
 		C18F60B5299250EF00168E0D /* AllModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F60B4299250EF00168E0D /* AllModifiers.swift */; };
+		C18F60B829937B0500168E0D /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F60B729937B0500168E0D /* TabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		C18F60B02992415D00168E0D /* DeleteAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccount.swift; sourceTree = "<group>"; };
 		C18F60B22992417000168E0D /* Logout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logout.swift; sourceTree = "<group>"; };
 		C18F60B4299250EF00168E0D /* AllModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllModifiers.swift; sourceTree = "<group>"; };
+		C18F60B729937B0500168E0D /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				C18F60AE299240E100168E0D /* AddBusiness.swift */,
 				C18F60B02992415D00168E0D /* DeleteAccount.swift */,
 				C18F60B22992417000168E0D /* Logout.swift */,
+				C18F60B729937B0500168E0D /* TabBar.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				C18F607D29923E4B00168E0D /* BaheyAppApp.swift in Sources */,
 				C18F609F29923F8F00168E0D /* AfterReview.swift in Sources */,
 				C18F609329923EFE00168E0D /* Splash.swift in Sources */,
+				C18F60B829937B0500168E0D /* TabBar.swift in Sources */,
 				C18F60B5299250EF00168E0D /* AllModifiers.swift in Sources */,
 				C18F60B12992415D00168E0D /* DeleteAccount.swift in Sources */,
 			);
