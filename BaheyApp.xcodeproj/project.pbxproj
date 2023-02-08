@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		825EE5132993A570009D9A6D /* Service Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825EE5122993A570009D9A6D /* Service Provider.swift */; };
 		C18F607D29923E4B00168E0D /* BaheyAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F607C29923E4B00168E0D /* BaheyAppApp.swift */; };
 		C18F607F29923E4B00168E0D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F607E29923E4B00168E0D /* ContentView.swift */; };
 		C18F608129923E4C00168E0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C18F608029923E4C00168E0D /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		825EE5122993A570009D9A6D /* Service Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Service Provider.swift"; sourceTree = "<group>"; };
 		C18F607929923E4B00168E0D /* BaheyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaheyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C18F607C29923E4B00168E0D /* BaheyAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaheyAppApp.swift; sourceTree = "<group>"; };
 		C18F607E29923E4B00168E0D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -68,6 +70,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		825EE5112993A544009D9A6D /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				825EE5122993A570009D9A6D /* Service Provider.swift */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		C18F607029923E4B00168E0D = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +109,7 @@
 		C18F608229923E4C00168E0D /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				825EE5112993A544009D9A6D /* New Group */,
 				C18F608E29923EAF00168E0D /* Explore.swift */,
 				C18F609029923EE500168E0D /* OnBoarding.swift */,
 				C18F609229923EFE00168E0D /* Splash.swift */,
@@ -211,6 +222,7 @@
 				C18F609329923EFE00168E0D /* Splash.swift in Sources */,
 				C18F60B5299250EF00168E0D /* AllModifiers.swift in Sources */,
 				C18F60B12992415D00168E0D /* DeleteAccount.swift in Sources */,
+				825EE5132993A570009D9A6D /* Service Provider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
