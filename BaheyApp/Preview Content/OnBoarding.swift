@@ -25,6 +25,9 @@ struct OnBoarding: View {
                     Text("العديد من مزودي خدمات المناسبات")
                         .padding()
                     Text("دليلك للوصول لمزودي خدمات المناسبات من أصحاب الأعمال الحرة بما يتناسب مع اختياراتك.")
+                        .multilineTextAlignment(.center)
+
+                        //.multilineTextAlignment(.center)
             
                 }.tag(0)
                 VStack(){
@@ -32,9 +35,9 @@ struct OnBoarding: View {
                         Image ("OnBoarding2")
                             .resizable()
                         .frame(width: 300, height: 300)}
-                    Text("العديد من مزودي خدمات المناسبات")
+                    Text("تقييمات موثوقة")
                         .padding()
-                    Text("دليلك للوصول لمزودي خدمات المناسبات من أصحاب الأعمال الحرة بما يتناسب مع اختياراتك.")
+                    Text("نوفر تقييمات موثوقة لمزودي الخدمات بدون أي حياد لضمان الجودة. ")
             
                 }.tag(1)
                 VStack(){

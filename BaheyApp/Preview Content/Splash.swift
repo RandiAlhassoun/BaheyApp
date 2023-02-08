@@ -22,6 +22,10 @@ struct Splash: View {
             if isActive {
                 OnBoarding()
             } else {
+                
+                ZStack{
+                                (Color("Dpink"))
+                                    .ignoresSafeArea()
                 VStack {
                     VStack {
                         Image("BaheyLogo")
@@ -39,13 +43,14 @@ struct Splash: View {
                     }
                 }.accentColor((Color("Dpink")))
                 
-                .onAppear {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                        withAnimation {
-                            self.isActive = true
+                    .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                            withAnimation {
+                                self.isActive = true
+                            }
                         }
                     }
-                }
+            }//z
             }
             
         }//Z
