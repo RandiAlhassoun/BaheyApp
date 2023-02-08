@@ -9,8 +9,29 @@ import SwiftUI
 
 struct TabBar: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+        TabView(){
+            
+            
+            Explore().tabItem{Image(systemName: "safari")
+                Text("اكتشف")
+            }.tag(1)
+            
+            Favorites().tabItem{Image(systemName: "heart.fill")
+                Text("المفضلة")
+            }.tag(2)
+            
+                //EditProfileDeveloperContentView()
+                More().tabItem{Image(systemName: "ellipsis")
+                    Text("المزيد")
+                }
+            
+
+//
+//                login_().tabItem{Image(systemName: "person.circle")
+//                    Text("Profile")
+//                }
+        }.accentColor((Color("Dpink")))
+}
 }
 
 struct TabBar_Previews: PreviewProvider {
@@ -18,3 +39,4 @@ struct TabBar_Previews: PreviewProvider {
         TabBar()
     }
 }
+
