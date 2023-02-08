@@ -24,12 +24,6 @@ struct TabBar: View {
                 More().tabItem{Image(systemName: "ellipsis")
                     Text("المزيد")
                 }
-            
-
-//
-//                login_().tabItem{Image(systemName: "person.circle")
-//                    Text("Profile")
-//                }
         }.accentColor((Color("Dpink")))
 }
 }
