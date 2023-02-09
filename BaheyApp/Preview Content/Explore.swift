@@ -9,7 +9,11 @@ import SwiftUI
 
 struct Explore: View {
     var body: some View {
-        Circle().foregroundColor(Color("yellowFill"))
+        VStack{
+            Text("hi")
+            //TextField("الإيميل", text: $email)
+                
+        }
     }
 }
 

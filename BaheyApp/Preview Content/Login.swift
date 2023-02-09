@@ -33,42 +33,42 @@ struct Login: View {
     var body: some View {
         NavigationView{
             VStack{
-              
-                    Text("تسجيل الدخول")
-                        .fontWeight(.bold)
-                        .font(.largeTitle)
-                        .foregroundColor(.black)
-                        .padding()
                 
-                    
+                Text("تسجيل الدخول")
+                    .fontWeight(.bold)
+                    .font(.largeTitle)
+                    .foregroundColor(.black)
+                    .padding()
                 
                 
-                    Text("البريد الإلكتروني")
-                        .fontWeight(.semibold)
-                        .font(.title2)
-                        .foregroundColor(.black)
-                        .padding()
-                    
-                    TextField("الإيميل", text: $email)
-                        .padding()
-                        .background(Color("Lgreen"))
-                        .cornerRadius(5.0)
-                        .padding(.bottom, 20)
-                    
+                VStack(alignment: .trailing){
+                
+                Text("البريد الإلكتروني")
+                    .fontWeight(.semibold)
+                    .font(.title2)
+                    .foregroundColor(.black)
+                    .padding()
+                
+                TextField("الإيميل", text: $email)
+                    .padding()
+                    .background(Color("Lgreen"))
+                    .cornerRadius(5.0)
+                    .padding(.bottom, 20)
+                
                 Text ("كلمة المرور")
-                    .multilineTextAlignment(.leading)
-                        .fontWeight(.semibold)
-                        .font(.title2)
-                        .foregroundColor(.black)
-                        .padding()
+                    //.multilineTextAlignment(.leading)
+                    .fontWeight(.semibold)
+                    .font(.title2)
+                    .foregroundColor(.black)
+                    .padding()
                 
-                    SecureField("كلمة المرور", text: $password)
-                        .padding()
-                        .background(Color("Lgreen"))
-                        .cornerRadius(5.0)
-                        .padding(.bottom, 20)
-                       
-             
+                SecureField("كلمة المرور", text: $password)
+                    .padding()
+                    .background(Color("Lgreen"))
+                    .cornerRadius(5.0)
+                    .padding(.bottom, 20)
+                
+            }//rand add
                     Button {
                     } label: {
                         Text("تسجيل دخول").modifier(LargeButtonModifier())

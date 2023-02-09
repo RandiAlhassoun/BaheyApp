@@ -16,59 +16,80 @@ struct OnBoarding: View {
     var body: some View {
         //NavigationView {
         VStack{
+            HStack{
+                Button {
+                    toContentView.toggle()
+
+                } label: {
+                    Text("Skip")
+                }.foregroundColor(Color("Dpink"))
+                Spacer()
+            }.padding()
+            
         TabView(selection: $currentTab,
                 content:  {
+//MARK: - First onBording page
             VStack(){
-                VStack(){
-                    HStack{
-                        Button {
-                        } label: {
-                            Text("تخطي")
-                        }.foregroundColor(Color("Dpink"))
-                        
-                        Spacer()
-                        
-                    }.frame(alignment: .top)
-                    
                     Image ("OnBoarding1")
                         .resizable()
-                    .frame(width: 300, height: 300)}
-                Text("العديد من مزودي خدمات المناسبات")
+                    .frame(width: 300, height: 300)
+                Text("A variety event service providers")
                     .modifier(EmptyStateTextModifier())
                     .padding()
-                Text("دليلك للوصول لمزودي خدمات المناسبات من أصحاب الأعمال الحرة بما يتناسب مع اختياراتك.")
+                Text("Your guide to finding freelance event service providers according to your preferences.")
                     .multilineTextAlignment(.center)
                     .modifier(RegularTextModifier())
                 
-                
+                Button {
+                    toContentView.toggle()
+                } label: {
+                Text("Next")
+                    
+               }.modifier(MediemButtonModifier())
             }.tag(0)
+//MARK: - Second onBording page
             VStack(){
                 VStack(){
                     Image ("OnBoarding2")
                         .resizable()
                     .frame(width: 300, height: 300)}
-                Text("تقييمات موثوقة")
+                Text("Trusted reviews")
                     .bold()
                     .modifier(EmptyStateTextModifier())
                 
                     .padding()
-                Text("نوفر تقييمات موثوقة لمزودي الخدمات بدون أي حياد لضمان الجودة. ")
+                Text("We provide reliable ratings of service providers without any impartiality to ensure quality.")
                     .multilineTextAlignment(.center)
                     .modifier(RegularTextModifier())
                 
+                Button {
+                    toContentView.toggle()
+                } label: {
+                Text("Next")
+                    
+               }.modifier(MediemButtonModifier())
+                
+                
             }.tag(1)
+//MARK: - Theered onBording page
             VStack(){
                 VStack(){
                     Image ("OnBoarding3")
                         .resizable()
                     .frame(width: 300, height: 300)}
-                Text("لا داعي للحيرة")
+                Text("don’t hesitate")
                     .modifier(EmptyStateTextModifier())
                     .padding()
-                Text("كوني جزءً من عالمنا و استمتعي بقائمة متنوعة و متجددة من مزودي الخدمات.  ")
+                Text("Be part of our world and enjoy a diverse and ever-growing list of service providers.")
                     .multilineTextAlignment(.center)
                     .modifier(RegularTextModifier())
                 
+                Button {
+                    toContentView.toggle()
+                } label: {
+                Text("Explore")
+                    
+               }.modifier(MediemButtonModifier())
                 
                 
             }.tag(2)
