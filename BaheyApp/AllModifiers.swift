@@ -131,8 +131,6 @@ struct ItemsModifier: ViewModifier {
 
 
 
-
-
 struct AllModifiers_Previews: PreviewProvider {
     static var previews: some View {
         AllModifiers()
