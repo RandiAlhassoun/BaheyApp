@@ -80,7 +80,7 @@ struct RegularTextModifier: ViewModifier {
             .font(.system(size: 18))
             .foregroundColor(.black)
             .frame(maxWidth: .infinity)
-            .padding()
+            //.padding()
     }}
 
 //XL Text Modifier:
@@ -92,7 +92,7 @@ struct XLTextModifier: ViewModifier {
             .bold()
             .foregroundColor(.black)
             .frame(maxWidth: .infinity)
-            .padding()
+            //.padding()
     }}
 
 //Provider Name Text Modifier:

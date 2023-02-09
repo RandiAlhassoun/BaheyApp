@@ -9,7 +9,17 @@ import SwiftUI
 
 struct More: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            VStack(alignment: .leading){
+                Text("Hello, person").modifier(RegularTextModifier())
+                    .fontWeight(.bold)
+                Text("email@ email.com").modifier(RegularTextModifier())
+                    .fontWeight(.semibold)
+                Spacer()
+                
+            }
+            
+        }
     }
 }
 
