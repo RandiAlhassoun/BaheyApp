@@ -16,99 +16,104 @@ struct LargeButtonModifier1: ViewModifier {
     func body(content: Content) -> some View {
         content
         //.bold()
-            .font(.system(size: 20))
-            .background(Color.black)
             .frame(width: 365 , height: 42)
-            .cornerRadius(5.0)
             .foregroundColor(.white)
+            .background(Color.black)
+            .cornerRadius(5.0)
+            .font(.system(size: 20))
     }}
-
-
 
 
 struct Login: View {
     @State var email: String = ""
     @State var password: String = ""
-
+    
     var body: some View {
         NavigationView{
-            VStack{
+        
+            VStack(){
                 
-                Text("تسجيل الدخول")
-                    .fontWeight(.bold)
-                    .font(.largeTitle)
-                    .foregroundColor(.black)
-                    .padding()
+                // MARK: - Titel
+                Text("Sing In").modifier(XLTextModifier())
+                    //.padding(.vertical, 50.0)
+                Spacer()
                 
-                
-                VStack(alignment: .trailing){
-                
-                Text("البريد الإلكتروني")
-                    .fontWeight(.semibold)
-                    .font(.title2)
-                    .foregroundColor(.black)
-                    .padding()
-                
-                TextField("الإيميل", text: $email)
-                    .padding()
-                    .background(Color("Lgreen"))
-                    .cornerRadius(5.0)
-                    .padding(.bottom, 20)
-                
-                Text ("كلمة المرور")
-                    //.multilineTextAlignment(.leading)
-                    .fontWeight(.semibold)
-                    .font(.title2)
-                    .foregroundColor(.black)
-                    .padding()
-                
-                SecureField("كلمة المرور", text: $password)
-                    .padding()
-                    .background(Color("Lgreen"))
-                    .cornerRadius(5.0)
-                    .padding(.bottom, 20)
-                
-            }//rand add
-                    Button {
-                    } label: {
-                        Text("تسجيل دخول").modifier(LargeButtonModifier())
-                    }.font(.system(size: 20))
-                        .background(Color("Dpink"))
-                        .frame(width: 365 , height: 42)
+                VStack(alignment:.leading){
+                    // MARK: - TextField
+                    
+                    Text("Email")
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.semibold)
+                    // .modifier(RegularTextModifier())
+                    
+                    
+                    TextField("Example@example.com", text: $email)
+                        .padding()
+                        .background(Color("Lgreen"))
                         .cornerRadius(5.0)
-                        .foregroundColor(.white)
+                        .padding(.bottom, 20)
+                    //.multilineTextAlignment(.leading)
+                    
+                    
+                    
+                    Text ("Password")
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.semibold)
+                    //.modifier(RegularTextModifier())
+                    
+                    
+                    SecureField("Password", text: $password)
                         .padding()
+                        .background(Color("Lgreen"))
+                        .cornerRadius(5.0)
+                        .padding(.bottom, 20)
+                    //.multilineTextAlignment(.leading)
                     
-                    Text("او")
-                    
-                    Button {
-                    } label: {
-                        Text("تسجيل الدخول باستخدام آبل").modifier(LargeButtonModifier1())
-                    }
-                    .font(.system(size: 20))
-                    .background(Color.black)
-                    .frame(width: 365 , height: 42)
-                    .cornerRadius(5.0)
-                    .foregroundColor(.white)
+                }
+                
+                // MARK: - Button
+                
+                NavigationLink(destination: Explore()){
+                Text("Sign In")
+                    .modifier(LargeButtonModifier())
                     .padding()
-                    
-                  
-                        
-                        
-                        NavigationLink {
-                            SignUp()
-                        } label: {
-                            Text(" ليس لديك حساب ؟ انشئ حساب")
-                                .foregroundColor(Color.black)
-                            
-                        }
-                        .padding()
-                    
+                 }
+                
+                Text("OR")
+
+                /* SignInWithAppleButton(
+                 onRequest: { request in
+                 /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Code@*/ /*@END_MENU_TOKEN@*/
+                 },
+                 onCompletion: { result in
+                 /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Code@*/ /*@END_MENU_TOKEN@*/
+                 }
+                 )*/
+                
+
+                
+                Button {
+                } label: {
+                    Text("Sign in with Apple").modifier(LargeButtonModifier1())
+                }             
+                .padding()
+                
+                
+                
+                // MARK: - Register link
+                HStack{
+
+
+                    Text("Don’t have an account?")
+                    NavigationLink(destination: SignUp()){
+                        Text("Sign up")
+                    }.foregroundColor(Color("Dpink"))
+                }
+              Spacer()
+              
             }
-          
+            .padding()
             
-        .padding()
-           
         }
     }
 }
@@ -118,6 +123,8 @@ struct Login_Previews: PreviewProvider {
         Login()
     }
 }
+
+
 
 
 
