@@ -101,6 +101,7 @@
 		C18F608229923E4C00168E0D /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				C18F609E29923F8F00168E0D /* AfterReview.swift */,
 				C18F608E29923EAF00168E0D /* Explore.swift */,
 				C18F609029923EE500168E0D /* OnBoarding.swift */,
 				C18F609229923EFE00168E0D /* Splash.swift */,
@@ -108,7 +109,6 @@
 				C18F609629923F3800168E0D /* ProviderInfo.swift */,
 				C18F609829923F4C00168E0D /* ViewAllReviews.swift */,
 				C18F609B29923F6D00168E0D /* WriteReview.swift */,
-				C18F609E29923F8F00168E0D /* AfterReview.swift */,
 				C18F60A029923F9F00168E0D /* Favorites.swift */,
 				C18F60A22992401300168E0D /* FavoritesEmpty.swift */,
 				C18F60A42992408400168E0D /* FavoritesNotRegistered.swift */,

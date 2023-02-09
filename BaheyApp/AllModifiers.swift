@@ -14,10 +14,10 @@
 /*
  Button {
  print("Button was tapped")
-} label: {
+ } label: {
  Text("Login")
-     .modifier(ButtonModifier())
-}
+ .modifier(ButtonModifier())
+ }
  */
 
 import SwiftUI
@@ -26,11 +26,11 @@ struct LargeButtonModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
         //.bold()
-            .font(.system(size: 20))
-            .background(Color("Dpink"))
             .frame(width: 365 , height: 42)
-            .cornerRadius(5.0)
             .foregroundColor(.white)
+            .background(Color("Dpink"))
+            .cornerRadius(5.0)
+            .font(.system(size: 20))
     }}
 struct AllModifiers: View {
     var body: some View {
@@ -42,11 +42,12 @@ struct MediemButtonModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
         //.bold()
-            .font(.system(size: 20))
-            .background(Color("Dpink"))
             .frame(width: 165 , height: 45)
-            .cornerRadius(15.0)
             .foregroundColor(.white)
+            .background(Color("Dpink"))
+            .cornerRadius(15.0)
+            .font(.system(size: 20))
+        
     }}
 
 //Small Button Modifier:
@@ -54,11 +55,12 @@ struct SmallButtonModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
         //.bold()
-            .font(.system(size: 12))
-            .background(Color("Dpink"))
+        
             .frame(width: 89.11 , height: 25)
-            .cornerRadius(20.0)
             .foregroundColor(.white)
+            .background(Color("Dpink"))
+            .cornerRadius(20.0)
+            .font(.system(size: 12))
     }}
 
 //Empty State Text Modifier:
