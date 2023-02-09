@@ -16,11 +16,11 @@ struct LargeButtonModifier1: ViewModifier {
     func body(content: Content) -> some View {
         content
         //.bold()
-            .font(.system(size: 20))
-            .background(Color.black)
             .frame(width: 365 , height: 42)
-            .cornerRadius(5.0)
             .foregroundColor(.white)
+            .background(Color.black)
+            .cornerRadius(5.0)
+            .font(.system(size: 20))
     }}
 
 
@@ -30,57 +30,57 @@ struct Login: View {
     
     var body: some View {
         NavigationView{
-            VStack{
+        
+            VStack(){
                 
                 // MARK: - Titel
-                Text("تسجيل الدخول").modifier(XLTextModifier())
-                    .padding()
+                Text("Sing In").modifier(XLTextModifier())
+                    //.padding(.vertical, 50.0)
+                Spacer()
                 
-                //Spacer()
-                
-                
-                
-                // MARK: - TextField
-                
-                Text("البريد الإلكتروني").modifier(RegularTextModifier())
-                    .fontWeight(.black)
-        
-                TextField("example@example.com", text: $email)
-                
-                    .padding()
-                    .background(Color("Lgreen"))
-                    .cornerRadius(5.0)
-                    .padding(.bottom, 20)
-                    .multilineTextAlignment(.trailing)
-                
-                
-                
-                Text ("كلمة المرور").modifier(RegularTextModifier())
-                        .fontWeight(.black)
-                SecureField("كلمة المرور", text: $password)
-                    .padding()
-                    .background(Color("Lgreen"))
-                    .cornerRadius(5.0)
-                    .padding(.bottom, 20)
-                    .multilineTextAlignment(.trailing)
-                
-
+                VStack(alignment:.leading){
+                    // MARK: - TextField
+                    
+                    Text("Email")
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.semibold)
+                    // .modifier(RegularTextModifier())
+                    
+                    
+                    TextField("Example@example.com", text: $email)
+                        .padding()
+                        .background(Color("Lgreen"))
+                        .cornerRadius(5.0)
+                        .padding(.bottom, 20)
+                    //.multilineTextAlignment(.leading)
+                    
+                    
+                    
+                    Text ("Password")
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.semibold)
+                    //.modifier(RegularTextModifier())
+                    
+                    
+                    SecureField("Password", text: $password)
+                        .padding()
+                        .background(Color("Lgreen"))
+                        .cornerRadius(5.0)
+                        .padding(.bottom, 20)
+                    //.multilineTextAlignment(.leading)
+                    
+                }
                 
                 // MARK: - Button
                 
-                
                 NavigationLink(destination: Explore()){
-                    Text("تسجيل دخول").modifier(LargeButtonModifier())
-                        .font(.system(size: 20))
-                        .background(Color("Dpink"))
-                        .frame(width: 365 , height: 42)
-                        .cornerRadius(5.0)
-                        .foregroundColor(.white)
-                        .padding()
-                }
+                Text("Sign In")
+                    .modifier(LargeButtonModifier())
+                    .padding()
+                 }
                 
-                Text("او")
-                
+                Text("OR")
+
                 /* SignInWithAppleButton(
                  onRequest: { request in
                  /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Code@*/ /*@END_MENU_TOKEN@*/
@@ -90,30 +90,27 @@ struct Login: View {
                  }
                  )*/
                 
+
+                
                 Button {
                 } label: {
-                    Text("تسجيل الدخول باستخدام آبل").modifier(LargeButtonModifier1())
-                }
-                .font(.system(size: 20))
-                .background(Color.black)
-                .frame(width: 365 , height: 42)
-                .cornerRadius(5.0)
-                .foregroundColor(.white)
+                    Text("Sign in with Apple").modifier(LargeButtonModifier1())
+                }             
                 .padding()
                 
                 
                 
                 // MARK: - Register link
                 HStack{
+
+
+                    Text("Don’t have an account?")
                     NavigationLink(destination: SignUp()){
-                        Text("انشي حساب")
+                        Text("Sign up")
                     }.foregroundColor(Color("Dpink"))
-                    
-                    Text("ليس لديك حساب ؟")
-                    
-                    
                 }
-                
+              Spacer()
+              
             }
             .padding()
             
@@ -126,6 +123,8 @@ struct Login_Previews: PreviewProvider {
         Login()
     }
 }
+
+
 
 
 
