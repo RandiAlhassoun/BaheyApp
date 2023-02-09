@@ -23,12 +23,14 @@ struct LargeButtonModifier1: ViewModifier {
             .font(.system(size: 20))
     }}
 
+
 struct Login: View {
     @State var email: String = ""
     @State var password: String = ""
     
     var body: some View {
         NavigationView{
+        
             VStack(){
                 
                 // MARK: - Titel
@@ -78,7 +80,7 @@ struct Login: View {
                  }
                 
                 Text("OR")
-                
+
                 /* SignInWithAppleButton(
                  onRequest: { request in
                  /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Code@*/ /*@END_MENU_TOKEN@*/
@@ -88,23 +90,27 @@ struct Login: View {
                  }
                  )*/
                 
+
                 
                 Button {
                 } label: {
                     Text("Sign in with Apple").modifier(LargeButtonModifier1())
-                }
+                }             
                 .padding()
                 
                 
                 
                 // MARK: - Register link
                 HStack{
+
+
                     Text("Don’t have an account?")
                     NavigationLink(destination: SignUp()){
                         Text("Sign up")
                     }.foregroundColor(Color("Dpink"))
                 }
               Spacer()
+              
             }
             .padding()
             
