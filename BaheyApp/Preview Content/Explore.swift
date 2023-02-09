@@ -8,67 +8,70 @@
 import SwiftUI
 
 struct Explore: View {
-    @State private var searchText = ""
-    let names = ["Holly", "Josh", "Rhonda", "Ted"]
+  //  @State private var searchText = ""
+//    let names = ["Holly", "Josh", "Rhonda", "Ted"]
+    let service: ServiceProvider
     
     var body: some View {
         VStack {
             
         Text("المتخصصات")
-        NavigationStack {
-            List {
-                ForEach(searchResults, id: \.self) { name in
-                    NavigationLink {
-                        Text(name)
-                    } label: {
-                        Text(name)
-                    }
-                }
-            }
-  
-        }
-        .searchable(text: $searchText)
+            ServiceCerd(service: service)
+//        NavigationStack {
+//
+//
+//        }
+//        .searchable(text: $searchText)
     }
 }
-    var searchResults: [String] {
-          if searchText.isEmpty {
-              return names
-          } else {
-              return names.filter { $0.contains(searchText) }
-          }
-      }
+//    var searchResults: [String] {
+//          if searchText.isEmpty {
+//              return names
+//          } else {
+//              return names.filter { $0.contains(searchText) }
+//          }
+//      }
     }
 
 
 struct Explore_Previews: PreviewProvider {
     static var previews: some View {
-        Explore()
+        Explore(service: service1)
     }
 }
 
 //Build service provider frame
 struct ServiceCerd: View {
-//    var folder: MyNotes
+    let service: ServiceProvider
+    
     var body: some View {
-        ZStack {
-            Rectangle()
-                .fill(Color.white)
-                .shadow(radius: 4)
-            
-                .frame(width: 317, height: 74)
-                .overlay(
-                 //   Text(folder.name)
-                    Text("")
-                        .font(.title3)
-                        .bold()
-                )
-            Rectangle()
-         
-                .frame(width: 20, height: 74)
-                .padding(.trailing,299)
-              //  .foregroundColor(folder.color)
-                .foregroundColor(Color.blue)
+        ZStack{
+          
+            HStack {
+                VStack {
+                    Text(service.name)
+                        .modifier(ProviderNameTextModifier())
+                    Text(service.category)
+                        .modifier(ProviderCatigoryTextModifier())
+                 
+                    Text(service.star)
+                    Spacer()
+                    Button {
+                   // print("Button was tapped")
+                   } label: {
+                    Text("Show more ")
+                        .modifier(SmallButtonModifier())
+                   }
+                }
+                Image(service.image)
+                    .resizable()
+                    .frame(width:207, height: 164 )
+                    .clipped()
+            }
+       
         }
+        .frame(width:360, height: 166)
+        .background(Color("Lgreen"))
     
     }
 }

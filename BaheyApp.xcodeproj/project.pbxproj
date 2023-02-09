@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		825EE5132993A570009D9A6D /* Service Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825EE5122993A570009D9A6D /* Service Provider.swift */; };
+		825EE5132993A570009D9A6D /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825EE5122993A570009D9A6D /* ServiceProvider.swift */; };
 		C18F607D29923E4B00168E0D /* BaheyAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F607C29923E4B00168E0D /* BaheyAppApp.swift */; };
 		C18F607F29923E4B00168E0D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F607E29923E4B00168E0D /* ContentView.swift */; };
 		C18F608129923E4C00168E0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C18F608029923E4C00168E0D /* Assets.xcassets */; };
@@ -30,10 +30,11 @@
 		C18F60B12992415D00168E0D /* DeleteAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F60B02992415D00168E0D /* DeleteAccount.swift */; };
 		C18F60B32992417000168E0D /* Logout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F60B22992417000168E0D /* Logout.swift */; };
 		C18F60B5299250EF00168E0D /* AllModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F60B4299250EF00168E0D /* AllModifiers.swift */; };
+		C18F60B829937B0500168E0D /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F60B729937B0500168E0D /* TabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		825EE5122993A570009D9A6D /* Service Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Service Provider.swift"; sourceTree = "<group>"; };
+		825EE5122993A570009D9A6D /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
 		C18F607929923E4B00168E0D /* BaheyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaheyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C18F607C29923E4B00168E0D /* BaheyAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaheyAppApp.swift; sourceTree = "<group>"; };
 		C18F607E29923E4B00168E0D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +58,7 @@
 		C18F60B02992415D00168E0D /* DeleteAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccount.swift; sourceTree = "<group>"; };
 		C18F60B22992417000168E0D /* Logout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logout.swift; sourceTree = "<group>"; };
 		C18F60B4299250EF00168E0D /* AllModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllModifiers.swift; sourceTree = "<group>"; };
+		C18F60B729937B0500168E0D /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +75,7 @@
 		825EE5112993A544009D9A6D /* New Group */ = {
 			isa = PBXGroup;
 			children = (
-				825EE5122993A570009D9A6D /* Service Provider.swift */,
+				825EE5122993A570009D9A6D /* ServiceProvider.swift */,
 			);
 			path = "New Group";
 			sourceTree = "<group>";
@@ -128,6 +130,7 @@
 				C18F60AE299240E100168E0D /* AddBusiness.swift */,
 				C18F60B02992415D00168E0D /* DeleteAccount.swift */,
 				C18F60B22992417000168E0D /* Logout.swift */,
+				C18F60B729937B0500168E0D /* TabBar.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -220,9 +223,10 @@
 				C18F607D29923E4B00168E0D /* BaheyAppApp.swift in Sources */,
 				C18F609F29923F8F00168E0D /* AfterReview.swift in Sources */,
 				C18F609329923EFE00168E0D /* Splash.swift in Sources */,
+				C18F60B829937B0500168E0D /* TabBar.swift in Sources */,
 				C18F60B5299250EF00168E0D /* AllModifiers.swift in Sources */,
 				C18F60B12992415D00168E0D /* DeleteAccount.swift in Sources */,
-				825EE5132993A570009D9A6D /* Service Provider.swift in Sources */,
+				825EE5132993A570009D9A6D /* ServiceProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

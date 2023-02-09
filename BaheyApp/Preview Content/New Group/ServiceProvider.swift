@@ -6,8 +6,21 @@
 //
 
 import Foundation
-//import SwiftUI
 
+struct ServiceProvider {
+    let id = UUID()
+    let name: String
+    let category: String
+    let image: String
+    let star: String
+}
+
+   
+let service1 = ServiceProvider(name: "المصصفة هديل", category: "مصففة شعر", image: "Hadeel", star: "★★★")
+let service2 = ServiceProvider(name: " عهود شعر", category: "مصففة شعر", image:"ahood", star: "★★★★★")
+let service3 = ServiceProvider(name: "Layla Hair", category: "مصففة شعر", image: "Layla",star: "★★")
+let service4 = ServiceProvider(name: "العنود كوفيرة", category: "مصففة شعر", image: "anood",star: "★★★")
+    
 
 //class MyNotesViewModel: ObservableObject {
 //    @Published var folders = MyNotes.testFolder
