@@ -24,91 +24,99 @@ struct LargeButtonModifier1: ViewModifier {
     }}
 
 
-
-
 struct Login: View {
     @State var email: String = ""
     @State var password: String = ""
-
+    
     var body: some View {
         NavigationView{
             VStack{
-              
-                    Text("تسجيل الدخول")
-                        .fontWeight(.bold)
-                        .font(.largeTitle)
-                        .foregroundColor(.black)
-                        .padding()
                 
-                    
+                // MARK: - Titel
+                Text("تسجيل الدخول").modifier(XLTextModifier())
+                    .padding()
+                
+                //Spacer()
                 
                 
-                    Text("البريد الإلكتروني")
-                        .fontWeight(.semibold)
-                        .font(.title2)
-                        .foregroundColor(.black)
-                        .padding()
-                    
-                    TextField("الإيميل", text: $email)
-                        .padding()
-                        .background(Color("Lgreen"))
-                        .cornerRadius(5.0)
-                        .padding(.bottom, 20)
-                    
-                Text ("كلمة المرور")
-                    .multilineTextAlignment(.leading)
-                        .fontWeight(.semibold)
-                        .font(.title2)
-                        .foregroundColor(.black)
-                        .padding()
                 
-                    SecureField("كلمة المرور", text: $password)
-                        .padding()
-                        .background(Color("Lgreen"))
-                        .cornerRadius(5.0)
-                        .padding(.bottom, 20)
-                       
-             
-                    Button {
-                    } label: {
-                        Text("تسجيل دخول").modifier(LargeButtonModifier())
-                    }.font(.system(size: 20))
+                // MARK: - TextField
+                
+                Text("البريد الإلكتروني").modifier(RegularTextModifier())
+                    .fontWeight(.black)
+        
+                TextField("example@example.com", text: $email)
+                
+                    .padding()
+                    .background(Color("Lgreen"))
+                    .cornerRadius(5.0)
+                    .padding(.bottom, 20)
+                    .multilineTextAlignment(.trailing)
+                
+                
+                
+                Text ("كلمة المرور").modifier(RegularTextModifier())
+                        .fontWeight(.black)
+                SecureField("كلمة المرور", text: $password)
+                    .padding()
+                    .background(Color("Lgreen"))
+                    .cornerRadius(5.0)
+                    .padding(.bottom, 20)
+                    .multilineTextAlignment(.trailing)
+                
+
+                
+                // MARK: - Button
+                
+                
+                NavigationLink(destination: Explore()){
+                    Text("تسجيل دخول").modifier(LargeButtonModifier())
+                        .font(.system(size: 20))
                         .background(Color("Dpink"))
                         .frame(width: 365 , height: 42)
                         .cornerRadius(5.0)
                         .foregroundColor(.white)
                         .padding()
+                }
+                
+                Text("او")
+                
+                /* SignInWithAppleButton(
+                 onRequest: { request in
+                 /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Code@*/ /*@END_MENU_TOKEN@*/
+                 },
+                 onCompletion: { result in
+                 /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Code@*/ /*@END_MENU_TOKEN@*/
+                 }
+                 )*/
+                
+                Button {
+                } label: {
+                    Text("تسجيل الدخول باستخدام آبل").modifier(LargeButtonModifier1())
+                }
+                .font(.system(size: 20))
+                .background(Color.black)
+                .frame(width: 365 , height: 42)
+                .cornerRadius(5.0)
+                .foregroundColor(.white)
+                .padding()
+                
+                
+                
+                // MARK: - Register link
+                HStack{
+                    NavigationLink(destination: SignUp()){
+                        Text("انشي حساب")
+                    }.foregroundColor(Color("Dpink"))
                     
-                    Text("او")
+                    Text("ليس لديك حساب ؟")
                     
-                    Button {
-                    } label: {
-                        Text("تسجيل الدخول باستخدام آبل").modifier(LargeButtonModifier1())
-                    }
-                    .font(.system(size: 20))
-                    .background(Color.black)
-                    .frame(width: 365 , height: 42)
-                    .cornerRadius(5.0)
-                    .foregroundColor(.white)
-                    .padding()
                     
-                  
-                        
-                        
-                        NavigationLink {
-                            SignUp()
-                        } label: {
-                            Text(" ليس لديك حساب ؟ انشئ حساب")
-                                .foregroundColor(Color.black)
-                            
-                        }
-                        .padding()
-                    
+                }
+                
             }
-          
+            .padding()
             
-        .padding()
-           
         }
     }
 }
