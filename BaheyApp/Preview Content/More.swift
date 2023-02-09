@@ -11,12 +11,14 @@ struct More: View {
     var body: some View {
         VStack{
             VStack(alignment: .leading){
-                Text("Hello, person").modifier(RegularTextModifier())
+                Text("Hello, person")
+                .modifier(RegularTextModifier())
                     .fontWeight(.bold)
-                Text("email@ email.com").modifier(RegularTextModifier())
+                
+                Text("email@ email.com")
+                //.modifier(RegularTextModifier())
                     .fontWeight(.semibold)
                 Spacer()
-                
             }
             
         }
