@@ -9,7 +9,29 @@ import SwiftUI
 
 struct AfterReview: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(){
+            VStack(){
+                Image ("AfterReview")
+                    .resizable()
+                .frame(width: 300, height: 300)}
+            
+            Text("تم اضافة تقييمك بنجاح").modifier(EmptyStateTextModifier())
+                .padding(.top, 50.0)
+            Button {
+            print("Button was tapped")
+           } label: {
+            Text("تم")
+                
+           }.frame(width: 165 , height: 45)
+                .foregroundColor(.white)
+                .background(Color("Dpink")
+                .cornerRadius(15.0)
+           .font(.system(size: 20))
+                )
+                
+                            //.multilineTextAlignment(.center)
+            
+        }
     }
 }
 
