@@ -8,32 +8,30 @@
 import SwiftUI
 
 struct AfterReview: View {
+    @State var toViewAllReviews = false
     var body: some View {
-        VStack(){
-            VStack(){
-                Image ("AfterReview")
-                    .resizable()
-                .frame(width: 300, height: 300)}
+        
+        VStack(){//main VStack
+            Image ("AfterReview")
+                .resizable()
+                .frame(width: 250, height: 250)
+            Text("Your review has been submitted successfully")
+                .modifier(EmptyStateTextModifier())
+                .multilineTextAlignment(.center)
+                .padding(.vertical, 50.0)
             
-            Text("تم اضافة تقييمك بنجاح").modifier(EmptyStateTextModifier())
-                .padding(.top, 50.0)
             Button {
-            print("Button was tapped")
-           } label: {
-            Text("تم")
+                toViewAllReviews.toggle()
+            } label: {
+                Text("Done")
                 
-           }.frame(width: 165 , height: 45)
-                .foregroundColor(.white)
-                .background(Color("Dpink")
-                .cornerRadius(15.0)
-           .font(.system(size: 20))
-                )
-                
-                            //.multilineTextAlignment(.center)
-            
+            }.modifier(MediemButtonModifier())
+        }//End of main VStack
+        .fullScreenCover(isPresented: $toViewAllReviews) {
+            ViewAllReviews()
         }
-    }
-}
+    }//End of body
+}//End of struct AfterReview
 
 struct AfterReview_Previews: PreviewProvider {
     static var previews: some View {
