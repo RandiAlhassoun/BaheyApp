@@ -70,7 +70,7 @@ struct EmptyStateTextModifier: ViewModifier {
             .bold()
             .font(.system(size: 18))
             .foregroundColor(.black)
-            .padding()
+            //.padding()
             
     }}
 
@@ -81,7 +81,7 @@ struct RegularTextModifier: ViewModifier {
         content
             .font(.system(size: 18))
             .foregroundColor(.black)
-            .frame(maxWidth: .infinity)
+            //.frame(maxWidth: .infinity)
             //.padding()
     }}
 
@@ -93,7 +93,7 @@ struct XLTextModifier: ViewModifier {
             .font(.system(size: 32))
             .bold()
             .foregroundColor(.black)
-            .frame(maxWidth: .infinity)
+            //.frame(maxWidth: .infinity)
             //.padding()
     }}
 
@@ -104,7 +104,7 @@ struct ProviderNameTextModifier: ViewModifier {
         content
             .font(.system(size: 15))
             .foregroundColor(.black)
-            .padding()
+            //.padding()
     }}
 
 //Provider Header Text Modifier:
@@ -115,7 +115,7 @@ struct ProviderCatigoryTextModifier: ViewModifier {
             .font(.system(size: 10))
             .bold()
             .foregroundColor(.black)
-            .padding()
+            //.padding()
     }}
 //Provider Header Text Modifier:
 //***NOTE: Used for provider categoty in ServiceProviderInfo***//
@@ -125,7 +125,7 @@ struct ItemsModifier: ViewModifier {
             .font(.system(size: 20))
             .bold()
             .foregroundColor(.black)
-            .padding()
+            //.padding()
     }}
 
 
