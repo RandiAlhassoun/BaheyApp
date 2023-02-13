@@ -70,7 +70,7 @@ struct EmptyStateTextModifier: ViewModifier {
             .bold()
             .font(.system(size: 18))
             .foregroundColor(.black)
-            .padding()
+            //.padding()
             
     }}
 

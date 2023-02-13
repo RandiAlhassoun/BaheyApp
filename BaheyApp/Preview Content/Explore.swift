@@ -8,8 +8,57 @@
 import SwiftUI
 
 struct Explore: View {
+    @State private var searchText = ""
+
     var body: some View {
-        Circle().foregroundColor(Color("yellowFill"))
+        NavigationView{
+            VStack{
+                //Text("hi")
+//MARK: - Photographer
+                ZStack(alignment: .bottomLeading){
+                    Image ("Photographer")
+                        .resizable()
+                    .frame(width: 360, height: 168)
+                    
+                    Text("Photographer")
+                        //.multilineTextAlignment(.center)
+
+                        .foregroundColor(.white)
+                        .modifier(XLTextModifier())
+                }//.padding()
+//MARK: - Hair
+
+                ZStack(alignment: .bottomLeading){
+                    Image ("Hair")
+                        .resizable()
+                    .frame(width: 360, height: 168)
+                    
+                    Text("Hair Stylist")
+                        //.multilineTextAlignment(.center)
+
+                        .foregroundColor(.white)
+                        .modifier(XLTextModifier())
+                }//.padding()
+//MARK: - MakeUp
+                ZStack(alignment: .bottomLeading){
+                    Image ("MakeUp")
+                        .resizable()
+                    .frame(width: 360, height: 168)
+                    
+                    Text("Makeup Artists")
+                        //.multilineTextAlignment(.center)
+
+                        .foregroundColor(.white)
+                        .modifier(XLTextModifier())
+                }//.padding()
+                //MARK: - MakeUp
+
+                    
+                    .navigationTitle("category")
+            }//Vstack
+        }//NavigationView
+        .searchable(text: $searchText)
+
     }
 }
 
