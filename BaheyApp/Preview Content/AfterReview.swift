@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AfterReview: View {
-    @State var toViewAllReviews = false
+    @State var toViewAllReviews = false //To go to ViewAllReviews after clicking Done button.
     var body: some View {
         
         VStack(){//main VStack
@@ -25,11 +25,11 @@ struct AfterReview: View {
             } label: {
                 Text("Done")
                 
-            }.modifier(MediemButtonModifier())
+           }.modifier(MediemButtonModifier())
         }//End of main VStack
         .fullScreenCover(isPresented: $toViewAllReviews) {
             ViewAllReviews()
-        }
+        }//End of fullScreenCover
     }//End of body
 }//End of struct AfterReview
 
