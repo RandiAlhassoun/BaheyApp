@@ -9,7 +9,28 @@ import SwiftUI
 
 struct Logout: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+       // NavigationView {
+            
+        
+            VStack{
+                Image("Logout")
+                    .resizable()
+                    .frame(width: 256.67, height: 250)
+                    .padding()
+                Text("Signed out successfully ")
+                    .modifier(EmptyStateTextModifier())
+                
+                    .padding()
+                
+               // NavigationLink(destination: Explore().navigationBarBackButtonHidden()){
+                    Text("OK")//}
+                    .modifier(MediemButtonModifier())
+                    .bold()
+                    .padding()
+                
+           // }
+            
+        }
     }
 }
 
