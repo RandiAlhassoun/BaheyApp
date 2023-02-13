@@ -13,16 +13,16 @@ struct TabBar: View {
             
             
             Explore().tabItem{Image(systemName: "safari")
-                Text("اكتشف")
+                Text("Explore")
             }.tag(1)
             
             Favorites().tabItem{Image(systemName: "heart.fill")
-                Text("المفضلة")
+                Text("Favoret")
             }.tag(2)
             
                 //EditProfileDeveloperContentView()
                 More().tabItem{Image(systemName: "ellipsis")
-                    Text("المزيد")
+                    Text("More")
                 }
         }.accentColor((Color("Dpink")))
 }
