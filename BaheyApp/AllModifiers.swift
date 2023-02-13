@@ -79,7 +79,7 @@ struct RegularTextModifier: ViewModifier {
         content
             .font(.system(size: 18))
             .foregroundColor(.black)
-            .frame(maxWidth: .infinity)
+            //.frame(maxWidth: .infinity)
             //.padding()
     }}
 
@@ -91,7 +91,7 @@ struct XLTextModifier: ViewModifier {
             .font(.system(size: 32))
             .bold()
             .foregroundColor(.black)
-            .frame(maxWidth: .infinity)
+            //.frame(maxWidth: .infinity)
             //.padding()
     }}
 
