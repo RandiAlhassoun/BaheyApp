@@ -9,7 +9,24 @@ import SwiftUI
 
 struct DeleteAccount: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+       // NavigationView{
+            VStack{
+                Image("DeleteAccount")
+                    .resizable()
+                    .frame(width: 250, height: 250)
+                    .padding()
+                Text("Your account has been deleted scssfly ")
+                    .modifier(EmptyStateTextModifier())
+                
+                    .padding()
+                
+               // NavigationLink(destination: Explore().navigationBarBackButtonHidden()){
+                    Text("OK")//}
+                    .modifier(MediemButtonModifier())
+                    .bold()
+                    .padding()
+            //}
+        }
     }
 }
 

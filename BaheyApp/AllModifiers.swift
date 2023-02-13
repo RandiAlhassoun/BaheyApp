@@ -70,7 +70,7 @@ struct EmptyStateTextModifier: ViewModifier {
             .bold()
             .font(.system(size: 18))
             .foregroundColor(.black)
-            .padding()
+            //.padding()
             
     }}
 
@@ -104,7 +104,10 @@ struct ProviderNameTextModifier: ViewModifier {
         content
             .font(.system(size: 15))
             .foregroundColor(.black)
-           // .padding()
+
+
+            //.padding()
+
     }}
 
 //Provider Header Text Modifier:
