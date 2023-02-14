@@ -75,7 +75,7 @@ struct ProviderInfo: View {
                         Text("Social networking sites").modifier(ProviderInfoHeadersTextModifier())
                         Button(action: {
                             //NOTE: Add your link here in: let yourURL = URL(string:"HERE")
-                            if let yourURL = URL(string: "https://www.youtube.com") {
+                            if let yourURL = URL(string: "https://www.instagram.com/bahey_app/?igshid=YmMyMTA2M2Y%3D") {
                                 UIApplication.shared.open(yourURL, options: [:], completionHandler: nil)
                             }
                             
