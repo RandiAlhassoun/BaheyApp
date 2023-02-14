@@ -68,7 +68,7 @@ struct Explore: View {
 
 struct Explore_Previews: PreviewProvider {
     static var previews: some View {
-        Explore(service: service1)
+        Explore()
     }
 }
 
