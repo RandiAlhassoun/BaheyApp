@@ -8,34 +8,65 @@
 import SwiftUI
 
 struct AboutUs: View {
-    var body: some View {
+    
+@State private var showingOptions = false
+    
+var body: some View {
         VStack{
-            Text("About us")
-                .modifier(XLTextModifier())
-                .padding()
-            //Spacer()
-            Image("Blogo")
+            // start of Vstack
+            
+            // MARK: - Logo Image
+            Image("NewLogo")
                 .resizable()
                 .frame(width: 109, height: 109)
                 .padding()
-            //Spacer()
+            
+            // MARK: - text
             Text("Bahey application aims to offer the services of freelancers specializing in events such as hairdressers, beauticians, photographers and many other fields. If you are a service provider, we welcome you to join us.")
                 .modifier(EmptyStateTextModifier())
-                //.multilineTextAlignment(.center)
+            //.multilineTextAlignment(.center)
                 .padding()
-           // Spacer()
-            HStack{
-                Image("instagram")
-                    .resizable()
-                    .frame(width: 60, height: 60)
-                Image("mail")
-                    .resizable()
-                    .frame(width: 60, height: 60)
-               
+            
+            
+            // MARK: - action buttons 
+            VStack(alignment: .center){
+                HStack{
+                    Button(action: {
+                        //NOTE: Add your link here in: let yourURL = URL(string:"HERE")
+                        if let yourURL = URL(string: "https://www.instagram.com/bahey_app/?igshid=YmMyMTA2M2Y%3D") {
+                            UIApplication.shared.open(yourURL, options: [:], completionHandler: nil)
+                        }
+                        
+                    }, label: {
+                        Image( "instagram") // <- Change icon to your preferred one
+                            .resizable()
+                            .frame(width: 60, height: 60)
+                            .foregroundColor(.blue)
+                
+                    })
+                    
+                    Button(){
+                        showingOptions = true
+                    } label: {
+                        Image("mail") // <- Change icon to your preferred one
+                            .resizable()
+                            .frame(width: 60, height: 60)
+                            .foregroundColor(.blue)
+                            .modifier(RegularTextModifier()).bold()
+                            .confirmationDialog("Connect by email", isPresented: $showingOptions, titleVisibility: .visible) {
+                                Button("BaheyApp@gmail.com") {}
+                            }
+                    }
+                }
             }
             .padding()
             Spacer()
-        }
+            
+        }.navigationTitle("About us")
+            .modifier(XLTextModifier())
+            .padding()
+    // end v stack
+    
     }
 }
 
