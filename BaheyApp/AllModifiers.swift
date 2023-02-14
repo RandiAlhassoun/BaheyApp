@@ -14,10 +14,10 @@
 /*
  Button {
  print("Button was tapped")
-} label: {
+ } label: {
  Text("Login")
-     .modifier(ButtonModifier())
-}
+ .modifier(ButtonModifier())
+ }
  */
 
 import SwiftUI
@@ -26,11 +26,11 @@ struct LargeButtonModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
         //.bold()
-            .font(.system(size: 20))
-            .background(Color("Dpink"))
             .frame(width: 365 , height: 42)
-            .cornerRadius(5.0)
             .foregroundColor(.white)
+            .background(Color("Dpink"))
+            .cornerRadius(5.0)
+            .font(.system(size: 20))
     }}
 struct AllModifiers: View {
     var body: some View {
@@ -42,11 +42,12 @@ struct MediemButtonModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
         //.bold()
-            .font(.system(size: 20))
-            .background(Color("Dpink"))
             .frame(width: 165 , height: 45)
-            .cornerRadius(15.0)
             .foregroundColor(.white)
+            .background(Color("Dpink"))
+            .cornerRadius(15.0)
+            .font(.system(size: 20))
+        
     }}
 
 //Small Button Modifier:
@@ -54,11 +55,12 @@ struct SmallButtonModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
         //.bold()
-            .font(.system(size: 12))
-            .background(Color("Dpink"))
+        
             .frame(width: 89.11 , height: 25)
-            .cornerRadius(20.0)
             .foregroundColor(.white)
+            .background(Color("Dpink"))
+            .cornerRadius(20.0)
+            .font(.system(size: 12))
     }}
 
 //Empty State Text Modifier:
@@ -68,6 +70,8 @@ struct EmptyStateTextModifier: ViewModifier {
             .bold()
             .font(.system(size: 18))
             .foregroundColor(.black)
+            //.padding()
+            
     }}
 
 //Regular Text Modifier:
@@ -77,8 +81,8 @@ struct RegularTextModifier: ViewModifier {
         content
             .font(.system(size: 18))
             .foregroundColor(.black)
-            .frame(maxWidth: .infinity)
-            .padding()
+            //.frame(maxWidth: .infinity)
+            //.padding()
     }}
 
 //XL Text Modifier:
@@ -89,8 +93,8 @@ struct XLTextModifier: ViewModifier {
             .font(.system(size: 32))
             .bold()
             .foregroundColor(.black)
-            .frame(maxWidth: .infinity)
-            .padding()
+            //.frame(maxWidth: .infinity)
+            //.padding()
     }}
 
 //Provider Name Text Modifier:
@@ -100,7 +104,10 @@ struct ProviderNameTextModifier: ViewModifier {
         content
             .font(.system(size: 15))
             .foregroundColor(.black)
-            .padding()
+
+
+            //.padding()
+
     }}
 
 //Provider Header Text Modifier:
@@ -111,7 +118,7 @@ struct ProviderCatigoryTextModifier: ViewModifier {
             .font(.system(size: 10))
             .bold()
             .foregroundColor(.black)
-            .padding()
+            //.padding()
     }}
 //Provider Header Text Modifier:
 //***NOTE: Used for provider categoty in ServiceProviderInfo***//
@@ -121,16 +128,57 @@ struct ItemsModifier: ViewModifier {
             .font(.system(size: 20))
             .bold()
             .foregroundColor(.black)
-            .padding()
+            //.padding()
     }}
 
 
-
-
-
-
-
-
+struct ProviderInfoHeadersTextModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .bold()
+            .font(.system(size: 20))
+            .foregroundColor(.black)
+            //.frame(maxWidth: .infinity)
+            //.padding()
+    }}
+// AccentTextModifier used for "More" in ProviderInfo page
+struct AccentTextModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.system(size: 18))
+            .foregroundColor(Color("Dpink"))
+            //.frame(maxWidth: .infinity)
+            //.padding()
+    }}
+struct WriteReviewHeadersModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .bold()
+            .font(.system(size: 22))
+            .foregroundColor(.black)
+            //.frame(maxWidth: .infinity)
+            //.padding()
+    }}
+// Modifier for Hstack that holds each TextField
+struct reviewTextFieldModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .lineLimit(4, reservesSpace: true)
+                        .multilineTextAlignment(.leading)
+                        .frame(maxWidth: .infinity , maxHeight: 145 , alignment: .topLeading)
+                        .padding()
+                        .background((Color("Lgreen")).clipShape(RoundedRectangle(cornerRadius:10)))
+    }
+}
+// Modifier for review Backgroundd used in ViewAllReviews
+struct reviewBackgrounddModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .frame(maxWidth: .infinity, maxHeight: 170 , alignment: .leading)
+            .background(Color("Lgreen"))
+            .cornerRadius(10)
+    }
+}
 struct AllModifiers_Previews: PreviewProvider {
     static var previews: some View {
         AllModifiers()

@@ -8,10 +8,30 @@
 import SwiftUI
 
 struct AfterReview: View {
+    @State var toViewAllReviews = false //To go to ViewAllReviews after clicking Done button.
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+        
+        VStack(){//main VStack
+            Image ("AfterReview")
+                .resizable()
+                .frame(width: 250, height: 250)
+            Text("Your review has been submitted successfully")
+                .modifier(EmptyStateTextModifier())
+                .multilineTextAlignment(.center)
+                .padding(.vertical, 50.0)
+            
+            Button {
+                toViewAllReviews.toggle()
+            } label: {
+                Text("Done")
+                
+           }.modifier(MediemButtonModifier())
+        }//End of main VStack
+        .fullScreenCover(isPresented: $toViewAllReviews) {
+            ViewAllReviews()
+        }//End of fullScreenCover
+    }//End of body
+}//End of struct AfterReview
 
 struct AfterReview_Previews: PreviewProvider {
     static var previews: some View {

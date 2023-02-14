@@ -11,7 +11,10 @@ import SwiftUI
 struct BaheyAppApp: App {
     var body: some Scene {
         WindowGroup {
-            Splash()
+            //Splash()
+            More()
+           // ProviderInfo()
+            
         }
     }
 }

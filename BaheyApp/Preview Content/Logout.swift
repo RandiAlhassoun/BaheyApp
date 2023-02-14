@@ -9,9 +9,32 @@ import SwiftUI
 
 struct Logout: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+        
+        VStack{ // start vstack
+            // MARK: - image
+            
+            Image("Logout")
+                .resizable()
+                .frame(width: 256.67, height: 250)
+                .padding()
+            
+            // MARK: - texts
+            
+            Text("Signed out successfully ")
+                .modifier(EmptyStateTextModifier())
+                .padding()
+            
+            // MARK: - button link to explor page
+            
+            NavigationLink(destination: Explore().navigationBarBackButtonHidden()){
+                Text("Done")
+                    .modifier(MediemButtonModifier())
+                    .bold()
+                .padding() }
+            
+        }// end vstack
+            
+        }}
 
 struct Logout_Previews: PreviewProvider {
     static var previews: some View {

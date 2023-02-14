@@ -8,30 +8,62 @@
 import SwiftUI
 
 struct Explore: View {
-  //  @State private var searchText = ""
-//    let names = ["Holly", "Josh", "Rhonda", "Ted"]
-    let service: ServiceProvider
-    
+ 
+    @State private var searchText = ""
+
     var body: some View {
-        VStack {
-            
-        Text("المتخصصات")
-            ServiceCerd(service: service)
-//        NavigationStack {
-//
-//
-//        }
-//        .searchable(text: $searchText)
+        NavigationView{
+            VStack{
+                //Text("hi")
+//MARK: - Photographer
+                ZStack(alignment: .bottomLeading){
+                    Image ("Photographer")
+                        .resizable()
+                    .frame(width: 360, height: 168)
+                    
+                    Text("Photographer")
+                        //.multilineTextAlignment(.center)
+
+                        .foregroundColor(.white)
+                        .modifier(XLTextModifier())
+                }//.padding()
+//MARK: - Hair
+
+                ZStack(alignment: .bottomLeading){
+                    Image ("Hair")
+                        .resizable()
+                    .frame(width: 360, height: 168)
+                    
+                    Text("Hair Stylist")
+                        //.multilineTextAlignment(.center)
+
+                        .foregroundColor(.white)
+                        .modifier(XLTextModifier())
+                }//.padding()
+//MARK: - MakeUp
+                ZStack(alignment: .bottomLeading){
+                    Image ("MakeUp")
+                        .resizable()
+                    .frame(width: 360, height: 168)
+                    
+                    Text("Makeup Artists")
+                        //.multilineTextAlignment(.center)
+
+                        .foregroundColor(.white)
+                        .modifier(XLTextModifier())
+                }//.padding()
+                //MARK: - MakeUp
+
+                    
+                    .navigationTitle("category")
+            }//Vstack
+        }//NavigationView
+        .searchable(text: $searchText)
+
+
     }
 }
-//    var searchResults: [String] {
-//          if searchText.isEmpty {
-//              return names
-//          } else {
-//              return names.filter { $0.contains(searchText) }
-//          }
-//      }
-    }
+
 
 
 struct Explore_Previews: PreviewProvider {
@@ -40,38 +72,3 @@ struct Explore_Previews: PreviewProvider {
     }
 }
 
-//Build service provider frame
-struct ServiceCerd: View {
-    let service: ServiceProvider
-    
-    var body: some View {
-        ZStack{
-          
-            HStack {
-                VStack {
-                    Text(service.name)
-                        .modifier(ProviderNameTextModifier())
-                    Text(service.category)
-                        .modifier(ProviderCatigoryTextModifier())
-                 
-                    Text(service.star)
-                    Spacer()
-                    Button {
-                   // print("Button was tapped")
-                   } label: {
-                    Text("Show more ")
-                        .modifier(SmallButtonModifier())
-                   }
-                }
-                Image(service.image)
-                    .resizable()
-                    .frame(width:207, height: 164 )
-                    .clipped()
-            }
-       
-        }
-        .frame(width:360, height: 166)
-        .background(Color("Lgreen"))
-    
-    }
-}
