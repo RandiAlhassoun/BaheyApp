@@ -12,9 +12,8 @@ struct BaheyAppApp: App {
     var body: some Scene {
         WindowGroup {
             //Splash()
-            More()
-           // ProviderInfo()
-            
+            ProviderInfo()
+           // WriteReview()
         }
     }
 }

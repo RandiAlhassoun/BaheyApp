@@ -21,6 +21,8 @@ struct ProviderInfo: View {
                         .frame(height: 250)
                         .ignoresSafeArea()
                     
+                    //MARK: - provider name & favorite heart:
+                    
                     //HStack contains provider name & favorite heart.
                     HStack{
                         Text("Sara Makeup Artist").modifier(XLTextModifier())
@@ -29,6 +31,8 @@ struct ProviderInfo: View {
                         //calling favoriteView() which contains the code for add to favorite.
                         favoriteView().padding(.horizontal)
                     }//End of HStack
+                    
+                    //MARK: - provider city & ctegory:
                     
                     //VStack Contains the details of each provider "city & ctegory".
                     VStack(alignment: .leading){
@@ -55,6 +59,7 @@ struct ProviderInfo: View {
                     .frame(maxWidth: .infinity , alignment: .leading)
                     .padding([.leading, .bottom, .trailing])
                     
+                    //MARK: - About Us:
                     VStack(alignment: .leading){//Contains About  us for each provider
                         Text("About Us").modifier(ProviderInfoHeadersTextModifier())
                         Text("qjkjqljwllekkqk;kw;qkw;qkw;qkw;qkq;wk;qkwq;kw;qsakss,;s,;sqkpwqkpwoqpwqema.sa,a;s,a;slq;wlqq;wpqopqmdlsklkqpkqpwqmdknkwjqwoqkwpqopqoq psmas,alkql")
@@ -63,12 +68,14 @@ struct ProviderInfo: View {
                     .frame(maxWidth: .infinity , alignment: .leading)
                     .padding([.leading, .bottom, .trailing])
                     
+                    //MARK: - Social networking sites:
+                    
                     //VStack Contains Social networking sites for each provider
                     VStack(alignment: .leading){
                         Text("Social networking sites").modifier(ProviderInfoHeadersTextModifier())
                         Button(action: {
                             //NOTE: Add your link here in: let yourURL = URL(string:"HERE")
-                            if let yourURL = URL(string: "https://www.youtube.com") {
+                            if let yourURL = URL(string: "https://www.instagram.com/bahey_app/?igshid=YmMyMTA2M2Y%3D") {
                                 UIApplication.shared.open(yourURL, options: [:], completionHandler: nil)
                             }
                             
@@ -82,6 +89,8 @@ struct ProviderInfo: View {
                     }//End of VStack Social networking sites
                     .frame(maxWidth: .infinity , alignment: .leading)
                     .padding([.leading, .bottom, .trailing])
+                    
+                    //MARK: - Reviews:
                     
                     //Contains reviews for each provider & more
                     VStack(alignment: .leading){
@@ -99,7 +108,7 @@ struct ProviderInfo: View {
                             HStack(){
                                 //Calling ReviewBlockView for each review block.
                                 ForEach(1...3, id: \.self) { i in
-                                    ReviewBlockView()}
+                                    SmallReviewBlockView()}
                                 
                             }//End of HStack review block
                             .frame(maxWidth: .infinity , alignment: .leading)
@@ -112,7 +121,11 @@ struct ProviderInfo: View {
                 }
             }
             .ignoresSafeArea()
+            
         }//End of body
+        
+        
+        // .navigationBarTitleDisplayMode(.large)
     }//End of struct ProviderInfo
 }
 
@@ -122,7 +135,7 @@ struct ProviderInfo_Previews: PreviewProvider {
     }
 }
 
-
+//MARK: - favoriteView:
 //struct struct Contains the code for add to favorite.
 struct favoriteView: View {
     @State var isFavoritePressed = false
@@ -143,7 +156,8 @@ struct favoriteView: View {
     }
 }
 
-struct ReviewBlockView: View {
+//MARK: - SmallReviewBlockView:
+struct SmallReviewBlockView: View {
     
     var body: some View {
         VStack(alignment: .leading){
@@ -154,6 +168,7 @@ struct ReviewBlockView: View {
             
             Image(systemName: "star.fill")
                 .foregroundColor(Color("yellowFill"))
+                .font(.system(size: 15))
                 .padding(.horizontal)
             Text("shhkkwkewkejelqlqwlqjeqlwjlqljwjlqjwlqjdsdkajd")
                 .modifier(RegularTextModifier())
