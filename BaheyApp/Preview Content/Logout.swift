@@ -9,30 +9,32 @@ import SwiftUI
 
 struct Logout: View {
     var body: some View {
-       // NavigationView {
-            
         
-            VStack{
-                Image("Logout")
-                    .resizable()
-                    .frame(width: 256.67, height: 250)
-                    .padding()
-                Text("Signed out successfully ")
-                    .modifier(EmptyStateTextModifier())
-                
-                    .padding()
-                
-               // NavigationLink(destination: Explore().navigationBarBackButtonHidden()){
-                    Text("OK")//}
+        VStack{ // start vstack
+            // MARK: - image
+            
+            Image("Logout")
+                .resizable()
+                .frame(width: 256.67, height: 250)
+                .padding()
+            
+            // MARK: - texts
+            
+            Text("Signed out successfully ")
+                .modifier(EmptyStateTextModifier())
+                .padding()
+            
+            // MARK: - button link to explor page
+            
+            NavigationLink(destination: Explore().navigationBarBackButtonHidden()){
+                Text("Done")
                     .modifier(MediemButtonModifier())
                     .bold()
-                    .padding()
-                
-           // }
+                .padding() }
             
-        }
-    }
-}
+        }// end vstack
+            
+        }}
 
 struct Logout_Previews: PreviewProvider {
     static var previews: some View {
