@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WriteReview: View {
-    //@State var feildValue = ""
+    //@State var fkeildValue = ""
     @State var toAfterReview = false //To go to ViewAllReviews after clicking Done button.
     @State var isFavoritePressed = false
     //let maxCharacters = 50
