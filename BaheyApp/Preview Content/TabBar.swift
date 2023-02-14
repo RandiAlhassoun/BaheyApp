@@ -12,8 +12,10 @@ struct TabBar: View {
         TabView(){
             
             
+
             Explore().tabItem{Image(systemName: "safari")
                 Text("Explore")
+
             }.tag(1)
             
             Favorites().tabItem{Image(systemName: "heart.fill")

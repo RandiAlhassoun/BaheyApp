@@ -13,12 +13,14 @@
 import SwiftUI
 
 struct More: View {
+    
     @State private var showingOptions = false
-    @State private var selection = "None"
+   
     var body: some View {
         
-        NavigationView{
-            VStack(alignment: .leading){
+        NavigationView{ //start Navigation View
+            VStack(alignment: .leading){ // start v stack
+                
                 // MARK: - heeder
                 VStack(alignment:.leading){
                     
@@ -29,13 +31,11 @@ struct More: View {
                     Text ("person@email.com")
                         .multilineTextAlignment(.leading)
                         .fontWeight(.semibold)
-                    
-                    // Spacer()
+                   
                 }.padding()
                 
                 Spacer()
-                HStack(){
-                    
+                HStack(){ //hstack for contect us with action button
                     Image(systemName:"envelope.fill")
                         .resizable()
                         .frame(width: 28, height: 28)
@@ -44,18 +44,12 @@ struct More: View {
                         showingOptions = true
                     }.modifier(RegularTextModifier()).bold()
                         .confirmationDialog("Connect by email", isPresented: $showingOptions, titleVisibility: .visible) {
-                           
-            
-                            Button("BaheyApp@gmail.com") {
-                                
-                            }
+                            Button("BaheyApp@gmail.com") {}
                         }
-                            
-                            
-                            //Spacer()
-                        }.padding()
+                        } // end hstack
+                .padding()
                     
-                HStack(){
+                HStack(){ // hstack with link to about us
                     NavigationLink(destination: AboutUs()){
                     Image(systemName:"bubble.left.and.bubble.right.fill")
                         .resizable()
@@ -64,39 +58,36 @@ struct More: View {
                     Text("About us").modifier(RegularTextModifier()).bold()
                     //Spacer()
                 }
-                    }.padding()
-                    HStack(){
+                    } // end hstack
+                .padding()
+                    HStack(){ // hstack with link to add Business
                         NavigationLink(destination: AddBusiness()){
                             Image(systemName:"newspaper.fill")
                                 .resizable()
                                 .frame(width: 28, height: 28)
                                 .foregroundColor(.gray)
-                            Text("Add Your Business").modifier(RegularTextModifier()).bold()
-                        }
+                            Text("Add Your Business").modifier(RegularTextModifier()).bold() }
                         
-                        //Spacer()
-                    }.padding()
+                    }// end hstack
+                    .padding()
                     
-                    
+                // MARK: - Button
+                
                     Spacer()
                     NavigationLink(destination: Logout()//.navigationBarBackButtonHidden()
                     ){
                         Text("Sign Out")
                             .modifier(LargeButtonModifier())
                     }
-                    ///.padding()
                     NavigationLink(destination: DeleteAccount()//.navigationBarBackButtonHidden()
                     ){
                         Text("Delete Account")
                             .modifier(LargeButtonModifier())
                     }
                     Spacer()
-                    //.padding()
-                    
-                    //  Spacer()
                 }
                 .padding()
-                // Spacer()
+                
             }
             
         }
