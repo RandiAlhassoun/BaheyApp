@@ -5,11 +5,47 @@
 //  Created by Rand Alhassoun on 07/02/2023.
 //
 
+
 import SwiftUI
 
 struct FavoritesNotRegistered: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Text("Saved")
+                .modifier(XLTextModifier())
+              Spacer()
+            
+            Image("FavoritesNotRegester")
+                .resizable()
+                .frame(width: 266.09, height: 250)
+             //   .padding()
+            
+            Text("Couldn’t fined any saved item !")
+              //  .padding()
+                .modifier(EmptyStateTextModifier())
+            
+            Text("It seems that you aren’t login to your account , please login to view your list ")
+                .modifier(EmptyStateTextModifier())
+                .padding()
+            
+            
+//            NavigationLink(destination: Login() ){
+//                Text("Login").modifier(MediemButtonModifier())
+//
+//            }
+          
+           /* Login Button and navigation to Login page*/
+            NavigationLink {
+                // destination view to navigation to
+                ExploreCategories()
+            } label: {
+                Text("Login")
+            }
+          .modifier(MediemButtonModifier())
+          .padding(20)
+          Spacer()
+
+       }
     }
 }
 

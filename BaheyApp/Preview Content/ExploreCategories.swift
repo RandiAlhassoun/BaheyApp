@@ -6,10 +6,32 @@
 //
 
 import SwiftUI
-
 struct ExploreCategories: View {
+    
+    @State private var isEditing = false
+    @State var searchText = ""
+    private var searchResult: [ServiceInfo] {
+    let results = Service.all()
+        
+        //MARK: - Search bar filter and result
+        if searchText.isEmpty {
+            return results
+        }
+        return results.filter {
+            $0.name.lowercased().contains(searchText.lowercased()) ||   $0.category
+                .lowercased().contains(searchText.lowercased())
+        }
+    }
+    
+    //MARK: - list View and card view
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            // Headline (subject)
+            Text("Specialist ")
+                .modifier(XLTextModifier())
+            SearchBar
+            ListView
+        }
     }
 }
 
@@ -18,3 +40,104 @@ struct ExploreCategories_Previews: PreviewProvider {
         ExploreCategories()
     }
 }
+
+//MARK: - extention for design liist view
+extension ExploreCategories {
+    var ListView: some View {
+        // List View
+        List(searchResult) { ServiceInfo in
+            HStack {
+                VStack(alignment: .center) {
+                    Text(ServiceInfo.name)
+                        .bold()
+                        .modifier(ProviderNameTextModifier())
+                    Text(ServiceInfo.category)
+                    
+                        .modifier(ProviderCatigoryTextModifier())
+                    
+                    /* star stack */
+                    HStack(spacing: 2) {
+                        ForEach(1...4, id: \.self) { stars in
+                            // Reviewer evaluation stars:
+                            Image(systemName: "star.fill")
+                                .foregroundColor(Color("yellowFill"))
+                                .font(.system(size: 15))
+                        }
+                        
+                    }
+                    .padding()
+                    
+                    Button {
+                        // ContentView()
+                    } label: {
+                        Text("Show more")
+                            .bold()
+                            .modifier(SmallButtonModifier())
+                    }
+                } // end of VStack
+                
+                Spacer()
+                Image(ServiceInfo.image)
+                    .resizable()
+                    .frame(width: 207, height: 164)
+                
+                
+            } // End of HStack image with contents
+            
+            .frame(width: 359.45, height: 166)
+            .background(Color("Lgreen"))
+            .cornerRadius(5)
+            .listRowSeparator(.hidden)
+            //.scrollContentBackground(.hidden)
+        }
+        .listStyle(.plain)
+        
+        
+        
+    }
+}
+
+//MARK: -  Search bar
+extension ExploreCategories{
+    var SearchBar: some View {
+        HStack {
+//            Image(systemName: "magnifyingglass")
+//                .foregroundColor(.gray)
+//                .padding(.leading,10)
+           TextField("Search ", text: $searchText)
+                .padding(.leading,30)
+               .overlay(
+                HStack {
+                    Image(systemName: "magnifyingglass")
+                       Spacer()
+                    Button(action: {
+                        searchText = ""
+                    }, label: {
+                        Image(systemName: "xmark.circle")
+                                .foregroundColor(Color.gray)
+                                .opacity(searchText.isEmpty ? 0.0 : 1.0)
+                    })
+                 
+                }.padding(.horizontal,10)
+                    .foregroundColor(.gray)
+                    )
+               
+                           
+                        
+                .onTapGesture {
+                    ForEach(searchResult) { ServiceInfo in
+                        Text(ServiceInfo.name)
+                            .searchCompletion(ServiceInfo.name)
+                    }
+                }
+            
+        }
+        .frame(width: 360, height: 44)
+        .background(
+            RoundedRectangle(cornerRadius: 5)
+                .stroke(.gray))
+        
+    }
+    
+}
+
