@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		825EE5132993A570009D9A6D /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825EE5122993A570009D9A6D /* ServiceProvider.swift */; };
 		C18F607D29923E4B00168E0D /* BaheyAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F607C29923E4B00168E0D /* BaheyAppApp.swift */; };
 		C18F607F29923E4B00168E0D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F607E29923E4B00168E0D /* ContentView.swift */; };
 		C18F608129923E4C00168E0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C18F608029923E4C00168E0D /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		825EE5122993A570009D9A6D /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
 		C18F607929923E4B00168E0D /* BaheyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaheyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C18F607C29923E4B00168E0D /* BaheyAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaheyAppApp.swift; sourceTree = "<group>"; };
 		C18F607E29923E4B00168E0D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -70,6 +72,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		825EE5112993A544009D9A6D /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				825EE5122993A570009D9A6D /* ServiceProvider.swift */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		C18F607029923E4B00168E0D = {
 			isa = PBXGroup;
 			children = (
@@ -101,10 +111,13 @@
 		C18F608229923E4C00168E0D /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+
+
 				C18F609E29923F8F00168E0D /* AfterReview.swift */,
 				C18F609629923F3800168E0D /* ProviderInfo.swift */,
 				C18F609829923F4C00168E0D /* ViewAllReviews.swift */,
 				C18F609B29923F6D00168E0D /* WriteReview.swift */,
+
 				C18F608E29923EAF00168E0D /* Explore.swift */,
 				C18F609029923EE500168E0D /* OnBoarding.swift */,
 				C18F609229923EFE00168E0D /* Splash.swift */,
@@ -215,6 +228,7 @@
 				C18F60B829937B0500168E0D /* TabBar.swift in Sources */,
 				C18F60B5299250EF00168E0D /* AllModifiers.swift in Sources */,
 				C18F60B12992415D00168E0D /* DeleteAccount.swift in Sources */,
+				825EE5132993A570009D9A6D /* ServiceProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
