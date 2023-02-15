@@ -25,7 +25,8 @@ struct ProviderInfo: View {
                     
                     //HStack contains provider name & favorite heart.
                     HStack{
-                        Text("Sara Makeup Artist").modifier(XLTextModifier())
+                       Text("Sara Makeup Artist")
+                        .modifier(XLTextModifier())
                             .padding(.horizontal)
                         Spacer()
                         //calling favoriteView() which contains the code for add to favorite.
