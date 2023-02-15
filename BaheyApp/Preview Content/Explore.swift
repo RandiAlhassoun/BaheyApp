@@ -15,88 +15,86 @@ struct Explore: View {
 
     var body: some View {
         NavigationView{
-            VStack{
+            VStack(spacing: 20){
                 SearchBar
 
-                List{
-                //Text("hi")
-
-                //MARK: - Photographer
-                    ZStack(alignment: .bottom){
-                    Image ("Photographer")
-                        .resizable()
-                        .frame(width: 350, height: 168)
-                      
-
-                            NavigationLink(destination: ExploreCategories()){
-                                Text("Photographer")
-                                    .multilineTextAlignment(.center)
-                                
-                                    .foregroundColor(.white)
-                                    .modifier(XLTextModifier())
-                                    .opacity(0.8)
-                                
-                            }
+               // List{
+                ScrollView(.vertical){
+                    //Text("hi")
+                    
+                    //MARK: - Photographer
+                    NavigationLink(destination: ExploreCategories()){
+                        ZStack(alignment: .bottom){
+                            Image ("Photographer")
+                                .resizable()
+                                .frame(maxWidth: .infinity, maxHeight: 170)
+                                .padding(.horizontal)
                             
-                        
-
-                }//.padding()
+                            Text("Photographer")
+                                .multilineTextAlignment(.center)
+                            
+                                .foregroundColor(.white)
+                                .modifier(XLTextModifier())
+                                .opacity(0.8)
+                                .padding()
+                            
+                        }//Z
+                    }//Nav
                     
-                //MARK: - Hair
-                
-                ZStack(alignment: .bottomLeading){
-                    Image ("Hair")
-                        .resizable()
-                        .frame(width: 350, height: 168)
                     
-                    
+                    //MARK: - Hair
                     NavigationLink(destination: ExploreCategories()){
-                        Text("Hair Stylist")                            .multilineTextAlignment(.center)
                         
-                            .foregroundColor(.white)
-                            .modifier(XLTextModifier())
-                            .opacity(0.8)
+                        ZStack(alignment: .bottom){
+                            Image ("Hair")
+                                .resizable()
+                                .frame(maxWidth: .infinity, maxHeight: 170)
+                                .padding(.horizontal)
+                            
+                            
+                            //NavigationLink(destination: ExploreCategories()){
+                            Text("Hair Stylist")                                                                .multilineTextAlignment(.center)
+                            
+                                .foregroundColor(.white)
+                                .modifier(XLTextModifier())
+                                .opacity(0.8)
+                                .padding()
+                            
+                        }//.padding()
                         
-                    }
-                    
-//                    Text("Hair Stylist")
-                    //.multilineTextAlignment(.center)
-                    
-                        .foregroundColor(.white)
-                        .modifier(XLTextModifier())
-                }//.padding()
-                //MARK: - MakeUp
-                ZStack(alignment: .bottomLeading){
-                    Image ("MakeUp")
-                        .resizable()
-                        .frame(width: 350, height: 168)
-                    
-                    
+                    }//.padding()
+                    //MARK: - MakeUp
                     NavigationLink(destination: ExploreCategories()){
-                        Text("Makeup Artists")
-
-                            .foregroundColor(.white)
-                            .modifier(XLTextModifier())
-                            .opacity(0.8)
                         
-                    }
-
+                        ZStack(alignment: .bottom){
+                            Image ("MakeUp")
+                                .resizable()
+                                .frame(maxWidth: .infinity, maxHeight: 170)
+                                .padding(.horizontal)
+                            
+                            
+                            Text("Makeup Artists")
+                                .multilineTextAlignment(.center)
+                            
+                                .foregroundColor(.white)
+                                .modifier(XLTextModifier())
+                                .opacity(0.8)
+                                .padding()
+                            //                    NavigationLink(destination: ExploreCategories()){
+                        }//Z
+                        //.padding()
+                        
+                    }//.padding()
                     
-                    //Text("Makeup Artists")
-                    //.multilineTextAlignment(.center)
+                    //MARK: - MakeUp
                     
-                        .foregroundColor(.white)
-                        .modifier(XLTextModifier())
-                }//.padding()
-                //MARK: - MakeUp
+               
+                .navigationTitle("Categories")
+                .frame(maxWidth: .infinity)
+                    
+            }//Scro;;
+                //.padding(.horizontal)
                 
-                
-                .navigationTitle("category")
-//                    NavigationLink(destination: ExploreCategories()){
-//                        Text("Photographer")
-//                    }
-                    
-            }//list
             }//Vstack
         }//NavigationView
         //.searchable(text: $searchText)

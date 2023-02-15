@@ -54,13 +54,13 @@ struct OnBoarding: View {
                         .resizable()
                     .frame(width: 300, height: 300)}
                 Text("Trusted reviews")
-                    .bold()
                     .modifier(EmptyStateTextModifier())
                 
                     .padding()
                 Text("We provide reliable ratings of service providers without any impartiality to ensure quality.")
                     .multilineTextAlignment(.center)
                     .modifier(RegularTextModifier())
+                    .padding()
                 
 //                Button {
 //                    toContentView.toggle()
@@ -78,6 +78,7 @@ struct OnBoarding: View {
                         .resizable()
                     .frame(width: 300, height: 300)}
                 Text("don’t hesitate")
+                    
                     .modifier(EmptyStateTextModifier())
                     .padding()
                 Text("Be part of our world and enjoy a diverse and ever-growing list of service providers.")
