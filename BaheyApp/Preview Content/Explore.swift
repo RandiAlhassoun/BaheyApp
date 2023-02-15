@@ -14,48 +14,51 @@ struct Explore: View {
     var body: some View {
         NavigationView{
             VStack{
+                List{
                 //Text("hi")
-//MARK: - Photographer
+
+                //MARK: - Photographer
                 ZStack(alignment: .bottomLeading){
                     Image ("Photographer")
                         .resizable()
-                    .frame(width: 360, height: 168)
+                        .frame(width: 350, height: 168)
                     
                     Text("Photographer")
-                        //.multilineTextAlignment(.center)
-
+                    //.multilineTextAlignment(.center)
+                    
                         .foregroundColor(.white)
                         .modifier(XLTextModifier())
                 }//.padding()
-//MARK: - Hair
-
+                //MARK: - Hair
+                
                 ZStack(alignment: .bottomLeading){
                     Image ("Hair")
                         .resizable()
-                    .frame(width: 360, height: 168)
+                        .frame(width: 350, height: 168)
                     
                     Text("Hair Stylist")
-                        //.multilineTextAlignment(.center)
-
-                        .foregroundColor(.white)
-                        .modifier(XLTextModifier())
-                }//.padding()
-//MARK: - MakeUp
-                ZStack(alignment: .bottomLeading){
-                    Image ("MakeUp")
-                        .resizable()
-                    .frame(width: 360, height: 168)
+                    //.multilineTextAlignment(.center)
                     
-                    Text("Makeup Artists")
-                        //.multilineTextAlignment(.center)
-
                         .foregroundColor(.white)
                         .modifier(XLTextModifier())
                 }//.padding()
                 //MARK: - MakeUp
-
+                ZStack(alignment: .bottomLeading){
+                    Image ("MakeUp")
+                        .resizable()
+                        .frame(width: 350, height: 168)
                     
-                    .navigationTitle("category")
+                    Text("Makeup Artists")
+                    //.multilineTextAlignment(.center)
+                    
+                        .foregroundColor(.white)
+                        .modifier(XLTextModifier())
+                }//.padding()
+                //MARK: - MakeUp
+                
+                
+                .navigationTitle("category")
+            }//list
             }//Vstack
         }//NavigationView
         .searchable(text: $searchText)
