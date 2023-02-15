@@ -37,7 +37,7 @@ struct FavoritesNotRegistered: View {
            /* Login Button and navigation to Login page*/
             NavigationLink {
                 // destination view to navigation to
-                ExploreCategories()
+                Login()
             } label: {
                 Text("Login")
             }

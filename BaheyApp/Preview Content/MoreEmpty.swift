@@ -1,37 +1,29 @@
 //
-//  More.swift
-//  Bahey1
-//
-//  Created by salma alorifi on 17/07/1444 AH.
-////
-//  More.swift
+//  MoreEmpty.swift
 //  BaheyApp
 //
-//  Created by Rand Alhassoun on 07/02/2023.
+//  Created by salma alorifi on 23/07/1444 AH.
 //
 
 import SwiftUI
 
-struct More: View {
-    
+struct MoreEmpty: View {
     @State private var showingOptions = false
-   
     var body: some View {
-        
         NavigationView{ //start Navigation View
             VStack(alignment: .leading){ // start v stack
                 
                 // MARK: - heeder
                 VStack(alignment:.leading){
                     
-                    Text("Hello, person")
+                    Text("Hello")
                         .multilineTextAlignment(.leading)
                         .fontWeight(.semibold)
                     
-                    Text ("person@email.com")
+                    Text ("Please Sign In ")
                         .multilineTextAlignment(.leading)
                         .fontWeight(.semibold)
-                        
+                        .foregroundColor(.gray)
                    
                 }.padding()
                 
@@ -75,14 +67,15 @@ struct More: View {
                 // MARK: - Button
                 
                     Spacer()
-                    NavigationLink(destination: Logout().navigationBarBackButtonHidden()
+                    NavigationLink(destination: Login().navigationBarBackButtonHidden()
                     ){
-                        Text("Sign Out")
+                        Text("Sign In")
                             .modifier(LargeButtonModifier())
                     }
-                    NavigationLink(destination: DeleteAccount().navigationBarBackButtonHidden()
+                  //Spacer()
+                    NavigationLink(destination: SignUp().navigationBarBackButtonHidden()
                     ){
-                        Text("Delete Account")
+                        Text("Sign Up")
                             .modifier(LargeButtonModifier())
                     }
                     Spacer()
@@ -93,14 +86,11 @@ struct More: View {
             //Modifiers to make the VStack as a block
                // .modifier(reviewBackgrounddModifier())
             }
-                }
-    }
-
-
-struct More_Previews: PreviewProvider {
-    static var previews: some View {
-        More()
     }
 }
 
-
+struct MoreEmpty_Previews: PreviewProvider {
+    static var previews: some View {
+        MoreEmpty()
+    }
+}
