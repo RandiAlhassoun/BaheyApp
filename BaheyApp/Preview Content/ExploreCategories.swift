@@ -10,28 +10,34 @@ struct ExploreCategories: View {
     
     @State private var isEditing = false
     @State var searchText = ""
-    private var searchResult: [ServiceInfo] {
-    let results = Service.all()
-        
-        //MARK: - Search bar filter and result
-        if searchText.isEmpty {
-            return results
-        }
-        return results.filter {
-            $0.name.lowercased().contains(searchText.lowercased()) ||   $0.category
-                .lowercased().contains(searchText.lowercased())
-        }
-    }
-    
+  //  private var searchResult: [ServiceInfo] {
+//    let results = Service.all()
+//
+//        //MARK: - Search bar filter and result
+//        if searchText.isEmpty {
+//            return results
+//        }
+//        return results.filter {
+//            $0.name.lowercased().contains(searchText.lowercased()) ||   $0.category
+//                .lowercased().contains(searchText.lowercased())
+//        }
+//    }
+//
     //MARK: - list View and card view
     var body: some View {
         VStack {
             // Headline (subject)
-            Text("Specialist ")
-                .modifier(XLTextModifier())
+//            Text("Specialist ")
+//                .modifier(XLTextModifier())
             SearchBar
-            ListView
-        }
+           
+            List {
+//
+                    CardView
+                }  .listStyle(.plain)
+      //      }
+           
+        }.navigationTitle("Specialist ")
     }
 }
 
@@ -43,67 +49,62 @@ struct ExploreCategories_Previews: PreviewProvider {
 
 //MARK: - extention for design liist view
 extension ExploreCategories {
-    var ListView: some View {
-        // List View
-        List(searchResult) { ServiceInfo in
-            HStack {
-                VStack(alignment: .center) {
-                    Text(ServiceInfo.name)
-                        .bold()
-                        .modifier(ProviderNameTextModifier())
-                    Text(ServiceInfo.category)
+    var CardView: some View {
+        // Card View
+                HStack {
                     
-                        .modifier(ProviderCatigoryTextModifier())
-                    
-                    /* star stack */
-                    HStack(spacing: 2) {
-                        ForEach(1...4, id: \.self) { stars in
-                            // Reviewer evaluation stars:
-                            Image(systemName: "star.fill")
-                                .foregroundColor(Color("yellowFill"))
-                                .font(.system(size: 15))
-                        }
-                        
-                    }
-                    .padding()
-                    
-                    Button {
-                        // ContentView()
-                    } label: {
-                        Text("Show more")
+                    VStack(alignment: .center) {
+                        Text("Sarah")
                             .bold()
-                            .modifier(SmallButtonModifier())
-                    }
-                } // end of VStack
+                            .modifier(ProviderNameTextModifier())
+                        Text("Hair style")
+                        
+                            .modifier(ProviderCatigoryTextModifier())
+                        
+                        /* star stack */
+                        HStack(spacing: 2) {
+                            ForEach(1...4, id: \.self) { stars in
+                                // Reviewer evaluation stars:
+                                Image(systemName: "star.fill")
+                                    .foregroundColor(Color("yellowFill"))
+                                    .font(.system(size: 15))
+                            }
+                            
+                        }
+                        .padding()
+
+                        Button {
+                            // ContentView()
+                        } label: {
+                            Text("Show more")
+                                .bold()
+                                .modifier(SmallButtonModifier())
+                        }
+                    } // end of VStack
+                    
+                    Spacer()
+                    Image("anood")
+                        .resizable()
+                        .frame(width: 207, height: 164)
+                    
+                    
+                } // End of HStack image with contents
                 
-                Spacer()
-                Image(ServiceInfo.image)
-                    .resizable()
-                    .frame(width: 207, height: 164)
-                
-                
-            } // End of HStack image with contents
-            
-            .frame(width: 359.45, height: 166)
-            .background(Color("Lgreen"))
-            .cornerRadius(5)
-            .listRowSeparator(.hidden)
-            //.scrollContentBackground(.hidden)
-        }
-        .listStyle(.plain)
+                .frame(width: 359.45, height: 166)
+                .background(Color("Lgreen"))
+                .cornerRadius(5)
+                .listRowSeparator(.hidden)
+                //.scrollContentBackground(.hidden)
+            }
+//            .listStyle(.plain)
+     }
         
-        
-        
-    }
-}
 
 //MARK: -  Search bar
 extension ExploreCategories{
     var SearchBar: some View {
         HStack {
-//            Image(systemName: "magnifyingglass")
-//                .foregroundColor(.gray)
-//                .padding(.leading,10)
+
            TextField("Search ", text: $searchText)
                 .padding(.leading,30)
                .overlay(
@@ -122,14 +123,13 @@ extension ExploreCategories{
                     .foregroundColor(.gray)
                     )
                
-                           
-                        
-                .onTapGesture {
-                    ForEach(searchResult) { ServiceInfo in
-                        Text(ServiceInfo.name)
-                            .searchCompletion(ServiceInfo.name)
-                    }
-                }
+//
+//                .onTapGesture {
+//                    ForEach(searchResult) { ServiceInfo in
+//                        Text(ServiceInfo.name)
+//                            .searchCompletion(ServiceInfo.name)
+//                    }
+//                }
             
         }
         .frame(width: 360, height: 44)
