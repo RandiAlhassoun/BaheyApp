@@ -48,7 +48,8 @@ struct AddBusiness: View {
         .navigationTitle("Add Your Business")
             .modifier(XLTextModifier())
             .padding()
-        
+            .navigationBackButton(color: UIColor(red: 0.73, green: 0.41, blue: 0.43, alpha: 1.00),  text: "Back")
+
     }
 }
 
