@@ -67,13 +67,17 @@ struct SignUp: View {
             // MARK: - Login link
             HStack{
                 Text("Already have an account? ")
-                NavigationLink(destination: Login()){
+                NavigationLink(destination: Login().navigationBarBackButtonHidden()){
                     Text("Sign In")
                 }.foregroundColor(Color("Dpink"))
             }
             Spacer()
         }// end main vstack
         .padding()
+       // .navigationBackButton(color: UIColor(red: 0.73, green: 0.41, blue: 0.43, alpha: 1.00),  text: "Back") //To use a custom color you have to get the UIColor from the hex using this website:https://www.uicolor.io
+    
+    //Modifiers to make the VStack as a block
+        //.modifier(reviewBackgrounddModifier())
     }
 }
 
