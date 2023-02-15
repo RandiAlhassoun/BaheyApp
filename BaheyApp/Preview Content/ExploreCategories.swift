@@ -54,10 +54,12 @@ struct ExploreCategories_Previews: PreviewProvider {
 extension ExploreCategories {
     var CardView: some View {
         // Card View
-                HStack {
-                    
-                    VStack() {
+                HStack  {
+                    Spacer()
+                    VStack(alignment: .center, spacing: 5) {
                         Text("Sarah")
+                            .multilineTextAlignment(.center)
+                            .frame(width: 150, height: 50)
                             .bold()
                             .modifier(ProviderNameTextModifier())
                         Text("Hair style")
@@ -74,14 +76,16 @@ extension ExploreCategories {
                             }
                             
                         }
-                        .padding()
+                        //.padding()
 
                         //                            Text("Show more")
+                        .padding(.vertical)
 
                         NavigationLink(destination: ProviderInfo()){
                             Text("Show more")
                                 .bold()
                                 .modifier(SmallButtonModifier())
+                            
                         }
 //                        Button {
 //                            // ContentView()
