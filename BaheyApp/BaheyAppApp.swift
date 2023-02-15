@@ -13,6 +13,7 @@ struct BaheyAppApp: App {
         WindowGroup {
             Splash()
             //More()
+
             //FavoritesNotRegistered()
             //ProviderInfo()
            // WriteReview()

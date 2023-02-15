@@ -10,111 +10,78 @@
 import SwiftUI
 
 
-// had to add a new modifier for Sign in with apple button
-
-struct LargeButtonModifier1: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-        //.bold()
-            .frame(width: 365 , height: 42)
-            .foregroundColor(.white)
-            .background(Color.black)
-            .cornerRadius(5.0)
-            .font(.system(size: 20))
-    }}
-
-
 struct Login: View {
+    
+    // add variable for email , password
+    
     @State var email: String = ""
     @State var password: String = ""
     
     var body: some View {
-        NavigationView{
-        
-            VStack(){
+        NavigationView{ // start Navigation View
+            
+            VStack(){ // start Vstack
+                
                 
                 // MARK: - Titel
+                
                 Text("Sing In").modifier(XLTextModifier())
-                    //.padding(.vertical, 50.0)
                 Spacer()
                 
+                // MARK: - TextField
+                
                 VStack(alignment:.leading){
-                    // MARK: - TextField
-                    
                     Text("Email")
-                        .multilineTextAlignment(.leading)
+                       // .multilineTextAlignment(.leading)
                         .fontWeight(.semibold)
-                    // .modifier(RegularTextModifier())
-                    
                     
                     TextField("Example@example.com", text: $email)
                         .padding()
                         .background(Color("Lgreen"))
                         .cornerRadius(5.0)
                         .padding(.bottom, 20)
-                    //.multilineTextAlignment(.leading)
-                    
-                    
                     
                     Text ("Password")
-                        .multilineTextAlignment(.leading)
+                        //.multilineTextAlignment(.leading)
                         .fontWeight(.semibold)
-                    //.modifier(RegularTextModifier())
-                    
                     
                     SecureField("Password", text: $password)
                         .padding()
                         .background(Color("Lgreen"))
                         .cornerRadius(5.0)
                         .padding(.bottom, 20)
-                    //.multilineTextAlignment(.leading)
-                    
                 }
                 
-                // MARK: - Button
+                // MARK: - Sign in button
                 
-                NavigationLink(destination: Explore()){
-                Text("Sign In")
+                NavigationLink(destination: Explore().navigationBarBackButtonHidden()){
+                    Text("Sign In")
                     .modifier(LargeButtonModifier())
                     .padding()
-                 }
-                
+                }
                 Text("OR")
-
-                /* SignInWithAppleButton(
-                 onRequest: { request in
-                 /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Code@*/ /*@END_MENU_TOKEN@*/
-                 },
-                 onCompletion: { result in
-                 /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Code@*/ /*@END_MENU_TOKEN@*/
-                 }
-                 )*/
                 
-
-                
+                // MARK: - Sign in with apple button
                 Button {
                 } label: {
                     Text("Sign in with Apple").modifier(LargeButtonModifier1())
-                }             
-                .padding()
+                }.padding()
                 
-                
-                
+            
                 // MARK: - Register link
                 HStack{
-
-
+                    
                     Text("Don’t have an account?")
-                    NavigationLink(destination: SignUp()){
+                    NavigationLink(destination: SignUp().navigationBarBackButtonHidden()){
                         Text("Sign up")
                     }.foregroundColor(Color("Dpink"))
                 }
-              Spacer()
-              
-            }
+                Spacer()
+                
+            }// end Vstack
             .padding()
             
-        }
+        }//end Navigation View
     }
 }
 
@@ -125,6 +92,20 @@ struct Login_Previews: PreviewProvider {
 }
 
 
+
+
+// MARK: - Had to add a new modifier for Sign in with apple button
+
+struct LargeButtonModifier1: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+        
+            .frame(width: 365 , height: 42)
+            .foregroundColor(.white)
+            .background(Color.black)
+            .cornerRadius(5.0)
+            .font(.system(size: 20))
+    }}
 
 
 

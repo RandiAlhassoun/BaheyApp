@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		82B89130299B8E69008792D0 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B8912F299B8E69008792D0 /* Service.swift */; };
+		8AF03350299BF59B002EAD92 /* MoreEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF0334F299BF59B002EAD92 /* MoreEmpty.swift */; };
 		C18F607D29923E4B00168E0D /* BaheyAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F607C29923E4B00168E0D /* BaheyAppApp.swift */; };
 		C18F607F29923E4B00168E0D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F607E29923E4B00168E0D /* ContentView.swift */; };
 		C18F608129923E4C00168E0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C18F608029923E4C00168E0D /* Assets.xcassets */; };
@@ -42,6 +44,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		82B8912F299B8E69008792D0 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		8AF0334F299BF59B002EAD92 /* MoreEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreEmpty.swift; sourceTree = "<group>"; };
 		C18F607929923E4B00168E0D /* BaheyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaheyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C18F607C29923E4B00168E0D /* BaheyAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaheyAppApp.swift; sourceTree = "<group>"; };
 		C18F607E29923E4B00168E0D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -107,6 +111,7 @@
 		C18F607B29923E4B00168E0D /* BaheyApp */ = {
 			isa = PBXGroup;
 			children = (
+				82B8912F299B8E69008792D0 /* Service.swift */,
 				C18F607C29923E4B00168E0D /* BaheyAppApp.swift */,
 				C18F607E29923E4B00168E0D /* ContentView.swift */,
 				C18F60B4299250EF00168E0D /* AllModifiers.swift */,
@@ -121,19 +126,20 @@
 			isa = PBXGroup;
 			children = (
 				C18F609E29923F8F00168E0D /* AfterReview.swift */,
+				C18F609629923F3800168E0D /* ProviderInfo.swift */,
+				C18F609829923F4C00168E0D /* ViewAllReviews.swift */,
+				C18F609B29923F6D00168E0D /* WriteReview.swift */,
 				C18F608E29923EAF00168E0D /* Explore.swift */,
 				C18F609029923EE500168E0D /* OnBoarding.swift */,
 				C18F609229923EFE00168E0D /* Splash.swift */,
 				C18F609429923F2000168E0D /* ExploreCategories.swift */,
-				C18F609629923F3800168E0D /* ProviderInfo.swift */,
-				C18F609829923F4C00168E0D /* ViewAllReviews.swift */,
-				C18F609B29923F6D00168E0D /* WriteReview.swift */,
 				C18F60A029923F9F00168E0D /* Favorites.swift */,
 				C18F60A22992401300168E0D /* FavoritesEmpty.swift */,
 				C18F60A42992408400168E0D /* FavoritesNotRegistered.swift */,
 				C18F60A62992409A00168E0D /* Login.swift */,
 				C18F60A8299240A800168E0D /* SignUp.swift */,
 				C18F60AA299240BB00168E0D /* More.swift */,
+				8AF0334F299BF59B002EAD92 /* MoreEmpty.swift */,
 				C18F60AC299240CB00168E0D /* AboutUs.swift */,
 				C18F60AE299240E100168E0D /* AddBusiness.swift */,
 				C18F60B02992415D00168E0D /* DeleteAccount.swift */,
@@ -240,6 +246,7 @@
 				C18F60CF299B684700168E0D /* DataManager.swift in Sources */,
 				C18F607F29923E4B00168E0D /* ContentView.swift in Sources */,
 				C18F608F29923EAF00168E0D /* Explore.swift in Sources */,
+				8AF03350299BF59B002EAD92 /* MoreEmpty.swift in Sources */,
 				C18F609C29923F6D00168E0D /* WriteReview.swift in Sources */,
 				C18F60A9299240A800168E0D /* SignUp.swift in Sources */,
 				C18F60AF299240E100168E0D /* AddBusiness.swift in Sources */,

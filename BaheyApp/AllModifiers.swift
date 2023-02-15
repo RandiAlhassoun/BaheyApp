@@ -104,7 +104,7 @@ struct ProviderNameTextModifier: ViewModifier {
         content
             .font(.system(size: 15))
             .foregroundColor(.black)
-            //.padding()
+           // .padding()
     }}
 
 //Provider Header Text Modifier:
@@ -129,8 +129,85 @@ struct ItemsModifier: ViewModifier {
     }}
 
 
+struct ProviderInfoHeadersTextModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .bold()
+            .font(.system(size: 20))
+            .foregroundColor(.black)
+            //.frame(maxWidth: .infinity)
+            //.padding()
+    }}
+// AccentTextModifier used for "More" in ProviderInfo page
+struct AccentTextModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.system(size: 18))
+            .foregroundColor(Color("Dpink"))
+            //.frame(maxWidth: .infinity)
+            //.padding()
+    }}
+struct WriteReviewHeadersModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .bold()
+            .font(.system(size: 22))
+            .foregroundColor(.black)
+            //.frame(maxWidth: .infinity)
+            //.padding()
+    }}
+// Modifier for Hstack that holds each TextField
+struct reviewTextFieldModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .lineLimit(4, reservesSpace: true)
+                        .multilineTextAlignment(.leading)
+                        .frame(maxWidth: .infinity , maxHeight: 145 , alignment: .topLeading)
+                        .padding()
+                        .background((Color("Lgreen")).clipShape(RoundedRectangle(cornerRadius:10)))
+    }
+}
+// Modifier for review Backgroundd used in ViewAllReviews
+struct reviewBackgrounddModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .frame(maxWidth: .infinity, maxHeight: 170 , alignment: .leading)
+            .background(Color("Lgreen"))
+            .cornerRadius(10)
+    }
+}
 
 
+struct NavigationBackButton: ViewModifier {
+
+    @Environment(\.presentationMode) var presentationMode
+    var color: UIColor
+    var text: String?
+
+    func body(content: Content) -> some View {
+        return content
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(
+                leading: Button(action: {  presentationMode.wrappedValue.dismiss() }, label: {
+                    HStack(spacing: 2) {
+                        Image(systemName: "chevron.backward")
+                            .foregroundColor(Color(color))
+
+                        if let text = text {
+                            Text(text)
+                                .foregroundColor(Color(color))
+                        }
+                    }
+                })
+            )
+    }
+}
+
+extension View {
+    func navigationBackButton(color: UIColor, text: String? = nil) -> some View {
+        modifier(NavigationBackButton(color: color, text: text))
+    }
+}
 
 
 struct AllModifiers_Previews: PreviewProvider {
@@ -138,5 +215,4 @@ struct AllModifiers_Previews: PreviewProvider {
         AllModifiers()
     }
 }
-
 

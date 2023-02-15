@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Explore: View {
+ 
     @State private var searchText = ""
 
     var body: some View {
@@ -62,11 +63,15 @@ struct Explore: View {
         }//NavigationView
         .searchable(text: $searchText)
 
+
     }
 }
+
+
 
 struct Explore_Previews: PreviewProvider {
     static var previews: some View {
         Explore()
     }
 }
+

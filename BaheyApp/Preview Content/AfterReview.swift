@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AfterReview: View {
-    @State var toViewAllReviews = false
+    @State var toProviderInfo = false //To go to ProviderInfo after clicking Done button.
     var body: some View {
         
         VStack(){//main VStack
@@ -16,20 +16,22 @@ struct AfterReview: View {
                 .resizable()
                 .frame(width: 250, height: 250)
             Text("Your review has been submitted successfully")
+                .frame(maxWidth: .infinity)
                 .modifier(EmptyStateTextModifier())
                 .multilineTextAlignment(.center)
                 .padding(.vertical, 50.0)
-            
+                .padding(.horizontal)
             Button {
-                toViewAllReviews.toggle()
+                toProviderInfo.toggle()
             } label: {
                 Text("Done")
                 
-            }.modifier(MediemButtonModifier())
+           }.modifier(MediemButtonModifier())
         }//End of main VStack
-        .fullScreenCover(isPresented: $toViewAllReviews) {
-            ViewAllReviews()
-        }
+        
+        .fullScreenCover(isPresented: $toProviderInfo) {
+            ProviderInfo()
+        }//End of fullScreenCover
     }//End of body
 }//End of struct AfterReview
 
