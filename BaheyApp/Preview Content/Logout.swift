@@ -26,7 +26,7 @@ struct Logout: View {
             
             // MARK: - button link to explor page
             
-            NavigationLink(destination: Explore().navigationBarBackButtonHidden()){
+            NavigationLink(destination: More().navigationBarBackButtonHidden()){
                 Text("Done")
                     .modifier(MediemButtonModifier())
                     .bold()

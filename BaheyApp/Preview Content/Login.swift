@@ -54,7 +54,7 @@ struct Login: View {
                 
                 // MARK: - Sign in button
                 
-                NavigationLink(destination: Explore().navigationBarBackButtonHidden()){
+                NavigationLink(destination: TabBar().navigationBarBackButtonHidden()){
                     Text("Sign In")
                     .modifier(LargeButtonModifier())
                     .padding()
