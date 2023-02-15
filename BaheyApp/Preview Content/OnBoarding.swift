@@ -40,12 +40,12 @@ struct OnBoarding: View {
                     .multilineTextAlignment(.center)
                     .modifier(RegularTextModifier())
                 
-                Button {
-                    toContentView.toggle()
-                } label: {
-                Text("Next")
-                    
-               }.modifier(MediemButtonModifier())
+//                Button {
+//                    toContentView.toggle()
+//                } label: {
+//                Text("Next")
+//                    
+//               }.modifier(MediemButtonModifier())
             }.tag(0)
 //MARK: - Second onBording page
             VStack(){
@@ -62,12 +62,12 @@ struct OnBoarding: View {
                     .multilineTextAlignment(.center)
                     .modifier(RegularTextModifier())
                 
-                Button {
-                    toContentView.toggle()
-                } label: {
-                Text("Next")
-                    
-               }.modifier(MediemButtonModifier())
+//                Button {
+//                    toContentView.toggle()
+//                } label: {
+//                Text("Next")
+//
+//               }.modifier(MediemButtonModifier())
                 
                 
             }.tag(1)
