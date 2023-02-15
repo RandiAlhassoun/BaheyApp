@@ -59,7 +59,7 @@ struct SignUp: View {
             
             // MARK: - Button
             
-            NavigationLink(destination: Explore().navigationBarBackButtonHidden()){
+            NavigationLink(destination: TabBar().navigationBarBackButtonHidden()){
                 Text("Create account").modifier(LargeButtonModifier())
                     .padding()
             }

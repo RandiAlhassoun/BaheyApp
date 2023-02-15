@@ -13,7 +13,11 @@ struct BaheyAppApp: App {
         WindowGroup {
             Splash()
             //More()
-
+            
+            //TestView()
+            //.environmentObject (dataManager)
+            
+           
             //FavoritesNotRegistered()
             //ProviderInfo()
            // WriteReview()
