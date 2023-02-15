@@ -6,17 +6,23 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct BaheyAppApp: App {
+    @StateObject var dataManager = DataManager()
+    
+    init() {
+        FirebaseApp.configure()
+    }
+    
     var body: some Scene {
         WindowGroup {
             Splash()
-            //More()
+            
+//            TestView()
+//                .environmentObject (dataManager)
 
-            //FavoritesNotRegistered()
-            //ProviderInfo()
-           // WriteReview()
         }
     }
 }

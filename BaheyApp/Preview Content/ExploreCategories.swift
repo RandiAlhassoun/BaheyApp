@@ -31,11 +31,14 @@ struct ExploreCategories: View {
 //                .modifier(XLTextModifier())
             SearchBar
            
-            List {
+            //List {
 //
                     CardView
-                }  .listStyle(.plain)
+                //}  .listStyle(.plain)
+            
+            
       //      }
+            Spacer()
            
         }.navigationTitle("Specialist ")
     }
@@ -53,7 +56,7 @@ extension ExploreCategories {
         // Card View
                 HStack {
                     
-                    VStack(alignment: .center) {
+                    VStack() {
                         Text("Sarah")
                             .bold()
                             .modifier(ProviderNameTextModifier())
@@ -73,13 +76,20 @@ extension ExploreCategories {
                         }
                         .padding()
 
-                        Button {
-                            // ContentView()
-                        } label: {
+                        //                            Text("Show more")
+
+                        NavigationLink(destination: ProviderInfo()){
                             Text("Show more")
                                 .bold()
                                 .modifier(SmallButtonModifier())
                         }
+//                        Button {
+//                            // ContentView()
+//                        } label: {
+//                            Text("Show more")
+//                                .bold()
+//                                .modifier(SmallButtonModifier())
+//                        }
                     } // end of VStack
                     
                     Spacer()
@@ -102,6 +112,7 @@ extension ExploreCategories {
 
 //MARK: -  Search bar
 extension ExploreCategories{
+    
     var SearchBar: some View {
         HStack {
 

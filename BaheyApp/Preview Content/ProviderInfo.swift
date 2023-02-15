@@ -11,7 +11,7 @@ struct ProviderInfo: View {
     @State var toViewAllReviews = false //To go to ViewAllReviews after clicking "More" .
     
     var body: some View {
-        NavigationView(){
+        //NavigationView(){
             
             //Main VStack that contains all the views.
             ScrollView(.vertical){
@@ -123,7 +123,7 @@ struct ProviderInfo: View {
             }
             .ignoresSafeArea()
             
-        }//End of body
+        //}//End of body
         
         
         // .navigationBarTitleDisplayMode(.large)
