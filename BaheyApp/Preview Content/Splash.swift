@@ -28,9 +28,9 @@ struct Splash: View {
                                     .ignoresSafeArea()
                 VStack {
                     VStack {
-                        Image("BaheyLogo")
+                        Image("SplashWhiteLogo")
                             .resizable()
-                            .frame(width: 142, height: 154)
+                            .frame(width: 200, height: 160)
                             .scaledToFit()
                     }
                     .scaleEffect(size)
