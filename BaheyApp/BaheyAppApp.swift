@@ -10,6 +10,8 @@ import Firebase
 
 @main
 struct BaheyAppApp: App {
+
+
     @StateObject var dataManager = DataManager()
     
     init() {
@@ -25,6 +27,13 @@ struct BaheyAppApp: App {
 //                .environmentObject (dataManager)
 
 
+
         }
     }
 }
+//private extension BaheyAppApp {
+//    func setupFirebase() {
+//        FirebaseConfiguration.shared.setLoggerLevel(.min)
+//        FirebaseApp.configure()
+//    }
+//}
