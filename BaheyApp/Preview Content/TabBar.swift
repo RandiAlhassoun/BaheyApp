@@ -10,9 +10,6 @@ import SwiftUI
 struct TabBar: View {
     var body: some View {
         TabView(){
-            
-            
-
             Explore().tabItem{Image(systemName: "safari")
                 Text("Explore")
 
