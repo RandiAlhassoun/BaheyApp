@@ -20,20 +20,13 @@ struct BaheyAppApp: App {
     
     var body: some Scene {
         WindowGroup {
-            Splash()
-
-            
-//            TestView()
-//                .environmentObject (dataManager)
+   //         Splash()
+             // .environmentObject (dataManager)
+            Login()
 
 
 
         }
     }
 }
-//private extension BaheyAppApp {
-//    func setupFirebase() {
-//        FirebaseConfiguration.shared.setLoggerLevel(.min)
-//        FirebaseApp.configure()
-//    }
-//}
+

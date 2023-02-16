@@ -20,6 +20,7 @@ struct Login: View {
     @State var signInProcessing = false
     @State var signInErrorMessage = ""
     @State var toExplore = false
+    @State var toSignUp = false
     
     var body: some View {
         NavigationView{ // start Navigation View
@@ -54,6 +55,10 @@ struct Login: View {
                         .background(Color("Lgreen"))
                         .cornerRadius(5.0)
                         .padding(.bottom, 20)
+                    if !signInErrorMessage.isEmpty {
+                        Text("Could not sign in user: \(signInErrorMessage)")
+                            .foregroundColor(.red)
+                    }
                 }
                 
                 // MARK: - Sign in button
@@ -87,24 +92,31 @@ struct Login: View {
                 HStack{
                     
                     Text("Don’t have an account?")
-                    NavigationLink(destination: SignUp().navigationBarBackButtonHidden()){
-                        Text("Sign up")
+                    Button {
+                        toSignUp.toggle()
+                    } label: {
+                        Text("Sign Up").foregroundColor(Color("Dpink"))
                     }.foregroundColor(Color("Dpink"))
+                        .navigationBarBackButtonHidden()
                 }
                 Spacer()
                 
             }// end Vstack
-            .padding()
-            .navigationBarBackButtonHidden(true)
+            
             .fullScreenCover(isPresented: $toExplore) {
-                Explore()
+                TabBar()
             }//fullScreenCover
+            .fullScreenCover(isPresented: $toSignUp) {
+                SignUp()
+            }//fullScreenCover
+            .padding()
         }//end Navigation View
     }
+    // MARK: -  func signInUser() using Firebase.
     func signInUser(email: String, password: String) {
-        print("Inside func signInUser()")
         signInProcessing = true
-        
+        print("Inside func signIn()")
+  
         Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
             
             guard error == nil else {

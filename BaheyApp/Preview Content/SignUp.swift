@@ -15,6 +15,7 @@ struct SignUp: View {
     @State var email: String = ""
     @State var password: String = ""
     @State var toExplore = false
+    @State var toLogin = false
     @State var signUpProcessing = false
     @State var signUpErrorMessage = ""
 
@@ -57,8 +58,15 @@ struct SignUp: View {
                     .padding()
                     .background(Color("Lgreen"))
                     .cornerRadius(5.0)
-                    .padding(.bottom, 20)
-                
+                   // .padding(.bottom, 20)
+                if signUpProcessing {
+                    ProgressView()//ProgressView shown means that there are things performd in the backend
+                }
+                if !signUpErrorMessage.isEmpty {
+                    Text("Failed creating account: \(signUpErrorMessage)").frame(height:50) //To show the error msg to the user ex: not matched, email already used...
+                        .foregroundColor(.red)
+                       // .padding()
+                }
             } // end of second vstack
             
             // MARK: - Button
@@ -77,27 +85,29 @@ struct SignUp: View {
                     .padding()
                 
             }
-            if signUpProcessing {
-                ProgressView()//ProgressView shown means that there are things performd in the backend
-            }
-            if !signUpErrorMessage.isEmpty {
-                Text("Failed creating account: \(signUpErrorMessage)").frame(height:50) //To show the error msg to the user ex: not matched, email already used...
-                    .foregroundColor(.red)
-                    .padding()
-            }
+            
             // MARK: - Login link
             HStack{
                 Text("Already have an account? ")
-                NavigationLink(destination: Login()){
-                    Text("Sign In")
-                }.foregroundColor(Color("Dpink"))
-                    .navigationBarBackButtonHidden()
+//                NavigationLink(destination: Login()){
+//                    Text("Sign In")
+//                }.foregroundColor(Color("Dpink"))
+//                    .navigationBarBackButtonHidden()
+                Button {
+                    toLogin.toggle()
+                } label: {
+                    Text("Sign In").foregroundColor(Color("Dpink"))
+                }
             }
             Spacer()
-                .fullScreenCover(isPresented: $toExplore) {
-                    Explore()
-                }//fullScreenCover
         }// end main vstack
+                .fullScreenCover(isPresented: $toExplore) {
+                    TabBar()
+                }//fullScreenCover
+                .fullScreenCover(isPresented: $toLogin) {
+                    Login()
+                }//fullScreenCover
+        
         .padding()
         // .navigationBackButton(color: UIColor(red: 0.73, green: 0.41, blue: 0.43, alpha: 1.00),  text: "Back") //To use a custom color you have to get the UIColor from the hex using this website:https://www.uicolor.io
         
