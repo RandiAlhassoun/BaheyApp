@@ -11,16 +11,21 @@ struct ProviderInfo: View {
     @State var toViewAllReviews = false //To go to ViewAllReviews after clicking "More" .
     
     var body: some View {
-        NavigationView(){
+        //NavigationView(){
+        VStack{
+            Image("saraMakeUp")
+                .resizable()
+                .frame(height: 250)
+                .ignoresSafeArea()
             
             //Main VStack that contains all the views.
             ScrollView(.vertical){
-                VStack{
-                    Image("saraMakeUp")
-                        .resizable()
-                        .frame(height: 250)
-                        .ignoresSafeArea()
-                    
+//                VStack{
+//                    Image("saraMakeUp")
+//                        .resizable()
+//                        .frame(height: 250)
+//                        .ignoresSafeArea()
+//                    
                     //MARK: - provider name & favorite heart:
                     
                     //HStack contains provider name & favorite heart.
@@ -119,11 +124,12 @@ struct ProviderInfo: View {
                     
                     //   .fullScreenCover(isPresented: $toViewAllReviews) {
                     //  ViewAllReviews()}
-                }
-            }
+           
+                }//scroll
+            }//vSta
             .ignoresSafeArea()
             
-        }//End of body
+        //}//End of body
         
         
         // .navigationBarTitleDisplayMode(.large)

@@ -58,6 +58,7 @@ struct Login: View {
                 
                 // MARK: - Sign in button
                 
+
                 //                NavigationLink(destination: Explore().navigationBarBackButtonHidden()){
                 //                    Text("Sign In")
                 //                        .modifier(LargeButtonModifier())
@@ -70,6 +71,7 @@ struct Login: View {
                     Text("Sign In").modifier(LargeButtonModifier())
                         .padding()
                     
+
                 }
                 Text("OR")
                 

@@ -10,18 +10,24 @@ import Firebase
 
 @main
 struct BaheyAppApp: App {
-//    init(){
-//        setupFirebase()
-//    }
+
+
+    @StateObject var dataManager = DataManager()
+    
+    init() {
+        FirebaseApp.configure()
+    }
+    
     var body: some Scene {
         WindowGroup {
-            //Splash()
-            //More()
+            Splash()
 
-            //FavoritesNotRegistered()
-            //ProviderInfo()
-           // WriteReview()
-            SignUp()
+            
+//            TestView()
+//                .environmentObject (dataManager)
+
+
+
         }
     }
 }

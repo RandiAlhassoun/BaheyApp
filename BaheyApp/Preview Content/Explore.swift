@@ -8,60 +8,96 @@
 import SwiftUI
 
 struct Explore: View {
+    @State var searchText = ""
+
  
-    @State private var searchText = ""
+    //@State private var searchText = ""
 
     var body: some View {
         NavigationView{
-            VStack{
-                List{
-                //Text("hi")
+            VStack(spacing: 20){
+                SearchBar
 
-                //MARK: - Photographer
-                ZStack(alignment: .bottomLeading){
-                    Image ("Photographer")
-                        .resizable()
-                        .frame(width: 350, height: 168)
+               // List{
+                ScrollView(.vertical){
+                    //Text("hi")
                     
-                    Text("Photographer")
-                    //.multilineTextAlignment(.center)
+                    //MARK: - Photographer
+                    NavigationLink(destination: ExploreCategories()){
+                        ZStack(alignment: .bottom){
+                            Image ("Photographer")
+                                .resizable()
+                                .frame(maxWidth: .infinity, maxHeight: 170)
+                                .padding(.horizontal)
+                            
+                            Text("Photographer")
+                                .multilineTextAlignment(.center)
+                            
+                                .foregroundColor(.white)
+                                .modifier(XLTextModifier())
+                                .opacity(0.8)
+                                .padding()
+                            
+                        }//Z
+                    }//Nav
                     
-                        .foregroundColor(.white)
-                        .modifier(XLTextModifier())
-                }//.padding()
-                //MARK: - Hair
+                    
+                    //MARK: - Hair
+                    NavigationLink(destination: ExploreCategories()){
+                        
+                        ZStack(alignment: .bottom){
+                            Image ("Hair")
+                                .resizable()
+                                .frame(maxWidth: .infinity, maxHeight: 170)
+                                .padding(.horizontal)
+                            
+                            
+                            //NavigationLink(destination: ExploreCategories()){
+                            Text("Hair Stylist")                                                                .multilineTextAlignment(.center)
+                            
+                                .foregroundColor(.white)
+                                .modifier(XLTextModifier())
+                                .opacity(0.8)
+                                .padding()
+                            
+                        }//.padding()
+                        
+                    }//.padding()
+                    //MARK: - MakeUp
+                    NavigationLink(destination: ExploreCategories()){
+                        
+                        ZStack(alignment: .bottom){
+                            Image ("MakeUp")
+                                .resizable()
+                                .frame(maxWidth: .infinity, maxHeight: 170)
+                                .padding(.horizontal)
+                            
+                            
+                            Text("Makeup Artists")
+                                .multilineTextAlignment(.center)
+                            
+                                .foregroundColor(.white)
+                                .modifier(XLTextModifier())
+                                .opacity(0.8)
+                                .padding()
+                            //                    NavigationLink(destination: ExploreCategories()){
+                        }//Z
+                        //.padding()
+                        
+                    }//.padding()
+                    
+                    //MARK: - MakeUp
+                    
+               
+                .navigationTitle("Categories")
+                .frame(maxWidth: .infinity)
+                    
+            }//Scro;;
+                //.padding(.horizontal)
                 
-                ZStack(alignment: .bottomLeading){
-                    Image ("Hair")
-                        .resizable()
-                        .frame(width: 350, height: 168)
-                    
-                    Text("Hair Stylist")
-                    //.multilineTextAlignment(.center)
-                    
-                        .foregroundColor(.white)
-                        .modifier(XLTextModifier())
-                }//.padding()
-                //MARK: - MakeUp
-                ZStack(alignment: .bottomLeading){
-                    Image ("MakeUp")
-                        .resizable()
-                        .frame(width: 350, height: 168)
-                    
-                    Text("Makeup Artists")
-                    //.multilineTextAlignment(.center)
-                    
-                        .foregroundColor(.white)
-                        .modifier(XLTextModifier())
-                }//.padding()
-                //MARK: - MakeUp
-                
-                
-                .navigationTitle("category")
-            }//list
             }//Vstack
         }//NavigationView
-        .searchable(text: $searchText)
+        //.searchable(text: $searchText)
 
 
     }
@@ -74,4 +110,49 @@ struct Explore_Previews: PreviewProvider {
         Explore()
     }
 }
+
+
+
+//MARK: -  Search bar
+extension Explore{
+    
+    var SearchBar: some View {
+        HStack {
+
+           TextField("Search ", text: $searchText)
+                .padding(.leading,30)
+               .overlay(
+                HStack {
+                    Image(systemName: "magnifyingglass")
+                       Spacer()
+                    Button(action: {
+                        searchText = ""
+                    }, label: {
+                        Image(systemName: "xmark.circle")
+                                .foregroundColor(Color.gray)
+                                .opacity(searchText.isEmpty ? 0.0 : 1.0)
+                    })
+                 
+                }.padding(.horizontal,10)
+                    .foregroundColor(.gray)
+                    )
+               
+//
+//                .onTapGesture {
+//                    ForEach(searchResult) { ServiceInfo in
+//                        Text(ServiceInfo.name)
+//                            .searchCompletion(ServiceInfo.name)
+//                    }
+//                }
+            
+        }
+        .frame(width: 360, height: 44)
+        .background(
+            RoundedRectangle(cornerRadius: 5)
+                .stroke(.gray))
+        
+    }
+    
+}
+
 

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-
 		C18F607D29923E4B00168E0D /* BaheyAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F607C29923E4B00168E0D /* BaheyAppApp.swift */; };
 		C18F607F29923E4B00168E0D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F607E29923E4B00168E0D /* ContentView.swift */; };
 		C18F608129923E4C00168E0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C18F608029923E4C00168E0D /* Assets.xcassets */; };
@@ -37,13 +36,12 @@
 		C18F60C6299A760700168E0D /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C18F60C5299A760700168E0D /* FirebaseFirestoreSwift */; };
 		C18F60C8299A760700168E0D /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = C18F60C7299A760700168E0D /* FirebaseStorage */; };
 		C18F60CC299B61BC00168E0D /* business.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F60CB299B61BC00168E0D /* business.swift */; };
-		C18F60CF299B684700168E0D /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F60CE299B684700168E0D /* DataManager.swift */; };
-		C18F60D1299B70AF00168E0D /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F60D0299B70AF00168E0D /* TestView.swift */; };
 		C18F60D4299CAAF800168E0D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C18F60D3299CAAF800168E0D /* Kingfisher */; };
+		C18F60D5299CCEB200168E0D /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F60CE299B684700168E0D /* DataManager.swift */; };
+		C18F60D7299CCF0A00168E0D /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F60D0299B70AF00168E0D /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-
 		C18F607929923E4B00168E0D /* BaheyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaheyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C18F607C29923E4B00168E0D /* BaheyAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaheyAppApp.swift; sourceTree = "<group>"; };
 		C18F607E29923E4B00168E0D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -114,6 +112,9 @@
 				C18F60B4299250EF00168E0D /* AllModifiers.swift */,
 				C18F608029923E4C00168E0D /* Assets.xcassets */,
 				C18F60BD299A192C00168E0D /* GoogleService-Info.plist */,
+				C18F60CE299B684700168E0D /* DataManager.swift */,
+				C18F60CB299B61BC00168E0D /* business.swift */,
+				C18F60D0299B70AF00168E0D /* TestView.swift */,
 				C18F608229923E4C00168E0D /* Preview Content */,
 			);
 			path = BaheyApp;
@@ -136,7 +137,6 @@
 				C18F60A62992409A00168E0D /* Login.swift */,
 				C18F60A8299240A800168E0D /* SignUp.swift */,
 				C18F60AA299240BB00168E0D /* More.swift */,
-				8AF0334F299BF59B002EAD92 /* MoreEmpty.swift */,
 				C18F60AC299240CB00168E0D /* AboutUs.swift */,
 				C18F60AE299240E100168E0D /* AddBusiness.swift */,
 				C18F60B02992415D00168E0D /* DeleteAccount.swift */,
@@ -150,9 +150,6 @@
 		C18F60CD299B680200168E0D /* DataTesting */ = {
 			isa = PBXGroup;
 			children = (
-				C18F60CB299B61BC00168E0D /* business.swift */,
-				C18F60CE299B684700168E0D /* DataManager.swift */,
-				C18F60D0299B70AF00168E0D /* TestView.swift */,
 			);
 			path = DataTesting;
 			sourceTree = "<group>";
@@ -239,10 +236,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C18F609929923F4C00168E0D /* ViewAllReviews.swift in Sources */,
-
+				C18F60D7299CCF0A00168E0D /* TestView.swift in Sources */,
+				C18F60D5299CCEB200168E0D /* DataManager.swift in Sources */,
 				C18F607F29923E4B00168E0D /* ContentView.swift in Sources */,
 				C18F608F29923EAF00168E0D /* Explore.swift in Sources */,
-				8AF03350299BF59B002EAD92 /* MoreEmpty.swift in Sources */,
 				C18F609C29923F6D00168E0D /* WriteReview.swift in Sources */,
 				C18F60A9299240A800168E0D /* SignUp.swift in Sources */,
 				C18F60AF299240E100168E0D /* AddBusiness.swift in Sources */,

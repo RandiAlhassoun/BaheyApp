@@ -26,7 +26,7 @@ struct DeleteAccount: View {
             
             // MARK: - button will be sent to explore page
             
-            NavigationLink(destination: Explore().navigationBarBackButtonHidden()){
+            NavigationLink(destination: More().navigationBarBackButtonHidden()){
                 Text("Done") }
             .modifier(MediemButtonModifier())
             .bold()

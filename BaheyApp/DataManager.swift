@@ -82,6 +82,10 @@ class DataManager: ObservableObject {
         
     }
     
+    
+    
+    
+    
  //MARK: -
     // FirestoreManager.swift
     

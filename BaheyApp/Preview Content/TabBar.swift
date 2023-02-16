@@ -16,7 +16,7 @@ struct TabBar: View {
             }.tag(1)
             
             Favorites().tabItem{Image(systemName: "heart.fill")
-                Text("Favoret")
+                Text("Favorites")
             }.tag(2)
             
                 //EditProfileDeveloperContentView()

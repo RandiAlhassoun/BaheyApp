@@ -31,11 +31,14 @@ struct ExploreCategories: View {
 //                .modifier(XLTextModifier())
             SearchBar
            
-            List {
+            //List {
 //
                     CardView
-                }  .listStyle(.plain)
+                //}  .listStyle(.plain)
+            
+            
       //      }
+            Spacer()
            
         }.navigationTitle("Specialist ")
     }
@@ -51,10 +54,12 @@ struct ExploreCategories_Previews: PreviewProvider {
 extension ExploreCategories {
     var CardView: some View {
         // Card View
-                HStack {
-                    
-                    VStack(alignment: .center) {
+                HStack  {
+                    Spacer()
+                    VStack(alignment: .center, spacing: 5) {
                         Text("Sarah")
+                            .multilineTextAlignment(.center)
+                            .frame(width: 150, height: 50)
                             .bold()
                             .modifier(ProviderNameTextModifier())
                         Text("Hair style")
@@ -71,15 +76,24 @@ extension ExploreCategories {
                             }
                             
                         }
-                        .padding()
+                        //.padding()
 
-                        Button {
-                            // ContentView()
-                        } label: {
+                        //                            Text("Show more")
+                        .padding(.vertical)
+
+                        NavigationLink(destination: ProviderInfo()){
                             Text("Show more")
                                 .bold()
                                 .modifier(SmallButtonModifier())
+                            
                         }
+//                        Button {
+//                            // ContentView()
+//                        } label: {
+//                            Text("Show more")
+//                                .bold()
+//                                .modifier(SmallButtonModifier())
+//                        }
                     } // end of VStack
                     
                     Spacer()
@@ -102,6 +116,7 @@ extension ExploreCategories {
 
 //MARK: -  Search bar
 extension ExploreCategories{
+    
     var SearchBar: some View {
         HStack {
 
