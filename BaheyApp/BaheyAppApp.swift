@@ -18,7 +18,7 @@ struct BaheyAppApp: App {
     
     var body: some Scene {
         WindowGroup {
-            Splash()
+            Splash().environmentObject(dataManager)
 
             
 //            TestView()

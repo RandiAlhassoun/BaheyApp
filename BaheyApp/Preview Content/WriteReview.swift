@@ -12,7 +12,9 @@ struct WriteReview: View {
     @State var toAfterReview = false //To go to ViewAllReviews after clicking Done button.
     @State var isFavoritePressed = false
     //let maxCharacters = 50
+    //@Environment(\.dismiss) var dismiss
     
+
     var body: some View {
         VStack(){
             //            Spacer()
@@ -32,7 +34,6 @@ struct WriteReview: View {
                 ReviewTextFieldView()
                 Spacer()
                 Button {
-                    
                     toAfterReview.toggle()
                     
                 } label: {
@@ -44,8 +45,11 @@ struct WriteReview: View {
             }.frame(maxWidth: .infinity, maxHeight: .infinity , alignment: .leading)
                 .padding()
                 .fullScreenCover(isPresented: $toAfterReview) {
+
                     AfterReview()
+                    
                 }//End of fullScreenCover
+            
         }
     }
     
@@ -54,6 +58,7 @@ struct WriteReview: View {
 struct WriteReview_Previews: PreviewProvider {
     static var previews: some View {
         WriteReview()
+        
     }
 }
 
