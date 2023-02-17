@@ -56,8 +56,11 @@ class DataManager: ObservableObject {
                     let City = data[ "City"] as? String ?? "no City"
                     let Categorie  = data[ "Categorie"] as? String ?? "no Categorie"
                     let ima  = data[ "ima"] as? String ?? "Hair"
-                    
-                    let Business = business(id: id, Name: Name, City: City, Categorie: Categorie ,ima: ima)
+                    let star  = data[ "star"] as? Int ?? 1
+                    let About  = data[ "About"] as? String ?? "About non"
+                    let Social  = data[ "Social"] as? String ?? "Social non"
+
+                    let Business = business(id: id, Name: Name, City: City, Categorie: Categorie ,ima: ima ,star: star ,About: About ,Social: Social)
                     
                     
                     

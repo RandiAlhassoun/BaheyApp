@@ -20,9 +20,8 @@ struct BaheyAppApp: App {
     
     var body: some Scene {
         WindowGroup {
-   //         Splash()
-             // .environmentObject (dataManager)
-            Login()
+            Splash().environmentObject(dataManager)
+
 
 
 

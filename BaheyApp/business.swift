@@ -14,5 +14,8 @@ struct business: Identifiable {
     var City : String
     var Categorie : String
     var ima : String
-
+    var star : Int
+    var About: String
+    var Social: String
+    
 }

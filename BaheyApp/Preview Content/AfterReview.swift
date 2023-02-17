@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct AfterReview: View {
+    @Environment(\.dismiss) var dismiss
+
     @State var toProviderInfo = false //To go to ProviderInfo after clicking Done button.
     var body: some View {
         
@@ -22,16 +24,18 @@ struct AfterReview: View {
                 .padding(.vertical, 50.0)
                 .padding(.horizontal)
             Button {
-                toProviderInfo.toggle()
+                dismiss()
+
+                //toProviderInfo.toggle()
             } label: {
                 Text("Done")
                 
            }.modifier(MediemButtonModifier())
         }//End of main VStack
         
-        .fullScreenCover(isPresented: $toProviderInfo) {
-            ProviderInfo()
-        }//End of fullScreenCover
+//        .fullScreenCover(isPresented: $toProviderInfo) {
+//            ProviderInfo(Card_id: "3")
+//        }//End of fullScreenCover
     }//End of body
 }//End of struct AfterReview
 
