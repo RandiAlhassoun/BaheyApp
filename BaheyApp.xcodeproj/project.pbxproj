@@ -42,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9FDB369F29A221000094A147 /* BaheyApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BaheyApp.entitlements; sourceTree = "<group>"; };
 		C18F607929923E4B00168E0D /* BaheyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaheyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C18F607C29923E4B00168E0D /* BaheyAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaheyAppApp.swift; sourceTree = "<group>"; };
 		C18F607E29923E4B00168E0D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -107,6 +108,7 @@
 		C18F607B29923E4B00168E0D /* BaheyApp */ = {
 			isa = PBXGroup;
 			children = (
+				9FDB369F29A221000094A147 /* BaheyApp.entitlements */,
 				C18F607C29923E4B00168E0D /* BaheyAppApp.swift */,
 				C18F607E29923E4B00168E0D /* ContentView.swift */,
 				C18F60B4299250EF00168E0D /* AllModifiers.swift */,
@@ -385,9 +387,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BaheyApp/BaheyApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BaheyApp/Preview Content\"";
+				DEVELOPMENT_TEAM = WTC7MUB2VT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -413,9 +417,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BaheyApp/BaheyApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BaheyApp/Preview Content\"";
+				DEVELOPMENT_TEAM = WTC7MUB2VT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
