@@ -242,7 +242,7 @@ struct Login_Previews: PreviewProvider {
     }
 }
 
-
+//edit
 
 
 // MARK: - Had to add a new modifier for Sign in with apple button
