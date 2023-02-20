@@ -46,8 +46,8 @@ struct Login: View {
                         .cornerRadius(5.0)
                         .padding(.bottom, 20)
                     
-                    Text ("Password")
-                    //.multilineTextAlignment(.leading)
+                    Text ("Password")//This is only fr me.
+                    //.multilineTextAlignment(.leading).csl
                         .fontWeight(.semibold)
                     
                     SecureField("Password", text: $password)
@@ -57,18 +57,12 @@ struct Login: View {
                         .padding(.bottom, 20)
                     if !signInErrorMessage.isEmpty {
                         Text("Could not sign in user: \(signInErrorMessage)")
+                            .multilineTextAlignment(.center)
                             .foregroundColor(.red)
                     }
                 }
                 
                 // MARK: - Sign in button
-                
-
-                //                NavigationLink(destination: Explore().navigationBarBackButtonHidden()){
-                //                    Text("Sign In")
-                //                        .modifier(LargeButtonModifier())
-                //                        .padding()
-                //                }
                 Button {
                     signInUser(email: email, password: password)
                     print("Sign In Button clicked")
@@ -118,6 +112,13 @@ struct Login: View {
         print("Inside func signIn()")
   
         Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+            
+            // MARK: -  NOTE: This if to get the user name of the user.
+            
+            if let user = authResult?.user {
+                let username = user.displayName
+                print("Username: \(username)")
+            } //End of if
             
             guard error == nil else {
                 signInProcessing = false

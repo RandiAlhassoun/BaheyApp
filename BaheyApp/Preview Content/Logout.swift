@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct Logout: View {
+    @State var toMoreAfterLogout = false
     var body: some View {
-        
         VStack{ // start vstack
             // MARK: - image
             
@@ -26,15 +26,21 @@ struct Logout: View {
             
             // MARK: - button link to explor page
             
-            NavigationLink(destination: More().navigationBarBackButtonHidden()){
+            Button {
+                toMoreAfterLogout.toggle()
+            } label: {
                 Text("Done")
-                    .modifier(MediemButtonModifier())
-                    .bold()
-                .padding() }
-            
-        }// end vstack
-            
-        }}
+                
+            }.modifier(MediemButtonModifier())
+                .bold()
+                .padding()
+        }//end vstack
+        .fullScreenCover(isPresented:$toMoreAfterLogout ){
+            TabBar()
+        }//fullScreenCover
+    }//End of body
+    
+}//End of struct Logout
 
 struct Logout_Previews: PreviewProvider {
     static var previews: some View {

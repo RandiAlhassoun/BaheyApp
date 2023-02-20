@@ -54,6 +54,7 @@ struct LargeReviewBlockView: View {
                 .font(.system(size: 15))
             // Reviewer review:
             Text("shhkkwkewkejelqljkkkkkkkkkkkkklllkallaklkakkaksalkslaksalsababhahahabhabhabhajajajajajjaajajajajaqwlqjeqlwjlqljwjlqjwlqjdsdkajd")
+            
                 .modifier(RegularTextModifier())
                 .padding(.horizontal)
             Spacer()
@@ -79,3 +80,4 @@ struct AddReviewButton: View {
                 .presentationDragIndicator(.visible)
         }
     }}
+
