@@ -6,40 +6,59 @@
 //
 
 import SwiftUI
+import Kingfisher
+
 
 struct ProviderInfo: View {
+    @EnvironmentObject var dataManager: DataManager
+
     @State var toViewAllReviews = false //To go to ViewAllReviews after clicking "More" .
+    
+    @State var businessData : business
+    
     
     var body: some View {
         //NavigationView(){
+        
         VStack{
-            Image("saraMakeUp")
+            
+            
+            
+            
+            //Image("saraMakeUp")
+            KFImage(URL(string: businessData.ima)!)
                 .resizable()
                 .frame(height: 250)
                 .ignoresSafeArea()
             
             //Main VStack that contains all the views.
             ScrollView(.vertical){
-//                VStack{
-//                    Image("saraMakeUp")
-//                        .resizable()
-//                        .frame(height: 250)
-//                        .ignoresSafeArea()
-//                    
-                    //MARK: - provider name & favorite heart:
-                    
-                    //HStack contains provider name & favorite heart.
-                    HStack{
-                       Text("Sara Makeup Artist")
+                //                VStack{
+                //                    Image("saraMakeUp")
+                //                        .resizable()
+                //                        .frame(height: 250)
+                //                        .ignoresSafeArea()
+                //
+                //MARK: - provider name & favorite heart:
+                
+                //HStack contains provider name & favorite heart.
+                HStack{
+                    Text(businessData.Name)
                         .modifier(XLTextModifier())
-                            .padding(.horizontal)
-                        Spacer()
-                        //calling favoriteView() which contains the code for add to favorite.
-                        favoriteView().padding(.horizontal)
-                    }//End of HStack
+                        .padding(.horizontal)
+                    Spacer()
+                    //calling favoriteView() which contains the code for add to favorite.
+                    favoriteView().padding(.horizontal)
+                }//End of HStack
+                
+                //MARK: - provider city & ctegory:
+                
+                //VStack Contains the details of each provider "city & ctegory".
+                VStack(alignment: .leading){
+                    Text("Details").modifier(ProviderInfoHeadersTextModifier())
+                    //.padding(.bottom)
                     
-                    //MARK: - provider city & ctegory:
-                    
+
                     //VStack Contains the details of each provider "city & ctegory".
                     VStack(alignment: .leading){
                         Text("Details").modifier(ProviderInfoHeadersTextModifier())
@@ -74,9 +93,16 @@ struct ProviderInfo: View {
                 
                     .frame(maxWidth: .infinity , alignment: .leading)
                     .padding([.leading, .bottom, .trailing])
+
                     
-                    //MARK: - Social networking sites:
+                    HStack(){
+                        Group{
+                            Text("Category:")
+                            Text(businessData.Categorie)}
+                        .modifier(RegularTextModifier())
+                    }//HStack For Category
                     
+
                     //VStack Contains Social networking sites for each provider
                     VStack(alignment: .leading){
                         Text("Social networking sites").modifier(ProviderInfoHeadersTextModifier())
@@ -97,40 +123,76 @@ struct ProviderInfo: View {
                     }//End of VStack Social networking sites
                     .frame(maxWidth: .infinity , alignment: .leading)
                     .padding([.leading, .bottom, .trailing])
+
                     
-                    //MARK: - Reviews:
-                    
-                    //Contains reviews for each provider & more
-                    VStack(alignment: .leading){
-                        HStack{
-                            Text("Reviews").modifier(ProviderInfoHeadersTextModifier())
-                            Spacer()
-                            NavigationLink(destination: ViewAllReviews()) {
-                                Text("More").modifier(AccentTextModifier())
-                            }
-                            
-                        }//End of VStack Reviews & more
-                        .padding(.horizontal)
-                        //ScrollView to hold the reviews
-                        ScrollView(.horizontal){
-                            HStack(){
-                                //Calling ReviewBlockView for each review block.
-                                ForEach(1...3, id: \.self) { i in
-                                    SmallReviewBlockView()}
-                                
-                            }//End of HStack review block
-                            .frame(maxWidth: .infinity , alignment: .leading)
-                            .padding(.horizontal)
+                }//End of VStack details
+                .frame(maxWidth: .infinity , alignment: .leading)
+                .padding([.leading, .bottom, .trailing])
+                
+                //MARK: - About Us:
+                VStack(alignment: .leading){//Contains About  us for each provider
+                    Text("About Us").modifier(ProviderInfoHeadersTextModifier())
+                    Text(businessData.About)
+                        .modifier(RegularTextModifier())
+                }//End of VStack about us.
+                .frame(maxWidth: .infinity , alignment: .leading)
+                .padding([.leading, .bottom, .trailing])
+                
+                //MARK: - Social networking sites:
+                
+                //VStack Contains Social networking sites for each provider
+                VStack(alignment: .leading){
+                    Text("Social networking sites").modifier(ProviderInfoHeadersTextModifier())
+                    Button(action: {
+                        //NOTE: Add your link here in: let yourURL = URL(string:"HERE")
+                        //if let yourURL = URL(string: "https://www.instagram.com/bahey_app/?igshid=YmMyMTA2M2Y%3D") {
+                        if let yourURL = URL(string: businessData.Social) {
+                            UIApplication.shared.open(yourURL, options: [:], completionHandler: nil)
                         }
-                    }//End of MAIN VStack
+                        
+                    }, label: {
+                        Image( "instagram") // <- Change icon to your preferred one
+                            .resizable()
+                            .frame(width: 45, height: 45)
+                            .foregroundColor(.blue)
+                    })
                     
-                    //   .fullScreenCover(isPresented: $toViewAllReviews) {
-                    //  ViewAllReviews()}
-           
-                }//scroll
-            }//vSta
-            .ignoresSafeArea()
-            
+                }//End of VStack Social networking sites
+                .frame(maxWidth: .infinity , alignment: .leading)
+                .padding([.leading, .bottom, .trailing])
+                
+                //MARK: - Reviews:
+                
+                //Contains reviews for each provider & more
+                VStack(alignment: .leading){
+                    HStack{
+                        Text("Reviews").modifier(ProviderInfoHeadersTextModifier())
+                        Spacer()
+                        NavigationLink(destination: ViewAllReviews()) {
+                            Text("More").modifier(AccentTextModifier())
+                        }
+                        
+                    }//End of VStack Reviews & more
+                    .padding(.horizontal)
+                    //ScrollView to hold the reviews
+                    ScrollView(.horizontal){
+                        HStack(){
+                            //Calling ReviewBlockView for each review block.
+                            ForEach(1...3, id: \.self) { i in
+                                SmallReviewBlockView()}
+                            
+                        }//End of HStack review block
+                        .frame(maxWidth: .infinity , alignment: .leading)
+                        .padding(.horizontal)
+                    }
+                }//End of MAIN VStack
+                
+                //   .fullScreenCover(isPresented: $toViewAllReviews) {
+                //  ViewAllReviews()}
+                
+            }//scroll
+        }//vSta
+        .ignoresSafeArea()
         //}//End of body
         
         
@@ -138,11 +200,11 @@ struct ProviderInfo: View {
     }//End of struct ProviderInfo
 }
 
-struct ProviderInfo_Previews: PreviewProvider {
-    static var previews: some View {
-        ProviderInfo()
-    }
-}
+//struct ProviderInfo_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ProviderInfo(Card_id: "2")
+//    }
+//}
 
 //MARK: - favoriteView:
 //struct struct Contains the code for add to favorite.

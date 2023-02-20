@@ -20,6 +20,7 @@ struct Splash: View {
 //                .ignoresSafeArea()
 
             if isActive {
+                //ExploreCategories()
                 OnBoarding()
             } else {
                 

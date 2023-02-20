@@ -6,7 +6,12 @@
 //
 
 import SwiftUI
+import Kingfisher
+
 struct ExploreCategories: View {
+    
+    @EnvironmentObject var dataManager: DataManager
+
     
     @State private var isEditing = false
     @State var searchText = ""
@@ -29,19 +34,23 @@ struct ExploreCategories: View {
             // Headline (subject)
 //            Text("Specialist ")
 //                .modifier(XLTextModifier())
-            SearchBar
+            //SearchBar
+            CardView
            
             //List {
 //
-                    CardView
+                   // CardView
                 //}  .listStyle(.plain)
             
             
       //      }
-            Spacer()
+           // Spacer()
            
         }.navigationTitle("Specialist ")
     }
+    
+    //MARK: - SEARCH
+    
 }
 
 struct ExploreCategories_Previews: PreviewProvider {
@@ -54,21 +63,25 @@ struct ExploreCategories_Previews: PreviewProvider {
 extension ExploreCategories {
     var CardView: some View {
         // Card View
+        ScrollView{
+            ForEach(/*dataManager.Test3*/searchResults, id: \.id) {  bus in
                 HStack  {
                     Spacer()
                     VStack(alignment: .center, spacing: 5) {
-                        Text("Sarah")
+                        //Text("Sarah")
+                        Text (bus.Name)
+                        
                             .multilineTextAlignment(.center)
                             .frame(width: 150, height: 50)
                             .bold()
                             .modifier(ProviderNameTextModifier())
-                        Text("Hair style")
+                        Text(bus.Categorie)
                         
                             .modifier(ProviderCatigoryTextModifier())
                         
                         /* star stack */
                         HStack(spacing: 2) {
-                            ForEach(1...4, id: \.self) { stars in
+                            ForEach(1...bus.star, id: \.self) { stars in
                                 // Reviewer evaluation stars:
                                 Image(systemName: "star.fill")
                                     .foregroundColor(Color("yellowFill"))
@@ -77,27 +90,21 @@ extension ExploreCategories {
                             
                         }
                         //.padding()
-
+                        
                         //                            Text("Show more")
                         .padding(.vertical)
-
-                        NavigationLink(destination: ProviderInfo()){
+                        
+                        
+                        NavigationLink(destination: ProviderInfo(businessData: bus)) {
                             Text("Show more")
                                 .bold()
                                 .modifier(SmallButtonModifier())
-                            
                         }
-//                        Button {
-//                            // ContentView()
-//                        } label: {
-//                            Text("Show more")
-//                                .bold()
-//                                .modifier(SmallButtonModifier())
-//                        }
                     } // end of VStack
                     
                     Spacer()
-                    Image("anood")
+                    //Image("anood")
+                    KFImage(URL(string: bus.ima)!)
                         .resizable()
                         .frame(width: 207, height: 164)
                     
@@ -109,7 +116,22 @@ extension ExploreCategories {
                 .cornerRadius(5)
                 .listRowSeparator(.hidden)
                 //.scrollContentBackground(.hidden)
+            }//for
+        }//S
+        .searchable(text: $searchText, prompt: "Search for a name")
+
             }
+    
+    var searchResults: [business] {
+        if searchText.isEmpty {
+            return dataManager.Test3
+        } else {
+            return dataManager.Test3.filter { $0.Name.localizedCaseInsensitiveContains(searchText)
+                
+            }
+
+        }
+    }
 //            .listStyle(.plain)
      }
         
