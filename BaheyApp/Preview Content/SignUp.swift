@@ -18,7 +18,7 @@ struct SignUp: View {
     @State var toLogin = false
     @State var signUpProcessing = false
     @State var signUpErrorMessage = ""
-
+    
     var body: some View {
         
         VStack{
@@ -58,55 +58,55 @@ struct SignUp: View {
                     .padding()
                     .background(Color("Lgreen"))
                     .cornerRadius(5.0)
-                   // .padding(.bottom, 20)
-                if signUpProcessing {
-                    ProgressView()//ProgressView shown means that there are things performd in the backend
-                }
-                if !signUpErrorMessage.isEmpty {
-                    Text("Failed creating account: \(signUpErrorMessage)").frame(height:50) //To show the error msg to the user ex: not matched, email already used...
-                        .foregroundColor(.red)
-                       // .padding()
-                }
+                .padding(.bottom, 20)
+                // MARK: - ProgressView & Error msg
+                VStack(alignment: .center){
+                    if signUpProcessing {
+                        //ProgressView shown means that there are things performd in the backend
+                        ProgressView()
+                    }
+                    if !signUpErrorMessage.isEmpty {
+                        //To show the error msg to the user ex: not matched, email already used...
+                        Text("Failed creating account: \(signUpErrorMessage)")
+                            .multilineTextAlignment(.center)
+                            //.frame(height:50)
+                            .foregroundColor(.red)
+                        // .padding()
+                    }
+                }//End of VStack ErrorMessag & ProgressView
             } // end of second vstack
             
             // MARK: - Button
+            //Spacer()
             
-
-            //            NavigationLink(destination: Explore().navigationBarBackButtonHidden()){
-            //                Text("Create account").modifier(LargeButtonModifier())
-            //                    .padding()
-            //            }
             Button {
                 signUpUser()
                 print("Create account Button clicked")
             } label: {
-
-                Text("Create account").modifier(LargeButtonModifier())
-                    .padding()
                 
-            }
+                Text("Create account").modifier(LargeButtonModifier())
+                    
+                    .padding(.vertical,20)
+            }//End of Button Lable.
+            
             
             // MARK: - Login link
             HStack{
                 Text("Already have an account? ")
-//                NavigationLink(destination: Login()){
-//                    Text("Sign In")
-//                }.foregroundColor(Color("Dpink"))
-//                    .navigationBarBackButtonHidden()
                 Button {
                     toLogin.toggle()
                 } label: {
                     Text("Sign In").foregroundColor(Color("Dpink"))
-                }
-            }
+                }//End of button Lable
+            }//End of HStack
             Spacer()
         }// end main vstack
-                .fullScreenCover(isPresented: $toExplore) {
-                    TabBar()
-                }//fullScreenCover
-                .fullScreenCover(isPresented: $toLogin) {
-                    Login()
-                }//fullScreenCover
+        .fullScreenCover(isPresented: $toExplore) {
+            TabBar()
+        }//fullScreenCover
+        .fullScreenCover(isPresented: $toLogin) {
+            Login()
+        }//fullScreenCover used to fo to Login if Already have an account?
         
         .padding()
         // .navigationBackButton(color: UIColor(red: 0.73, green: 0.41, blue: 0.43, alpha: 1.00),  text: "Back") //To use a custom color you have to get the UIColor from the hex using this website:https://www.uicolor.io
@@ -131,6 +131,14 @@ struct SignUp: View {
                 
                 let changeRequest = authResult?.user.createProfileChangeRequest() //create a profile change request object using the user object from the result of creating a new user
                 changeRequest?.displayName = self.username //set the display name of the user to be equal to the username entered by the user
+                
+                // MARK: -  NOTE: This if to get the user name of the user.
+                
+                if let user = authResult?.user {
+                    let username = user.displayName
+                    print("Username: \(self.username)")
+                } //End of if
+                
                 changeRequest?.commitChanges(completion: { (error) in //commit changes to firebase auth
                     
                     if let error = error { //error handling
@@ -141,16 +149,17 @@ struct SignUp: View {
                         print("Successfully signed up user and committed changes") //print out success message to console
                         signUpProcessing = false
                         toExplore = true
-                    }
+                    }//End of else
                     
-                })
+                }//End of changeRequest
+                )//End of completion:
                 
-            }
+            }//End of else
             
-        }
+        }//End of Auth.auth().createUser
         
-    }
-}
+    }//End of func
+}//End of struct SignUp
 
 
 struct SignUp_Previews: PreviewProvider {

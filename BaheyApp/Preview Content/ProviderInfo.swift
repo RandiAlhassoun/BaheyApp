@@ -58,13 +58,42 @@ struct ProviderInfo: View {
                     Text("Details").modifier(ProviderInfoHeadersTextModifier())
                     //.padding(.bottom)
                     
-                    HStack(){
-                        Group{
-                            Text("City:")
-                            Text(businessData.City)}.modifier(RegularTextModifier())
+
+                    //VStack Contains the details of each provider "city & ctegory".
+                    VStack(alignment: .leading){
+                        Text("Details").modifier(ProviderInfoHeadersTextModifier())
+                        //.padding(.bottom)
                         
-                    }//HStack For City
+                        HStack(){
+                            Group{
+                                Text("City:")
+                                Text("Riyadh")}.modifier(RegularTextModifier())
+                            
+                        }//HStack For City
+
+                        HStack(){
+                            Group{
+                                Text("Category:")
+                                Text("Makeup")}
+                            .modifier(RegularTextModifier())
+                        }//HStack For Category
+                        
+                        Divider()
+                    }//End of VStack details
+                    .frame(maxWidth: .infinity , alignment: .leading)
+                    .padding([.leading, .bottom, .trailing])
                     
+                    //MARK: - About Us:
+                    VStack(alignment: .leading){//Contains About  us for each provider
+                        Text("About Us").modifier(ProviderInfoHeadersTextModifier())
+                        Text("qjkjqljwllekkqk;kw;qkw;qkw;qkw;qkq;wk;qkwq;kw;qsakss,;s,;sqkpwqkpwoqpwqema.sa,a;s,a;slq;wlqq;wpqopqmdlsklkqpkqpwqmdknkwjqwoqkwpqopqoq psmas,alkql")
+                            .modifier(RegularTextModifier())
+                        Divider()
+                    }//End of VStack about us.
+                
+                    .frame(maxWidth: .infinity , alignment: .leading)
+                    .padding([.leading, .bottom, .trailing])
+
                     
                     HStack(){
                         Group{
@@ -73,6 +102,28 @@ struct ProviderInfo: View {
                         .modifier(RegularTextModifier())
                     }//HStack For Category
                     
+
+                    //VStack Contains Social networking sites for each provider
+                    VStack(alignment: .leading){
+                        Text("Social networking sites").modifier(ProviderInfoHeadersTextModifier())
+                        Button(action: {
+                            //NOTE: Add your link here in: let yourURL = URL(string:"HERE")
+                            if let yourURL = URL(string: "https://www.instagram.com/bahey_app/?igshid=YmMyMTA2M2Y%3D") {
+                                UIApplication.shared.open(yourURL, options: [:], completionHandler: nil)
+                            }
+                            
+                        }, label: {
+                            Image( "instagram") // <- Change icon to your preferred one
+                                .resizable()
+                                .frame(width: 45, height: 45)
+                                .foregroundColor(.blue)
+                        })
+                        Divider()
+                        
+                    }//End of VStack Social networking sites
+                    .frame(maxWidth: .infinity , alignment: .leading)
+                    .padding([.leading, .bottom, .trailing])
+
                     
                 }//End of VStack details
                 .frame(maxWidth: .infinity , alignment: .leading)

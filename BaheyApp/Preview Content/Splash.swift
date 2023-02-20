@@ -21,7 +21,9 @@ struct Splash: View {
 
             if isActive {
                 //ExploreCategories()
+                
                 OnBoarding()
+                
             } else {
                 
                 ZStack{

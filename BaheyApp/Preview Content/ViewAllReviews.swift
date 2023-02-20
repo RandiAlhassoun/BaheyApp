@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ViewAllReviews: View {
     //@State var showWriteReviewSheet = false
+
     var body: some View {
         
         //Main VStack that holds all the elements of the view.
@@ -54,6 +55,7 @@ struct LargeReviewBlockView: View {
                 .font(.system(size: 15))
             // Reviewer review:
             Text("shhkkwkewkejelqljkkkkkkkkkkkkklllkallaklkakkaksalkslaksalsababhahahabhabhabhajajajajajjaajajajajaqwlqjeqlwjlqljwjlqjwlqjdsdkajd")
+            
                 .modifier(RegularTextModifier())
                 .padding(.horizontal)
             Spacer()
@@ -67,9 +69,13 @@ struct LargeReviewBlockView: View {
 
 struct AddReviewButton: View {
     @State var showWriteReviewSheet = false
+    @State var toAfterReview = false //To go to ViewAllReviews after clicking Done button.
+
     var body: some View {
         Button {
             showWriteReviewSheet.toggle()
+            toAfterReview.toggle()
+
         } label: {
             Text("Add a review")
                 .modifier(LargeButtonModifier())
@@ -78,4 +84,10 @@ struct AddReviewButton: View {
                 .presentationDetents([.medium , .large])
                 .presentationDragIndicator(.visible)
         }
+        .fullScreenCover(isPresented: $toAfterReview) {
+            AfterReview()
+            
+        }//End of fullScreenCover
+
     }}
+

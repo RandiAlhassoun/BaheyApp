@@ -11,8 +11,10 @@ struct WriteReview: View {
     //@State var fkeildValue = ""
     @State var toAfterReview = false //To go to ViewAllReviews after clicking Done button.
     @State var isFavoritePressed = false
+    @State var isF = false
+
     //let maxCharacters = 50
-    //@Environment(\.dismiss) var dismiss
+    @Environment(\.dismiss) var dismiss
     
 
     var body: some View {
@@ -34,7 +36,8 @@ struct WriteReview: View {
                 ReviewTextFieldView()
                 Spacer()
                 Button {
-                    toAfterReview.toggle()
+                    //toAfterReview.toggle()
+                    dismiss()
                     
                 } label: {
                     Text("Submit")
@@ -42,10 +45,10 @@ struct WriteReview: View {
                     
                 }
                 Spacer()
+                
             }.frame(maxWidth: .infinity, maxHeight: .infinity , alignment: .leading)
                 .padding()
                 .fullScreenCover(isPresented: $toAfterReview) {
-
                     AfterReview()
                     
                 }//End of fullScreenCover

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DeleteAccount: View {
+    @State var toMoreAfterDelete = false
     var body: some View {
         
         VStack{// start vstack
@@ -26,15 +27,20 @@ struct DeleteAccount: View {
             
             // MARK: - button will be sent to explore page
             
-            NavigationLink(destination: More().navigationBarBackButtonHidden()){
-                Text("Done") }
-            .modifier(MediemButtonModifier())
-            .bold()
-            .padding()
-            
+            Button {
+                toMoreAfterDelete.toggle()
+            } label: {
+                Text("Done")
+                
+            }.modifier(MediemButtonModifier())
+                .bold()
+                .padding()
         }//end vstack
-       // .navigationBackButton(color: UIColor(red: 0.73, green: 0.41, blue: 0.43, alpha: 1.00),  text: "Back")
-
+        .fullScreenCover(isPresented:$toMoreAfterDelete ){
+            TabBar()
+        }//fullScreenCover
+        // .navigationBackButton(color: UIColor(red: 0.73, green: 0.41, blue: 0.43, alpha: 1.00),  text: "Back")
+        
         
     }}
 
