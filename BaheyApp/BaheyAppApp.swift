@@ -10,8 +10,8 @@ import Firebase
 
 @main
 struct BaheyAppApp: App {
-
-
+    
+    
     @StateObject var dataManager = DataManager()
     
     init() {
@@ -20,12 +20,10 @@ struct BaheyAppApp: App {
     
     var body: some Scene {
         WindowGroup {
-   //         Splash()
-             // .environmentObject (dataManager)
+            //         Splash()
+            // .environmentObject (dataManager)
+            //ViewAllReviews()
             Login()
-
-
-
         }
     }
 }

@@ -51,8 +51,7 @@ struct ProviderInfo: View {
                                 Text("Riyadh")}.modifier(RegularTextModifier())
                             
                         }//HStack For City
-                        
-                        
+
                         HStack(){
                             Group{
                                 Text("Category:")
@@ -60,7 +59,7 @@ struct ProviderInfo: View {
                             .modifier(RegularTextModifier())
                         }//HStack For Category
                         
-                        
+                        Divider()
                     }//End of VStack details
                     .frame(maxWidth: .infinity , alignment: .leading)
                     .padding([.leading, .bottom, .trailing])
@@ -70,7 +69,9 @@ struct ProviderInfo: View {
                         Text("About Us").modifier(ProviderInfoHeadersTextModifier())
                         Text("qjkjqljwllekkqk;kw;qkw;qkw;qkw;qkq;wk;qkwq;kw;qsakss,;s,;sqkpwqkpwoqpwqema.sa,a;s,a;slq;wlqq;wpqopqmdlsklkqpkqpwqmdknkwjqwoqkwpqopqoq psmas,alkql")
                             .modifier(RegularTextModifier())
+                        Divider()
                     }//End of VStack about us.
+                
                     .frame(maxWidth: .infinity , alignment: .leading)
                     .padding([.leading, .bottom, .trailing])
                     
@@ -91,6 +92,7 @@ struct ProviderInfo: View {
                                 .frame(width: 45, height: 45)
                                 .foregroundColor(.blue)
                         })
+                        Divider()
                         
                     }//End of VStack Social networking sites
                     .frame(maxWidth: .infinity , alignment: .leading)
