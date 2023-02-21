@@ -86,7 +86,7 @@ struct SignUp: View {
                 
                 Text("Create account").modifier(LargeButtonModifier())
                     
-                    .padding(.vertical,20)
+                    .padding(.top,20)
             }//End of Button Lable.
             
             
@@ -96,7 +96,7 @@ struct SignUp: View {
                 Button {
                     toLogin.toggle()
                 } label: {
-                    Text("Sign In").foregroundColor(Color("Dpink"))
+                    Text("Sign In " ).foregroundColor(Color("Dpink"))
                 }//End of button Lable
             }//End of HStack
             Spacer()

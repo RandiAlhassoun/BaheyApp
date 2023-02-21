@@ -103,7 +103,7 @@ struct Login: View {
                 
                 // MARK: - Titel
                 
-                Text("Sing In").modifier(XLTextModifier())
+                Text("Sign In").modifier(XLTextModifier())
                 Spacer()
                 
                 // MARK: - TextField

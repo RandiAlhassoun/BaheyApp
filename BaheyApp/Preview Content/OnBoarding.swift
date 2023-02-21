@@ -84,6 +84,7 @@ struct OnBoarding: View {
                 Text("Be part of our world and enjoy a diverse and ever-growing list of service providers.")
                     .multilineTextAlignment(.center)
                     .modifier(RegularTextModifier())
+                    .padding()
                 
                 Button {
                     toContentView.toggle()

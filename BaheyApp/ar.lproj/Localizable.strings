@@ -7,6 +7,7 @@
 */
 
 "Hair Stylist" = "تصفيف الشعر";
+"Hair Dresser" = "الشعر";
 "Makeup Artists" = "المكياج";
 "Makeup" = "المكياج";
 "Photographer" = "التصوير";
@@ -44,22 +45,26 @@
 "It seems that you aren’t login to your account , please login to view your list " = "لن نتمكن من استعراض المعلومات
 الا بعد تسجيل الدخول";
 "Login" = "تسجيل الدخول";
-"Sing In" = "تسجيل الدخول";
+"Sign In " = "سجّل دخول";
+"Sign In" = "تسجيل الدخول";
 "Email" = "الايميل";
 "Password" = "كلمة المرور";
 "Could not sign in user:" = "لا يمكن تسجيل دخول المستخدم";
 "OR" = "أو";
-"Don’t have an account?" = "ليس لديك حساب";
-"Sign Up" = "تسجيل الدخول";
+"Don’t have an account?" = "ليس لديك حساب؟";
+"Sign Up" = "انشئ حساب";
+"Sign up" = "انشاء حساب";
 "Username" = "اسم المستخدم";
 "Failed creating account:" = "فشل انشاء الحساب ";
-"Create account" = "أنشاء حساب";
-"Already have an account? " = "لديك حساب";
+"Create account" = "انشاء حساب";
+"Already have an account? " = "لديك حساب؟";
 "Hello, %@"  = "أهلا، %@";
-"Connect by email," = "تواصل معنا عبدالايميل،";
+"Connect by email," = "تواصل معنا عبر الايميل،";
 "Cntact Us" = "تواصل معنا";
 "Sign Out" = "تسجيل الخروج";
 "Delete Account" = "حذف الحساب";
+"Your data will be permanently deleted" = "سيتم حذف بياناتك بشكل نهائي";
+"Are you sure you want to delete your account?" = "هل أنت متأكد أنك تريد حذف حسابك؟";
 "About us" = "حول";
 "Add Your Business" = "اضف مشروعك";
 "Bahey application aims to offer the services of freelancers specializing in events such as hairdressers, beauticians, photographers and many other fields. If you are a service provider, we welcome you to join us." = "تطبيق Bahey يهدف الى عرض خدمات أصحاب الأعمال الحرة المختصين بالمناسبات من مصففي شعر، خبيرات تجميل، مصورين و المزيد من المجالات المتعددة. في حال كنت من مزودي احدي الخدمات فنرحب بانضمامكم لنا.";
