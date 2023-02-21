@@ -1,0 +1,75 @@
+/* 
+  Localizable.strings
+  BaheyApp
+
+  Created by Nourah Almusaad on 21/02/2023.
+  
+*/
+
+"Hair Stylist" = "تصفيف الشعر";
+"Makeup Artists" = "المكياج";
+"Makeup" = "المكياج";
+"Photographer" = "التصوير";
+"Show more" = "أظهر المزيد";
+"Search for a name" = "البحث عن اسم";
+"Categories" = "المجالات"; 
+"Specialist"  ="المتخصصات";
+"Done" = "تم";
+"Skip" = "تخطي ";
+"Your review has been submitted successfully" = "تم إضافة تقييمك بنجاح";
+"Details" = "التفاصيل";
+"City:" = "المدينة";
+"Riyadh" = "الرياض";
+"Category:" = "المجال";
+"About Us" = "نبذة عنا ";
+"Social networking sites" = "مواقع التواصل";
+"Reviews" = "تقييمات";
+"More" = "المزيد";
+"Rating and Reviews" = "تقييمات والتعليقات";
+"Add a review" = "اضافة تعليق";
+"Click to rate" = "تقييمك";
+"Write Your Review" = "اكتب تعليقك";
+"Submit" = "إرسال";
+"A variety event service providers" = "العديد من مزودي خدمات المناسبات";
+"Your guide to finding freelance event service providers according to your preferences." = "دليلك للوصول لمزودي خدمات المناسبات من أصحاب الأعمال الحرة بما يتناسب مع اختياراتك.";
+"Trusted reviews" = "تقييمات موثوقة";
+"We provide reliable ratings of service providers without any impartiality to ensure quality." = "نوفر تقييمات موثوقة لمزودي الخدمات بدون أي حياد لضمان الجودة. ";
+"don’t hesitate" = "لا داعي للحيرة";
+"Be part of our world and enjoy a diverse and ever-growing list of service providers." = "كوني جزءً من عالمنا و استمتعي بقائمة متنوعة و متجددة من مزودي الخدمات";
+"Explore" = "استكشف";
+"Favorites" = "المفضلة";
+"There are no favourites!! " = "لا يوجد مفضلات !!";
+"Click on the heart shape to add to your favourites! " = "اضغط على شكل القلب لإضافة الي مفضلاتك!";
+"Sorry!!"  = "عذراً!!";
+"It seems that you aren’t login to your account , please login to view your list " = "لن نتمكن من استعراض المعلومات
+الا بعد تسجيل الدخول";
+"Login" = "تسجيل الدخول";
+"Sing In" = "تسجيل الدخول";
+"Email" = "الايميل";
+"Password" = "كلمة المرور";
+"Could not sign in user:" = "لا يمكن تسجيل دخول المستخدم";
+"OR" = "أو";
+"Don’t have an account?" = "ليس لديك حساب";
+"Sign Up" = "تسجيل الدخول";
+"Username" = "اسم المستخدم";
+"Failed creating account:" = "فشل انشاء الحساب ";
+"Create account" = "أنشاء حساب";
+"Already have an account? " = "لديك حساب";
+"Hello, %@"  = "أهلا، %@";
+"Connect by email," = "تواصل معنا عبدالايميل،";
+"Cntact Us" = "تواصل معنا";
+"Sign Out" = "تسجيل الخروج";
+"Delete Account" = "حذف الحساب";
+"About us" = "حول";
+"Add Your Business" = "اضف مشروعك";
+"Bahey application aims to offer the services of freelancers specializing in events such as hairdressers, beauticians, photographers and many other fields. If you are a service provider, we welcome you to join us." = "تطبيق Bahey يهدف الى عرض خدمات أصحاب الأعمال الحرة المختصين بالمناسبات من مصففي شعر، خبيرات تجميل، مصورين و المزيد من المجالات المتعددة. في حال كنت من مزودي احدي الخدمات فنرحب بانضمامكم لنا.";
+"You can contact us by e-mail to view your personal project" = "يمكنك التواصل معنا عن طريق الايميل  لعرض مشروعك الشخصي ";
+"Your account has been deleted scssfly " = "تم حذف الحساب بنجاح";
+"Signed out successfully " = "تم تسجيل الخروج بنجاح";
+"characters remaining" = "حرف متبقي";
+"Riyadh" = "الرياض";
+"Event photography project" = "مشروع تصوير مناسبات";
+; "مشروع تصوير زواجات - حفلات - مناسبات" = "Photographing of weddings - parties - events"
+"Children's photography project - Photographing of family reception of the newborn in the hospital - graduation parties of adults,  We have an external service for photography + printing photos and albums" = "مشروع تصوير أطفال - تصوير استقبال المولود عائلي في المستشفى - حفلات التخرج للكبار،متوفر لدينا خدمة تصوير خارجي + طباعة الصور والالبومات";
+"A makeup artist project who provides external services - I have accredited certificates from the British Institute and Makeup Artist Ghadeer Al-Sultan - documented in Maarouf" = "مشروع خبيرة مكياج تقدم خدمات خارجية - لديها شهادات معتمده من المعهد البريطاني والارتست غدير السلطان - موثقة في معروف";
+"Hair style project" = "مشروع مصففة شعر";

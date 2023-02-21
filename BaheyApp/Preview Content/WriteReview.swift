@@ -124,8 +124,18 @@ struct ReviewTextFieldView: View {
         }
         //This is to show the remaining characters:
         VStack(alignment: .leading){
-            Text("\(maxCharacters - feildValue.count) characters remaining")
-            .foregroundColor(.gray)}
+            HStack(spacing: 3) {
+                Text("\(maxCharacters - feildValue.count)")
+                Text("characters remaining")
+
+            }
+            .foregroundColor(.gray)
+//            Text("\(maxCharacters - feildValue.count)" + "characters remaining")
+//            Text("\(maxCharacters - feildValue.count)" + NSLocalizedString("characters remaining", comment: ""))
+//            Text("\(maxCharacters - feildValue.count)" + NSLocalizedString("characters remaining", comment: ""))
+//            Text("\(5)")
+//            Text(String(5))
+            }
         
     }}
 
