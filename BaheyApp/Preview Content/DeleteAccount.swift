@@ -10,7 +10,7 @@ import SwiftUI
 struct DeleteAccount: View {
     @State var toMoreAfterDelete = false
     var body: some View {
-        
+        //
         VStack{// start vstack
             // MARK: - image
             
