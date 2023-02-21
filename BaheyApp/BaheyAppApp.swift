@@ -23,7 +23,7 @@ struct BaheyAppApp: App {
 
 
 
-            Splash().environmentObject(dataManager)
+            Login().environmentObject(dataManager)
 
         }
     }
