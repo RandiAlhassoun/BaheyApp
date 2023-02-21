@@ -149,27 +149,39 @@ struct StarsSelectionView: View {
 //            StarsSelectionView(rating: 4)
 //        }}}
 //MARK: - ReviewTextFieldView:
-//
-//struct ReviewTextFieldView: View {
-//    @State var feildValue = ""
-//    let maxCharacters = 100
-//    //@State var isDisableFeild = true
-//    var body: some View {
-//        VStack{
-//            TextField("",
-//                      text: $feildValue ,  axis: .vertical)//axis parameter supports more advanced behaviors, like reserving a minimum amount of space and expanding as more content is added, and then scrolling once the content exceeds the upper limit
-//            .modifier(reviewTextFieldModifier())
-//
-//            //** NOTE: onReceive code to let the user enter chacters to maxCharacters and then allow the user to delete **//
-//            .onReceive(feildValue .publisher.collect().map {$0.count > 100}) { enabled in
-//                self.feildValue  = String(self.feildValue .prefix(100))
-//            }
-//
-//        }
-//        //This is to show the remaining characters:
-//        VStack(alignment: .leading){
-//            Text("\(maxCharacters - feildValue.count) characters remaining")
-//            .foregroundColor(.gray)}
-//
-//    }}
+
+
+struct ReviewTextFieldView: View {
+    @State var feildValue = ""
+    let maxCharacters = 100
+    //@State var isDisableFeild = true
+    var body: some View {
+        VStack{
+            TextField("",
+                      text: $feildValue ,  axis: .vertical)//axis parameter supports more advanced behaviors, like reserving a minimum amount of space and expanding as more content is added, and then scrolling once the content exceeds the upper limit
+            .modifier(reviewTextFieldModifier())
+            
+            //** NOTE: onReceive code to let the user enter chacters to maxCharacters and then allow the user to delete **//
+            .onReceive(feildValue .publisher.collect().map {$0.count > 100}) { enabled in
+                self.feildValue  = String(self.feildValue .prefix(100))
+            }
+            
+        }
+        //This is to show the remaining characters:
+        VStack(alignment: .leading){
+            HStack(spacing: 3) {
+                Text("\(maxCharacters - feildValue.count)")
+                Text("characters remaining")
+
+            }
+            .foregroundColor(.gray)
+//            Text("\(maxCharacters - feildValue.count)" + "characters remaining")
+//            Text("\(maxCharacters - feildValue.count)" + NSLocalizedString("characters remaining", comment: ""))
+//            Text("\(maxCharacters - feildValue.count)" + NSLocalizedString("characters remaining", comment: ""))
+//            Text("\(5)")
+//            Text(String(5))
+            }
+        
+    }}
+
 

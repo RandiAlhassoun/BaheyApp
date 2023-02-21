@@ -11,7 +11,7 @@ import SwiftUI
 struct FavoritesNotRegistered: View {
     var body: some View {
         VStack{
-            Text("Saved")
+            Text("Favorites")
                 .modifier(XLTextModifier())
               Spacer()
             
@@ -20,11 +20,11 @@ struct FavoritesNotRegistered: View {
                 .frame(width: 266.09, height: 250)
              //   .padding()
             
-            Text("Couldn’t fined any saved item !")
+            Text("Sorry!")
               //  .padding()
                 .modifier(EmptyStateTextModifier())
             
-            Text("It seems that you aren’t login to your account , please login to view your list ")
+            Text("It seems that you aren’t logged in to your account , please login to view your list ")
                 .modifier(EmptyStateTextModifier())
                 .padding()
             
