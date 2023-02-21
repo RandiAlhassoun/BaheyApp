@@ -27,7 +27,7 @@ struct ExploreCategories: View {
             CardView
 
            
-        }.navigationTitle("Specialist")
+        }.navigationTitle(cat)
     }
     
     //MARK: - SEARCH
@@ -105,9 +105,9 @@ extension ExploreCategories {
     
     var searchResults: [business] {
         if searchText.isEmpty {
-            return dataManager.Test3
+            return dataManager.business_info
         } else {
-            return dataManager.Test3.filter { $0.Name.localizedCaseInsensitiveContains(searchText)
+            return dataManager.business_info.filter { $0.Name.localizedCaseInsensitiveContains(searchText)
                 
             }
 
@@ -158,4 +158,3 @@ extension ExploreCategories {
 //    }
 //
 //}
-

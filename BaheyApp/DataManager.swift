@@ -17,12 +17,14 @@ class DataManager: ObservableObject {
     
    // @Published var business_Testing: [business] = []
     
-    @Published var Test3: [business] = []
+    @Published var business_info: [business] = []
+    @Published var Reviews: [reviews2] = []
+
 
     
     init(){
         fetchbusiness_Testing()
-        
+        fetchbusiness_Testing2()
         //fetchRestaurant()
     }
     
@@ -30,10 +32,10 @@ class DataManager: ObservableObject {
     
     
     func fetchbusiness_Testing () {
-        Test3.removeAll ()
+        business_info.removeAll ()
         let db = Firestore.firestore()
         
-        let ref = db.collection("Test3")
+        let ref = db.collection("business_info")
         
         
         
@@ -59,6 +61,7 @@ class DataManager: ObservableObject {
                     let star  = data[ "star"] as? Int ?? 1
                     let About  = data[ "About"] as? String ?? "About non"
                     let Social  = data[ "Social"] as? String ?? "Social non"
+                    
 
                     let Business = business(id: id, Name: Name, City: City, Categorie: Categorie ,ima: ima ,star: star ,About: About ,Social: Social)
                     
@@ -72,12 +75,15 @@ class DataManager: ObservableObject {
                     //                    print(Business.City)
                     //                    print(Business.Categorie)
                     
-                    self.Test3.append(Business)
+                    self.business_info.append(Business)
                     
                     
                 }
                 
-                print(self.Test3)
+                print(self.business_info.count)
+                print(self.business_info)
+
+                print("rrrrrrrrrrrrrrrrrrrrrrrrrrrrr ")
 
             }
             
@@ -89,13 +95,88 @@ class DataManager: ObservableObject {
     
     
     
- //MARK: -
+// //MARK: -
+//
+//
+//
+    func fetchbusiness_Testing2 () {
+        Reviews.removeAll ()
+        let db = Firestore.firestore()
+
+        let ref = db.collection("Reviews")
+
+
+
+        ref.getDocuments { snapshot, error in
+            guard error == nil else {
+                print (error!.localizedDescription)
+                return
+            }
+
+
+            if let snapshot = snapshot {
+                for document in snapshot.documents {
+                    let data = document.data ()
+                    //   print(data)
+
+
+
+                    let Reviewe = data["Reviewe"] as? String ?? "no Reviewe"
+                    let ReviewerName = data["ReviewerName"] as? String ?? "no Name"
+                    let BID = data[ "BID"] as? String ?? "no BID"
+                    let stars  = data[ "stars"] as? Int ?? 3
+
+
+
+
+
+                    let reviews2 = reviews2(Reviewe: Reviewe, ReviewerName: ReviewerName, BID: BID, stars: stars)
+
+
+
+
+
+
+
+
+                    //                    print("-----------")
+                    //                    print(Business.Name)
+                    //                    print(Business.City)
+                    //                    print(Business.Categorie)
+
+                    self.Reviews.append(reviews2)
+
+
+                }
+
+                print(self.Reviews.count)
+                print(self.Reviews)
+
+                print("vvvvvvvvvvvvv")
+
+            }
+
+        }
+
+    }
+//
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     // FirestoreManager.swift
     
 //    func fetchRestaurant() {
 //        let db = Firestore.firestore()
 //
-//        let docRef = db.collection("Test3")
+//        let docRef = db.collection("business_info")
 //
 //        docRef.getDocuments { (document, error) in
 //            guard error == nil else {
@@ -125,7 +206,7 @@ class DataManager: ObservableObject {
 //                        //                    print(Business.City)
 //                        //                    print(Business.Categorie)
 //
-//                        self.Test3.append(Business)
+//                        self.business_info.append(Business)
 //
 //                        print("data", data)
 //
