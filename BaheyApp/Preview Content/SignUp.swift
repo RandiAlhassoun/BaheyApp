@@ -117,7 +117,7 @@ struct SignUp: View {
     
     // MARK: -  func signUpUser() used to create a user using Firebase.
     
-    func signUpUser() {
+    public func signUpUser() {
         signUpProcessing = true
         print("inside signUpUser()")
         Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
@@ -139,6 +139,7 @@ struct SignUp: View {
                     print("Username: \(self.username)")
                 } //End of if
                 
+               
                 changeRequest?.commitChanges(completion: { (error) in //commit changes to firebase auth
                     
                     if let error = error { //error handling

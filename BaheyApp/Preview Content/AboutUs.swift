@@ -28,7 +28,7 @@ var body: some View {
                 .padding()
             
             
-            // MARK: - action buttons 
+            // MARK: - action buttons
             VStack(alignment: .center){
                 HStack{
                     Button(action: {
@@ -38,7 +38,7 @@ var body: some View {
                         }
                         
                     }, label: {
-                        Image( "instagram") // <- Change icon to your preferred one
+                        Image( "instagram")
                             .resizable()
                             .frame(width: 60, height: 60)
                             .foregroundColor(.blue)

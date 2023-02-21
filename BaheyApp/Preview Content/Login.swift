@@ -155,7 +155,6 @@ struct Login: View {
                         .padding()
                     
                     
-
                 }
                 Text("OR")
                 
@@ -264,7 +263,7 @@ struct Login: View {
     func signInUser(email: String, password: String) {
         signInProcessing = true
         print("Inside func signIn()")
-  
+        
         Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
             
             // MARK: -  NOTE: This if to get the user name of the user.
@@ -361,7 +360,6 @@ struct LargeButtonModifier1: ViewModifier {
             .cornerRadius(5.0)
             .font(.system(size: 20))
     }}
-
 
 
 
