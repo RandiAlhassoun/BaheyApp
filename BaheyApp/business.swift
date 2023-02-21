@@ -17,5 +17,9 @@ struct business: Identifiable {
     var star : Int
     var About: String
     var Social: String
+
+    //RName
     
 }
+
+

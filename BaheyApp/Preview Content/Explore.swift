@@ -54,7 +54,7 @@ struct Explore: View {
                         
                         
                         //MARK: - Hair
-                            NavigationLink(destination: ExploreCategories(cat:"Hair Stylist")){
+                            NavigationLink(destination: ExploreCategories(cat:"Hair Dresser")){
                             
                             ZStack(alignment: .bottom){
                                 Image ("Hair")
@@ -64,7 +64,7 @@ struct Explore: View {
                                 
                                 
                                 //NavigationLink(destination: ExploreCategories()){
-                                Text("Hair Stylist")                                                                .multilineTextAlignment(.center)
+                                Text("Hair Dresser")                                                                .multilineTextAlignment(.center)
                                 
                                     .foregroundColor(.white)
                                     .modifier(XLTextModifier())
@@ -174,11 +174,12 @@ struct Explore: View {
 
 
     }
+    
     var searchResults: [business] {
         if searchText.isEmpty {
-            return dataManager.Test3
+            return dataManager.business_info
         } else {
-            return dataManager.Test3.filter { $0.Name.localizedCaseInsensitiveContains(searchText)
+            return dataManager.business_info.filter { $0.Name.localizedCaseInsensitiveContains(searchText)
                 
             }
 
@@ -237,5 +238,4 @@ struct Explore_Previews: PreviewProvider {
 //    }
 //
 //}
-
 
