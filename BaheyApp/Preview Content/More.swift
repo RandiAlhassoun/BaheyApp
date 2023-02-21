@@ -15,14 +15,14 @@ import Firebase
 
 
 struct More: View {
-    
-    
-    @State private var showingOptions = false
     @State private var UserLogedOut = false
     @State var signOutProcessing = false
     @State private var isDeleting = false
+    @State private var showingOptions = false
+    @State private var toLogin = false
+    @State var isShowingAlert = false
+    
     var body: some View {
-        
         NavigationView{ //start Navigation View
             VStack(alignment: .leading){ // start v stack
                 
@@ -32,10 +32,12 @@ struct More: View {
                     Text("Hello, \(CurrentUserName ?? "User")")//To get the email of the current user or else set the email to "User"
                         .multilineTextAlignment(.leading)
                         .fontWeight(.semibold)
+                        .font(.system(size: 20))
                     let CurrentUserEmail = Auth.auth().currentUser?.email
                     Text ("\(CurrentUserEmail ?? "User@email.com")")//To get the email of the current user or else set the email to "User@email.com"
                         .multilineTextAlignment(.leading)
                         .fontWeight(.semibold)
+                        .font(.system(size: 20))
                     
                     
                 }.padding()
@@ -80,44 +82,57 @@ struct More: View {
                 
                 
                 Spacer()
-                // MARK: - Sign out Button:
-                Button {
+                
+                // MARK: - Auth.auth().currentUser To check wither the user logged in or not? if logged in show signout & delete account, if not show sigIn button
+                
+                if Auth.auth().currentUser == nil {
+                    Button {
+                        toLogin.toggle()
+                        //signInUser()
+                        print("signIn Button clicked")
+                    } label: {
+                        Text("Sign In").modifier(LargeButtonModifier())
+                    }
+                } else {
+                    Button {
+                        
+                        signOutUser()
+                        print("Sign out Button clicked")
+                    } label: {
+                        Text("Sign Out").modifier(LargeButtonModifier())
+                    }
                     
-                    signOutUser()
-                    print("Sign out Button clicked")
-                } label: {
-                    Text("Sign Out").modifier(LargeButtonModifier())
-                }
-                // MARK: - Sign out Button:
-                //                NavigationLink(destination: DeleteAccount().navigationBarBackButtonHidden()
-                //                ){
-                //                    Text("Delete Account")
-                //                        .modifier(LargeButtonModifier())
-                //                }
-                Button {
-                    deleteAccount()
-                    print("Delete Account Button clicked")
-                } label: {
-                    Text("Delete Account").modifier(LargeButtonModifier())
-                }
-                
+                    Button(action: {
+                        print("Delete Account Button clicked")
+                        isShowingAlert = true
+                    }) {
+                        Text("Delete Account").modifier(LargeButtonModifier())
+                    }
+                    .alert(isPresented: $isShowingAlert){ Alert(
+                        title: Text("Your data will be permanently deleted"),
+                        
+                        message: Text("Are you sure you want to delete your account?"),
+                        primaryButton: .destructive(Text("Delete").foregroundColor(Color("Dpink")), action: {
+                            deleteAccount()
+                        }),
+                        secondaryButton: .cancel(Text("Cancel"))
+                    )}
+                }//End of else
                 Spacer()
-                
-                
             }
             .padding()
             .fullScreenCover(isPresented: $UserLogedOut) {
                 Logout()
-                
             }
             .fullScreenCover(isPresented: $isDeleting) {
                 DeleteAccount()
             }
+            .fullScreenCover(isPresented: $toLogin) {
+                Login()
+            }
+            
             
             //.navigationBackButton(color: UIColor(red: 0.73, green: 0.41, blue: 0.43, alpha: 1.00),  text: "Back") //To use a custom color you have to get the UIColor from the hex using this website:https://www.uicolor.io
-            
-            //Modifiers to make the VStack as a block
-            // .modifier(reviewBackgrounddModifier())
         }
     }
     // MARK: - Sign out func:
@@ -126,6 +141,7 @@ struct More: View {
         signOutProcessing = true
         let firebaseAuth = Auth.auth()
         print("Current User that will log out : \(firebaseAuth.currentUser?.displayName)")
+        print("Deleted")
         do {
             try firebaseAuth.signOut()
         } catch let signOutError as NSError {
@@ -155,7 +171,8 @@ struct More: View {
                 
             } else {   //if there was no error, print a success message to the console
                 
-                print("User successfully deleted")   //print success message to the console
+                
+                print("User successfully deleted")//print success message to the console
                 
             }   //end if/else statement
             
@@ -163,7 +180,6 @@ struct More: View {
         
     }   //end deleteAccount function
 }
-
 
 struct More_Previews: PreviewProvider {
     static var previews: some View {
