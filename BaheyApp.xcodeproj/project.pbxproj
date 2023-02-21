@@ -150,16 +150,8 @@
 				C18F60B02992415D00168E0D /* DeleteAccount.swift */,
 				C18F60B22992417000168E0D /* Logout.swift */,
 				C18F60B729937B0500168E0D /* TabBar.swift */,
-				C18F60CD299B680200168E0D /* DataTesting */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		C18F60CD299B680200168E0D /* DataTesting */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DataTesting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
