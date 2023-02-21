@@ -6,13 +6,26 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct WriteReview: View {
+    
+    //@EnvironmentObject var dataManager: DataManager
+
+    let CurrentUserName = Auth.auth().currentUser?.displayName
+
+    @State var Bid = ""
+
     //@State var fkeildValue = ""
     @State var toAfterReview = false //To go to ViewAllReviews after clicking Done button.
     @State var isFavoritePressed = false
+    @State var isF = false
+
+    
+    @State var feildValue = ""
+    let maxCharacters = 100
     //let maxCharacters = 50
-    //@Environment(\.dismiss) var dismiss
+    @Environment(\.dismiss) var dismiss
     
 
     var body: some View {
@@ -25,16 +38,42 @@ struct WriteReview: View {
                     .padding(.bottom)
                 
                 //Calling stars view, by default it is 5 stars.
-                StarsSelectionView(rating:5).padding(.bottom)
+                StarsSelectionView(rating:3).padding(.bottom)
                 
                 Text("Write Your Review").modifier(WriteReviewHeadersModifier())
                     .padding(.bottom)
                 
                 
-                ReviewTextFieldView()
+                //ReviewTextFieldView()
+                //MARK: -
+                
+                VStack{
+                    TextField("",
+                              text: $feildValue ,  axis: .vertical)//axis parameter supports more advanced behaviors, like reserving a minimum amount of space and expanding as more content is added, and then scrolling once the content exceeds the upper limit
+                    .modifier(reviewTextFieldModifier())
+                    
+                    //** NOTE: onReceive code to let the user enter chacters to maxCharacters and then allow the user to delete **//
+                    .onReceive(feildValue .publisher.collect().map {$0.count > 100}) { enabled in
+                        self.feildValue  = String(self.feildValue .prefix(100))
+                    }
+                    
+                }
+                //This is to show the remaining characters:
+                VStack(alignment: .leading){
+                    Text("\(maxCharacters - feildValue.count) characters remaining")
+                    .foregroundColor(.gray)}
+                
+                
+                //MARK: -
                 Spacer()
                 Button {
-                    toAfterReview.toggle()
+                    //toAfterReview.toggle()
+                   //
+                    //self.AddInfo(stars: 4, ReviewerName: "2", BID: "1", Reviewe:feildValue)
+                    self.AddInfo(BID: Bid, stars: 3, ReviewerName: (CurrentUserName ?? "Userx"), Reviewe: feildValue)
+                                //(BID: String, stars: Int, ReviewerName: String, Reviewe: String)
+
+                    dismiss()
                     
                 } label: {
                     Text("Submit")
@@ -42,16 +81,24 @@ struct WriteReview: View {
                     
                 }
                 Spacer()
+                
             }.frame(maxWidth: .infinity, maxHeight: .infinity , alignment: .leading)
                 .padding()
                 .fullScreenCover(isPresented: $toAfterReview) {
-
                     AfterReview()
                     
                 }//End of fullScreenCover
             
         }
     }
+    
+
+    func AddInfo(BID: String, stars: Int, ReviewerName: String, Reviewe: String){
+        let db = Firestore.firestore()
+        db.collection("Reviews").document().setData(["BID": BID, "stars": stars, "ReviewerName": ReviewerName, "Reviewe": Reviewe])
+
+    }
+
     
 }
 
@@ -103,6 +150,7 @@ struct StarsSelectionView: View {
 //        }}}
 //MARK: - ReviewTextFieldView:
 
+
 struct ReviewTextFieldView: View {
     @State var feildValue = ""
     let maxCharacters = 100
@@ -121,8 +169,19 @@ struct ReviewTextFieldView: View {
         }
         //This is to show the remaining characters:
         VStack(alignment: .leading){
-            Text("\(maxCharacters - feildValue.count) characters remaining")
-            .foregroundColor(.gray)}
+            HStack(spacing: 3) {
+                Text("\(maxCharacters - feildValue.count)")
+                Text("characters remaining")
+
+            }
+            .foregroundColor(.gray)
+//            Text("\(maxCharacters - feildValue.count)" + "characters remaining")
+//            Text("\(maxCharacters - feildValue.count)" + NSLocalizedString("characters remaining", comment: ""))
+//            Text("\(maxCharacters - feildValue.count)" + NSLocalizedString("characters remaining", comment: ""))
+//            Text("\(5)")
+//            Text(String(5))
+            }
         
     }}
+
 

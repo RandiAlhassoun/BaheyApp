@@ -10,7 +10,7 @@ import SwiftUI
 struct FavoritesEmpty: View {
     var body: some View {
         VStack(spacing: 20){
-            Text("Saved")
+            Text("Favorites")
                 .modifier(XLTextModifier())
                Spacer()
             

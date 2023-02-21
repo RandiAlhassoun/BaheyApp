@@ -58,42 +58,13 @@ struct ProviderInfo: View {
                     Text("Details").modifier(ProviderInfoHeadersTextModifier())
                     //.padding(.bottom)
                     
-
-                    //VStack Contains the details of each provider "city & ctegory".
-                    VStack(alignment: .leading){
-                        Text("Details").modifier(ProviderInfoHeadersTextModifier())
-                        //.padding(.bottom)
+                    HStack(){
+                        Group{
+                            Text("City:")
+                            Text(businessData.City)}.modifier(RegularTextModifier())
                         
-                        HStack(){
-                            Group{
-                                Text("City:")
-                                Text("Riyadh")}.modifier(RegularTextModifier())
-                            
-                        }//HStack For City
-
-                        HStack(){
-                            Group{
-                                Text("Category:")
-                                Text("Makeup")}
-                            .modifier(RegularTextModifier())
-                        }//HStack For Category
-                        
-                        Divider()
-                    }//End of VStack details
-                    .frame(maxWidth: .infinity , alignment: .leading)
-                    .padding([.leading, .bottom, .trailing])
+                    }//HStack For City
                     
-                    //MARK: - About Us:
-                    VStack(alignment: .leading){//Contains About  us for each provider
-                        Text("About Us").modifier(ProviderInfoHeadersTextModifier())
-                        Text("qjkjqljwllekkqk;kw;qkw;qkw;qkw;qkq;wk;qkwq;kw;qsakss,;s,;sqkpwqkpwoqpwqema.sa,a;s,a;slq;wlqq;wpqopqmdlsklkqpkqpwqmdknkwjqwoqkwpqopqoq psmas,alkql")
-                            .modifier(RegularTextModifier())
-                        Divider()
-                    }//End of VStack about us.
-                
-                    .frame(maxWidth: .infinity , alignment: .leading)
-                    .padding([.leading, .bottom, .trailing])
-
                     
                     HStack(){
                         Group{
@@ -102,33 +73,12 @@ struct ProviderInfo: View {
                         .modifier(RegularTextModifier())
                     }//HStack For Category
                     
-
-                    //VStack Contains Social networking sites for each provider
-                    VStack(alignment: .leading){
-                        Text("Social networking sites").modifier(ProviderInfoHeadersTextModifier())
-                        Button(action: {
-                            //NOTE: Add your link here in: let yourURL = URL(string:"HERE")
-                            if let yourURL = URL(string: "https://www.instagram.com/bahey_app/?igshid=YmMyMTA2M2Y%3D") {
-                                UIApplication.shared.open(yourURL, options: [:], completionHandler: nil)
-                            }
-                            
-                        }, label: {
-                            Image( "instagram") // <- Change icon to your preferred one
-                                .resizable()
-                                .frame(width: 45, height: 45)
-                                .foregroundColor(.blue)
-                        })
-                        Divider()
-                        
-                    }//End of VStack Social networking sites
-                    .frame(maxWidth: .infinity , alignment: .leading)
-                    .padding([.leading, .bottom, .trailing])
-
                     
                 }//End of VStack details
                 .frame(maxWidth: .infinity , alignment: .leading)
                 .padding([.leading, .bottom, .trailing])
                 
+                Divider()
                 //MARK: - About Us:
                 VStack(alignment: .leading){//Contains About  us for each provider
                     Text("About Us").modifier(ProviderInfoHeadersTextModifier())
@@ -137,7 +87,7 @@ struct ProviderInfo: View {
                 }//End of VStack about us.
                 .frame(maxWidth: .infinity , alignment: .leading)
                 .padding([.leading, .bottom, .trailing])
-                
+                Divider()
                 //MARK: - Social networking sites:
                 
                 //VStack Contains Social networking sites for each provider
@@ -168,7 +118,8 @@ struct ProviderInfo: View {
                     HStack{
                         Text("Reviews").modifier(ProviderInfoHeadersTextModifier())
                         Spacer()
-                        NavigationLink(destination: ViewAllReviews()) {
+                        //businessData: bus
+                        NavigationLink(destination: ViewAllReviews(Bid: businessData.id)) {
                             Text("More").modifier(AccentTextModifier())
                         }
                         
@@ -177,11 +128,98 @@ struct ProviderInfo: View {
                     //ScrollView to hold the reviews
                     ScrollView(.horizontal){
                         HStack(){
+                            
+                            
+                            
+                            
+                            ForEach(dataManager.Reviews.filter { $0.BID.localizedCaseInsensitiveContains(businessData.id)}, id: \.id) { bus in
+                                VStack(alignment: .leading){
+                                    // Reviewer name:
+                                    Text(bus.ReviewerName)
+                                        .modifier(RegularTextModifier())
+                                        .bold()
+                                        .padding([.top, .leading, .trailing])
+                                    // Reviewer evaluation stars:
+                                   // ForEach(1...bus.stars, id: \.id){ str in
+                                    HStack{
+                                        Text(" ")
+                                    ForEach(1...bus.stars, id: \.self) { stars in
+            //                            HStack{
+                                       
+                                            Image(systemName: "star.fill")
+                                                .foregroundColor(Color("yellowFill"))
+                                               // .padding(.horizontal)
+                                               // .font(.system(size: 15))
+                                        }//h
+                                    }//for
+                                    // Reviewer review:
+                                    Text(bus.Reviewe)
+                                    
+                                        .modifier(RegularTextModifier())
+                                        .padding(.horizontal)
+                                    Spacer()
+                                }
+                                    .frame(width: 200, height:130 , alignment: .leading)
+                                //navigationBackButton Modifier that creates a back button with custom ccolor.
+                                    .navigationBackButton(color: UIColor(red: 0.73, green: 0.41, blue: 0.43, alpha: 1.00),  text: "Back") //To use a custom color you have to get the UIColor from the hex using this website:https://www.uicolor.io
+                                
+                                //Modifiers to make the VStack as a block
+                                    .modifier(reviewBackgrounddModifier())
+                                
+                            }//for
+
                             //Calling ReviewBlockView for each review block.
-                            ForEach(1...3, id: \.self) { i in
-                                SmallReviewBlockView()}
+//                            ForEach(1...3, id: \.self) { i in
+//                                SmallReviewBlockView()
+//                            }
+  
+                            
+                            //ForEach(1...businessData.Reviews, id: \.self) { stars in
+
+                        
+//                            ForEach(businessData.Reviews, id: \.self) { stars in
+//                            ForEach(businessData.RName, id: \.self) { stars in
+//
+//                                VStack(alignment: .leading){
+//                                    Text(stars)
+//                                        .modifier(RegularTextModifier())
+//                                        .bold()
+//                                        .padding([.top, .leading, .trailing])
+//                                    //z=z+1
+////                            }
+//                         //   var z = 0
+//                            ForEach(0...businessData.Reviews.count-1, id: \.self) { stars in
+//
+//                                VStack(alignment: .leading){
+//                                    
+//                                    
+//                                    //print(id)
+//                                    Text(businessData.RName[stars])
+//                                        .modifier(RegularTextModifier())
+//                                        .bold()
+//                                        .padding([.top, .leading, .trailing])
+//                                    //z=z+1
+//
+//                                    Image(systemName: "star.fill")
+//                                        .foregroundColor(Color("yellowFill"))
+//                                        .font(.system(size: 15))
+//                                        .padding(.horizontal)
+//                                    Text(businessData.Reviews[stars])
+//                                        .modifier(RegularTextModifier())
+//                                        .padding(.horizontal)
+//                                    Spacer()
+//
+//                                }//Modifiers to make the VStack as a block
+//                                .frame(width: 200, height:130 , alignment: .leading)
+//                                .background(Color("Lgreen"))
+//                                .cornerRadius(10)
+//
+//
+//                                //z+=+1
+//                            }//for
                             
                         }//End of HStack review block
+                        
                         .frame(maxWidth: .infinity , alignment: .leading)
                         .padding(.horizontal)
                     }
@@ -229,14 +267,14 @@ struct favoriteView: View {
 
 //MARK: - SmallReviewBlockView:
 struct SmallReviewBlockView: View {
-    
+
     var body: some View {
         VStack(alignment: .leading){
             Text("Shahd")
                 .modifier(RegularTextModifier())
                 .bold()
                 .padding([.top, .leading, .trailing])
-            
+
             Image(systemName: "star.fill")
                 .foregroundColor(Color("yellowFill"))
                 .font(.system(size: 15))
@@ -245,10 +283,9 @@ struct SmallReviewBlockView: View {
                 .modifier(RegularTextModifier())
                 .padding(.horizontal)
             Spacer()
-            
+
         }//Modifiers to make the VStack as a block
         .frame(width: 200, height:130 , alignment: .leading)
         .background(Color("Lgreen"))
         .cornerRadius(10)
     }}
-
