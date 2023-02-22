@@ -28,7 +28,7 @@ var body: some View {
                 .padding()
             
             
-            // MARK: - action buttons 
+            // MARK: - action buttons
             VStack(alignment: .center){
                 HStack{
                     Button(action: {
