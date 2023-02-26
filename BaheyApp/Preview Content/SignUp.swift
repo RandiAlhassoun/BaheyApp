@@ -59,6 +59,7 @@ struct SignUp: View {
                     .background(Color("Lgreen"))
                     .cornerRadius(5.0)
                 .padding(.bottom, 20)
+            } // end of second vstack
                 // MARK: - ProgressView & Error msg
                 VStack(alignment: .center){
                     if signUpProcessing {
@@ -74,7 +75,7 @@ struct SignUp: View {
                         // .padding()
                     }
                 }//End of VStack ErrorMessag & ProgressView
-            } // end of second vstack
+            
             
             // MARK: - Button
             //Spacer()
